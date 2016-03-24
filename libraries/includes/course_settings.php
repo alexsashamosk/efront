@@ -397,7 +397,7 @@ if ($_GET['op'] == 'course_info') {
 	if (isset($_GET['ajax']) && $_GET['ajax'] == 'courseUsersTable') {
 
 		//pr($studentRoles);
-		$smarty -> assign("T_DATASOURCE_COLUMNS", array('login', 'active_in_course', 'completed', 'to_timestamp', 'score', 'issued_certificate', 'expire_certificate', 'operations'));
+		$smarty -> assign("T_DATASOURCE_COLUMNS", array('login', 'active_in_course', 'completed', 'to_timestamp', 'score','finalgrade', 'issued_certificate', 'expire_certificate', 'operations'));
 		$smarty -> assign("T_DATASOURCE_SORT_BY", 0);
 		$constraints  = array('archive' => false, 'active' => true) + createConstraintsFromSortedTable();
 		$constraints['condition'] = "uc.user_type in ('".implode("','", $studentRoles)."')";

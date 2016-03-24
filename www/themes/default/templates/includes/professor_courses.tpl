@@ -146,6 +146,7 @@
 			        <td class = "topTitle" name = "timestamp_completed"   style = "width:10%">{$smarty.const._COMPLETEDON}</td>
 			        <td class = "topTitle centerAlign" name = "from_timestamp" style = "width:5%">{$smarty.const._STATUS}</td>
 			        <td class = "topTitle centerAlign" name = "completed" style = "width:5%">{$smarty.const._COMPLETED}</td>
+			        <td class = "topTitle centerAlign" name = "completed" style = "width:5%">{$smarty.const._COMPLETED}</td>
 			        <td class = "topTitle centerAlign" name = "score" style = "width:5%">{$smarty.const._SCORE}</td>
 					<td class = "topTitle centerAlign noSort">{$smarty.const._OPERATIONS}</td>
 					<td class = "topTitle centerAlign" name = "active_in_course">{$smarty.const._CHECK}</td>

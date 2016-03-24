@@ -18,7 +18,7 @@ if (str_replace(DIRECTORY_SEPARATOR, "/", __FILE__) == $_SERVER['SCRIPT_FILENAME
  * @author Antonellis Panagiotis
  * @version 1.0
  */
-class EfrontFacultiesException extends Exception
+class EfrontDepartmentsException extends Exception
 {
     const NO_ERROR          = 0;
     const GROUP_NOT_EXISTS  = 301;
@@ -31,8 +31,15 @@ class EfrontFacultiesException extends Exception
     const INVALID_TYPE 	   = 308;
 }
 
-
-class EfrontFaculties
+/**
+ * EfrontGroup class
+ *
+ * This class represents a group
+ * @package eFront
+ * @author Antonellis Panagiotis
+ * @version 1.0
+ */
+class EfrontDepartments
 {
     /**
      * The faculties array.
@@ -41,7 +48,27 @@ class EfrontFaculties
      * @var array
      * @access protected
      */
-    public $faculties = array();
+    public $departments = array();
+
+    /**
+     * The departments users. Calling getUsers() initializes it; otherwise, it evaluates to false.
+     *
+     * @since 3.5.0
+     * @var array
+     * @access protected
+     */
+
+    /*
+     * The group lessons. Lessons correlated with this group can be either directly assigned to
+     * all users of the group or be automatically assigned to every user joining the group
+     */
+    protected $lessons = false;
+
+    /*
+     * The group courses. Lessons correlated with this group can be either directly assigned to
+     * all users of the group or be automatically assigned to every user joining the group
+     */
+    protected $courses = false;
 
 
     /**
@@ -59,21 +86,21 @@ class EfrontFaculties
      * @since 3.5.0
      * @access public
      */
-    function __construct($faculties_id) {
+    function __construct($departments_id) {
 
-        if (is_array($faculties_id)) {
-            $faculties[0] = $faculties_id;
+        if (is_array($departments_id)) {
+            $departments[0] = $departments_id;
         } else {
-	        if (!eF_checkParameter($faculties_id, 'id')) {
-	            throw new EfrontGroupException(_INVALIDID.": $faculties_id", EfrontGroupException :: INVALID_ID);
+	        if (!eF_checkParameter($departments_id, 'id')) {
+	            throw new EfrontGroupException(_INVALIDID.": $departments_id", EfrontGroupException :: INVALID_ID);
 	        }
-            $faculties = eF_getTableData("faculties", "*", "id = $faculties_id");
+            $departments = eF_getTableData("departments", "*", "id = $departments_id");
         }
 
-        if (sizeof($faculties) == 0) {
+        if (sizeof($departments) == 0) {
             throw new EfrontGroupException(_GROUPDOESNOTEXIST, EfrontGroupException :: GROUP_NOT_EXISTS);
         } else {
-            $this -> faculties = $faculties[0];
+            $this -> departments = $departments[0];
         }
     }
 
@@ -104,8 +131,8 @@ class EfrontFaculties
     public static function create($fields = array()) {
         !isset($fields['name'])    ? $fields['name'] = 'Default name' : null;
 
-        $newId   = eF_insertTableData("faculties", $fields);
-        $result = eF_getTableData("faculties", "*", "id=".$newId);                                         //We perform an extra step/query for retrieving data, sinve this way we make sure that the array fields will be in correct order (forst id, then name, etc)
+        $newId   = eF_insertTableData("departments", $fields);
+        $result = eF_getTableData("departments", "*", "id=".$newId);                                         //We perform an extra step/query for retrieving data, sinve this way we make sure that the array fields will be in correct order (forst id, then name, etc)
         $direction = new EfrontDirection($result[0]);
 
         return $direction;
@@ -134,37 +161,17 @@ class EfrontFaculties
      * @access public
      */
     public function delete() {
-        eF_deleteTableData("departments", "faculty_id=".$this -> faculties['id']);
-        eF_deleteTableData("faculties", "id=".$this -> faculties['id']);
-
+        eF_deleteTableData("departments", "id=".$this -> departments['id']);
         return true;
     }
 
     public function persist() {
 
-        $ok = eF_updateTableData("faculties", $this -> faculties, "id=".$this -> faculties['id']);
+        $ok = eF_updateTableData("departments", $this -> departments, "id=".$this -> departments['id']);
         return $ok;
     }
 
-	public function toPathString($includeLeaf = true, $onlyActive = false) {
-        if ($onlyActive) {
-            $iterator = new EfrontNodeFilterIterator(new RecursiveIteratorIterator(new RecursiveArrayIterator($this -> tree), RecursiveIteratorIterator :: SELF_FIRST), array('active' => 1));
-        } else {
-            $iterator = new EfrontNodeFilterIterator(new RecursiveIteratorIterator(new RecursiveArrayIterator($this -> tree), RecursiveIteratorIterator :: SELF_FIRST));
-        }
-        foreach ($iterator as $id => $value) {
-            $values = array();
-            foreach ($this -> getNodeAncestors($id) as $direction) {
-                $values[] = $direction['name'];
-            }
-            if (!$includeLeaf) {
-                unset($values[0]);
-            }
-            $parentsString[$id] = implode('&nbsp;&rarr;&nbsp;', array_reverse($values));
-        }
-
-        return $parentsString;
-    }
+	
 
    /**
      * Returns the existing groups
@@ -182,26 +189,26 @@ class EfrontFaculties
      * @since 3.5.0
      * @access public
      */
-    public static function getFaculties($returnObjects = false, $returnDisabled = false){
-        $faculties = array();
+    public static function getDepartments($returnObjects = false, $returnDisabled = false){
+        $departments = array();
         if ($returnDisabled){
-            $data = eF_getTableData("faculties", "id, code, name", "", "code");
+            $data = eF_getTableData("departments", "id, code, name", "", "code");
         }
         else{
-            $data = eF_getTableData("faculties", "id, code, name", "active = 1", "code");
+            $data = eF_getTableData("departments", "id, code, name", "active = 1", "code");
         }
         if ($returnObjects){
-            foreach ($data as $faculties_info){
-                $faculties = new EfrontFaculties($faculties_info['id']);
-                $faculties[$faculties_info['id']] = $faculties;
+            foreach ($data as $departments_info){
+                $departments = new EfrontDepartments($departments_info['id']);
+                $departments[$departments_info['id']] = $departments;
             }
         }
         else{
-            foreach ($data as $faculties_info){
-                $faculties[$faculties_info['id']] = $faculties_info;
+            foreach ($data as $departments_info){
+                $departments[$departments_info['id']] = $departments_info;
             }
         }
-        return $faculties;
+        return $departments;
     }
 
    /**
@@ -222,9 +229,6 @@ class EfrontFaculties
 
 }
 
-/**
-* 
-*/
 
 
 

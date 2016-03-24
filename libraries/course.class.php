@@ -952,7 +952,7 @@ class EfrontCourse
 		!empty($constraints) OR $constraints = array('archive' => false, 'active' => true);
 
 		list($where, $limit, $orderby) = EfrontUser :: convertUserConstraintsToSqlParameters($constraints);
-		$from    = "(users u, (select uc.user_type as role,uc.score,uc.completed,uc.users_LOGIN,uc.to_timestamp, uc.from_timestamp as active_in_course, uc.from_timestamp as enrolled_on from courses c left outer join users_to_courses uc on uc.courses_ID=c.id where (c.id=".$this -> course['id']." or c.instance_source=".$this -> course['id'].") and uc.archive=0) r)";
+		$from    = "(users u, (select uc.user_type as role,uc.score,uc.final_grade,uc.completed,uc.users_LOGIN,uc.to_timestamp, uc.from_timestamp as active_in_course, uc.from_timestamp as enrolled_on from courses c left outer join users_to_courses uc on uc.courses_ID=c.id where (c.id=".$this -> course['id']." or c.instance_source=".$this -> course['id'].") and uc.archive=0) r)";
 		$from 	 = EfrontCourse :: appendTableFiltersUserConstraints($from, $constraints);
 		$where[] = "u.login=r.users_LOGIN";
 		$select  = "u.*, max(score) as score, max(completed) as completed, max(to_timestamp) as to_timestamp, max(r.role) as role, 1 as has_course, max(active_in_course) as active_in_course, max(enrolled_on) as enrolled_on";
@@ -987,7 +987,7 @@ class EfrontCourse
 		!empty($constraints) OR $constraints = array('archive' => false, 'active' => true);
 
 		list($where, $limit, $orderby) = EfrontUser :: convertUserConstraintsToSqlParameters($constraints);
-		$from    = "(users u, (select uc.score, uc.user_type as course_user_type,uc.completed,uc.users_LOGIN,uc.to_timestamp, uc.from_timestamp as active_in_course from courses c left outer join users_to_courses uc on uc.courses_ID=c.id where (c.id=".$this -> course['id']." or c.instance_source=".$this -> course['id'].") and uc.archive=0) r)";		
+		$from    = "(users u, (select uc.score,uc.final_grade, uc.user_type as course_user_type,uc.completed,uc.users_LOGIN,uc.to_timestamp, uc.from_timestamp as active_in_course from courses c left outer join users_to_courses uc on uc.courses_ID=c.id where (c.id=".$this -> course['id']." or c.instance_source=".$this -> course['id'].") and uc.archive=0) r)";		
 		$from 	 = EfrontCourse :: appendTableFiltersUserConstraints($from, $constraints);
 		$where[] = "u.login=r.users_LOGIN";
 		$select  = "u.login";
@@ -1011,7 +1011,7 @@ class EfrontCourse
 
 		list($where, $limit, $orderby) = EfrontUser :: convertUserConstraintsToSqlParameters($constraints);
 
-		$select  = "u.*, uc.courses_ID,uc.completed,uc.score,uc.user_type as role,uc.from_timestamp as active_in_course, uc.to_timestamp, uc.comments, uc.issued_certificate, 1 as has_course";
+		$select  = "u.*, uc.courses_ID,uc.completed,uc.score,uc.final_grade,uc.user_type as role,uc.from_timestamp as active_in_course, uc.to_timestamp, uc.comments, uc.issued_certificate, 1 as has_course";
 		$where[] = "u.login=uc.users_LOGIN and uc.courses_ID='".$this -> course['id']."' and uc.archive=0";
 		$from 	 = "users_to_courses uc,users u";
 		$from 	 = EfrontCourse :: appendTableFiltersUserConstraints($from, $constraints);
@@ -1316,6 +1316,16 @@ class EfrontCourse
 			return array();
 		} else {
 			return $result['users_LOGIN'];
+		}
+	}
+
+	public function getFinal_grade() {
+		$result = eF_getTableDataFlat("users_to_courses", "final_grade", "courses_ID=".$this->course['id']. " and users_LOGIN='". $this -> course['users_LOGIN']."'");
+		//unset($result[0]['final_grade']);
+			if (empty($result)) {
+			return array();
+		} else {
+			return $result['final_grade'][0];
 		}
 	}
 
@@ -1870,6 +1880,12 @@ class EfrontCourse
 
 		return true;
 	}
+
+public function persistusers_to_courses() {
+
+        $ok = eF_updateTableData("users_to_courses", $this -> course, "courses_ID=".$this -> course['id']);
+        return $ok;
+    }
 
 	/**
 	 * Make sure that the course fields are valid, and sanitize properly if not
@@ -2765,9 +2781,29 @@ class EfrontCourse
 				$courseString .= '<span style = "margin-left:30px">('._COURSEACTIONS.': '.implode('', $courseOptions).')</span>';
 			}
 		} else {
-			if ($this -> course['completed']) {
-				$courseOptions['completed'] = '<img src = "images/16x16/success.png" title = "'._COURSECOMPLETED.': '.formatTimestamp($this -> course['to_timestamp'], 'time').'" alt = "'._COURSECOMPLETED.': '.formatTimestamp($this -> course['to_timestamp'], 'time').'">&nbsp;';
+			if ($this -> course['completed'] && $this ->getFinal_grade()!=0) {
+				$fgrade = $this ->getFinal_grade();
+				switch ($fgrade) {
+					case $fgrade>0 && $fgrade<60:
+						$fgrade = _NOUD;
+						break;
+					case $fgrade>=60 && $fgrade<75:
+						$fgrade = _UD;
+						break;
+					case $fgrade>=75 && $fgrade<90:
+						$fgrade = _GOOD;
+						break;
+					case $fgrade>=90 && $fgrade<=100:
+						$fgrade = _VERYGOOD;
+						break;
+
+				}
+				$courseOptions['completed'] = _FINALGRADE.": ".$this ->getFinal_grade()." б. (".$fgrade.")".' <img src = "images/16x16/success.png" title = "'._COURSECOMPLETED.': '.formatTimestamp($this -> course['to_timestamp'], 'time').'" alt = "'._COURSECOMPLETED.': '.formatTimestamp($this -> course['to_timestamp'], 'time').'">&nbsp;';
 			}
+				if (!$this -> course['completed'] && $this ->getFinal_grade()!=0) {
+					$courseOptions['completed'] = _FINALGRADE.": ".$this ->getFinal_grade()." б. (".$fgrade.")";
+				}
+
 				if ($this -> course['issued_certificate']) {
 					$dateTable 	= unserialize($this -> course['issued_certificate']);
 					$certificateExportMethod = $this->options['certificate_export_method'];

@@ -25,8 +25,48 @@
                         <tr><td></td>
                         	<td class = "elementCell"><input class = "inputCheckbox" type = "checkbox" id = "showLessons" {if ( isset($smarty.get.showlessons))} "checked"{/if}>{$smarty.const._SHOWALLLESSONS}</td></tr>
                         <tr><td></td>
-                            <td class = "elementCell"><input type = "button" value = "{$smarty.const._SHOW}" class = "flatButton" onclick = "document.location='administrator.php?ctg=statistics&option=system&tab=system_traffic&from_year='+document.systemperiod.from_Year.value+'&from_month='+document.systemperiod.from_Month.value+'&from_day='+document.systemperiod.from_Day.value+'&from_hour='+document.systemperiod.from_Hour.value+'&from_min='+document.systemperiod.from_Minute.value+'&to_year='+document.systemperiod.to_Year.value+'&to_month='+document.systemperiod.to_Month.value+'&to_day='+document.systemperiod.to_Day.value+'&to_hour='+document.systemperiod.to_Hour.value+'&to_min='+document.systemperiod.to_Minute.value+'&showlog='+document.systemperiod.showLog.checked+'&showusers='+document.systemperiod.showUsers.checked+'&showlessons='+document.systemperiod.showLessons.checked"></td>
+                        
+                        <tr><td></td>
+                            <td class = "elementCell">
+                            <input type = "button" value = "{$smarty.const._SHOW}" class = "flatButton" onclick = "document.location='administrator.php?ctg=statistics&option=system&tab=system_traffic&from_year='+document.systemperiod.from_Year.value+'&from_month='+document.systemperiod.from_Month.value+'&from_day='+document.systemperiod.from_Day.value+'&from_hour='+document.systemperiod.from_Hour.value+'&from_min='+document.systemperiod.from_Minute.value+'&to_year='+document.systemperiod.to_Year.value+'&to_month='+document.systemperiod.to_Month.value+'&to_day='+document.systemperiod.to_Day.value+'&to_hour='+document.systemperiod.to_Hour.value+'&to_min='+document.systemperiod.to_Minute.value+'&showlog='+document.systemperiod.showLog.checked+'&showusers='+document.systemperiod.showUsers.checked+'&showlessons='+document.systemperiod.showLessons.checked"></td>
                         </tr>
+                         <tr><td class = "labelCell">{$smarty.const._SELECTGROUP}:&nbsp;</td>
+                            <td><select style = "vertical-align:middle" id = "group_filter" name = "group_filter" >
+                            <option value = "-1" class = "inactiveElement" {if !$smarty.get.group_filter}selected{/if}>{$smarty.const._SELECTGROUP}</option>
+                            {foreach name = "group_options" from = $T_GROUPS item = 'group' key='id'}
+                                <option value = "{$group.id}" {if $smarty.get.group_filter == $group.id}selected{/if}>{$group.name}</option>
+                            {/foreach}
+                            </select>
+                           
+                            <input type = "button" value="{$smarty.const._SUBMIT}" class = "flatButton"  onclick = "document.location='administrator.php?ctg=statistics&option=system&tab=system_traffic&from_year='+document.systemperiod.from_Year.value+'&from_month='+document.systemperiod.from_Month.value+'&from_day='+document.systemperiod.from_Day.value+'&from_hour='+document.systemperiod.from_Hour.value+'&from_min='+document.systemperiod.from_Minute.value+'&to_year='+document.systemperiod.to_Year.value+'&to_month='+document.systemperiod.to_Month.value+'&to_day='+document.systemperiod.to_Day.value+'&to_hour='+document.systemperiod.to_Hour.value+'&to_min='+document.systemperiod.to_Minute.value+'&showlog='+document.systemperiod.showLog.checked+'&showusers='+document.systemperiod.showUsers.checked+'&showlessons='+document.systemperiod.showLessons.checked+'&group_filter='+$('group_filter').options[$('group_filter').selectedIndex].value"> 
+                            </td>                         
+                            </tr>
+                            <tr><td class = "labelCell">{$smarty.const._NAMEDEP}:&nbsp;</td>
+                            <td><select style = "vertical-align:middle" id = "dep_filter" name = "dep_filter" >
+                                <option value = "-1" class = "inactiveElement" {if !$smarty.get.dep_filter}selected{/if}>
+                                {$smarty.const._NAMEDEP}
+                                </option>
+                            {foreach name = "dep_options" from = $T_DEP_PATHS item = 'departments' key='id'}
+                                <option value = "{$departments.id}" {if $smarty.get.dep_filter == $departments.id}selected{/if}>{$departments.name}
+                                </option>
+                            {/foreach}
+                            </select>
+                            <input class = "flatButton" type = "button" value="{$smarty.const._SUBMIT}" onclick = "document.location='administrator.php?ctg=statistics&option=system&tab=system_traffic&from_year='+document.systemperiod.from_Year.value+'&from_month='+document.systemperiod.from_Month.value+'&from_day='+document.systemperiod.from_Day.value+'&from_hour='+document.systemperiod.from_Hour.value+'&from_min='+document.systemperiod.from_Minute.value+'&to_year='+document.systemperiod.to_Year.value+'&to_month='+document.systemperiod.to_Month.value+'&to_day='+document.systemperiod.to_Day.value+'&to_hour='+document.systemperiod.to_Hour.value+'&to_min='+document.systemperiod.to_Minute.value+'&showlog='+document.systemperiod.showLog.checked+'&showusers='+document.systemperiod.showUsers.checked+'&showlessons='+document.systemperiod.showLessons.checked+'&dep_filter='+$('dep_filter').options[$('dep_filter').selectedIndex].value"> 
+                            </td>                         
+                            </tr>
+                            <tr><td class = "labelCell">{$smarty.const._PREPOD}:&nbsp;</td>
+                            <td><select style = "vertical-align:middle" id = "prepod_filter" name = "dep_filter" >
+                                <option value = "-1" class = "inactiveElement" {if !$smarty.get.dep_filter}selected{/if}>
+                                {$smarty.const._PREPOD}
+                                </option>
+                            {foreach name = "pr_options" from = $T_PR_PATHS item = 'prepod' key='id'}
+                                <option value = "{$prepod.id}" {if $smarty.get.prepod_filter == $prepod.id}selected{/if}>{$prepod.surname}
+                                </option>
+                            {/foreach}
+                            </select>
+                            <input class = "flatButton" type = "button" value="{$smarty.const._SUBMIT}" onclick = "document.location='administrator.php?ctg=statistics&option=system&tab=system_traffic&from_year='+document.systemperiod.from_Year.value+'&from_month='+document.systemperiod.from_Month.value+'&from_day='+document.systemperiod.from_Day.value+'&from_hour='+document.systemperiod.from_Hour.value+'&from_min='+document.systemperiod.from_Minute.value+'&to_year='+document.systemperiod.to_Year.value+'&to_month='+document.systemperiod.to_Month.value+'&to_day='+document.systemperiod.to_Day.value+'&to_hour='+document.systemperiod.to_Hour.value+'&to_min='+document.systemperiod.to_Minute.value+'&showlog='+document.systemperiod.showLog.checked+'&showusers='+document.systemperiod.showUsers.checked+'&showlessons='+document.systemperiod.showLessons.checked+'&prepod_filter='+$('prepod_filter').options[$('prepod_filter').selectedIndex].value"> 
+                            </td>                         
+                            </tr>
                     </table>
                     </form>
                     <table class = "statisticsTools">
@@ -179,4 +219,5 @@ Commented out until we convert old log-based stats to time-based
                 </div>
             </div>
         {/capture}
+
         {eF_template_printBlock title = $smarty.const._SYSTEMSTATISTICS data = $smarty.capture.display_system_statistics image = '32x32/reports.png' help = 'Reports'}

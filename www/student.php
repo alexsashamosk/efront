@@ -458,6 +458,7 @@ try {
 	    /***/
 	    require_once("module_tests.php");
 	}
+    
 	elseif ($ctg == 'feedback') {
 		$_SESSION['s_lessons_ID'] OR eF_redirect(basename($_SERVER['PHP_SELF']));
 	    require_once("module_tests.php");
@@ -478,6 +479,10 @@ try {
 		
 	    require_once("includes/lessons_list.php");
 	}
+    elseif ($ctg == 'stlistitems') {
+        /***/
+        require_once "stlistitems.php";
+    }
 	elseif ($ctg == 'forum') {
 	    /***/
 	    require_once("includes/forum.php");

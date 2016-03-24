@@ -93,6 +93,7 @@ try {
 				}
 			} #cpp#endif
             $options[]  = array('text' => _SYSTEMSTATISTICS,  'image' => "32x32/reports.png",   'href' => $_SERVER['PHP_SELF']."?ctg=statistics&option=system");
+            $options[]  = array('text' => _NUMBERCOURSESTATISTICS,  'image' => "32x32/users.png",   'href' => $_SERVER['PHP_SELF']."?ctg=statistics&option=numbercourse");
             if (G_VERSIONTYPE != 'community') { #cpp#ifndef COMMUNITY
                 if (G_VERSIONTYPE != 'standard') { #cpp#ifndef STANDARD
 
@@ -198,7 +199,10 @@ try {
         
 	} else if ($_GET['option'] == "tincan") {
         require_once("statistics/tincan_stats.php");
-	}
+        
+    } else if ($_GET['option'] == "numbercourse") {
+        require_once("statistics/numbercourse.php");
+    }
         
 } catch (Exception $e) {
 	handleNormalFlowExceptions($e);

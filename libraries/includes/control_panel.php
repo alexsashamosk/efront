@@ -566,6 +566,9 @@ try {
             if (EfrontUser::isOptionVisible('departments')) {
                 $controlPanelOptions[] = array('text' => _DEPARTMENTS, 'image' => "departments.png", 'href' => basename($_SERVER['PHP_SELF'])."?ctg=departments");
             }
+            if (EfrontUser::isOptionVisible('listitems')) {
+                $controlPanelOptions[] = array('text' => _LISTITEMS, 'image' => "listitems.png", 'href' => basename($_SERVER['PHP_SELF'])."?ctg=listitems");
+            }
             if (G_VERSIONTYPE != 'community') { #cpp#ifndef COMMUNITY
                 if (G_VERSIONTYPE != 'standard') { #cpp#ifndef STANDARD
 

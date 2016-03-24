@@ -167,6 +167,12 @@
 	{/if}
     {include file = "includes/lessons_list.tpl"}
 {/if}
+
+{if (isset($T_CTG) && $T_CTG == 'stlistitems')}
+    {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href ="'|cat:$smarty.server.PHP_SELF|cat:'?ctg=stlistitems">'|cat:$smarty.const._LISTITEMS|cat:'</a>'}
+    
+    {include file = "includes/stlistitems.tpl"}
+{/if}
 {if $T_CTG == 'calendar'}
     {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href ="'|cat:$smarty.server.PHP_SELF|cat:'?ctg=calendar">'|cat:$smarty.const._CALENDAR|cat:'</a>'}
 	{include file = "includes/calendar.tpl"}
@@ -633,6 +639,7 @@ function changeItemColor(item, color) {
 		{$smarty.capture.moduleForum}
 		{$smarty.capture.moduleProgress}
 		{$smarty.capture.moduleLandingPage}
+        {$smarty.capture.moduleStlistitems}
 	</table>
 {/capture}
 

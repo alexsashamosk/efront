@@ -547,6 +547,10 @@ try {
 	    /**This part is used to display the user's personal information*/
 	    include "includes/professor_lessons.php";
 	}
+	elseif ($ctg == 'final_grade') {
+	    /**This part is used to display the user's personal information*/
+	    include "includes/final_grade.php";
+	}
 	/*
 	The personal page is used to display the professor's personal information
 	and provides the means to edit this information

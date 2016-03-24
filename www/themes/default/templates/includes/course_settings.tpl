@@ -27,6 +27,10 @@
 					{if $lesson->lesson.score}
 						<tr><td class = "labelCell">{$smarty.const._SCORE}:&nbsp;</td>
 							<td class = "elementCell">{$lesson->lesson.score}&nbsp;%</td></tr>
+					{/if}		
+					{if $lesson->lesson.finalgrade}
+						<tr><td class = "labelCell">{$smarty.const._FINALGRADE}:&nbsp;</td>
+							<td class = "elementCell">{$lesson->lesson.finalgrade}&nbsp;</td></tr>
 					{/if}
 						<tr><td class = "labelCell">{$smarty.const._CONTENTDONE}:&nbsp;</td>
 							<td class = "progressCell" style = "vertical-align:top">
@@ -54,6 +58,7 @@
 					</td></tr>
 						
 					<tr><td class = "labelCell">{$T_COMPLETE_COURSE_FORM.score.label}&nbsp;</td><td>{$T_COMPLETE_COURSE_FORM.score.html}</td></tr>
+					<tr><td class = "labelCell">{$T_COMPLETE_COURSE_FORM.finalgrade.label}&nbsp;</td><td>{$T_COMPLETE_COURSE_FORM.finalgrade.html}</td></tr>
 					{if !$T_USER_COURSE->user.completed}
 					<tr><td></td>
 						<td class = "infoCell">{$smarty.const._PROPOSEDSCOREISAVERAGELESSONSCORE}</td></tr>

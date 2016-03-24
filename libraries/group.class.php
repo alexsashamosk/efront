@@ -1079,10 +1079,10 @@ class EfrontGroup
     public static function getGroups($returnObjects = false, $returnDisabled = false){
         $groups = array();
         if ($returnDisabled){
-            $data = eF_getTableData("groups", "id, name, self_enroll", "", "name");
+            $data = eF_getTableData("groups", "id, name, self_enroll, number_course", "", "name");
         }
         else{
-            $data = eF_getTableData("groups", "id, name, self_enroll", "active = 1", "name");
+            $data = eF_getTableData("groups", "id, name, self_enroll, number_course", "active = 1", "name");
         }
         if ($returnObjects){
             foreach ($data as $group_info){

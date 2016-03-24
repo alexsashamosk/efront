@@ -63,6 +63,10 @@ abstract class EfrontUser
 	 */
 	private static $userRoles;
 
+	private static $departmentsRoles;
+	private static $facultiesRoles;
+	private static $facultiesdepRoles;
+	private static $profRoles;
 	/**
 	 * The basic user types.
 	 *
@@ -304,6 +308,7 @@ abstract class EfrontUser
 		foreach (EfrontUser::getRoles(true) as $key => $value) {
 			$rolesTypes[$key] = mb_strtolower($value);
 		}
+		$rolesdep = EfrontLessonUser :: getDepartmentsRoles(true);
 		
 		//If a user type is not specified, by default make the new user student
 		if (!isset($userProperties['user_type'])) {	
@@ -317,6 +322,13 @@ abstract class EfrontUser
 			} else {
 				$userProperties['user_type'] = 'student';
 			}
+		}
+		if (!isset($userProperties['id_departments'])) {	
+			$userProperties['id_departments'] = null;
+		} else {
+			if (in_array(mb_strtolower($userProperties['id_departments']), $rolesdep)) {
+				$userProperties['id_departments'] = mb_strtolower($userProperties['id_departments']);
+			} 
 		}
 		if (!in_array($userProperties['user_type'], EFrontUser::$basicUserTypes)) {
 			$userProperties['user_type'] = 'student';
@@ -336,6 +348,7 @@ abstract class EfrontUser
 		!isset($userProperties['pending'])												? $userProperties['pending']		= 0											 : null;										   // 0 means not pending, 1 means pending
 		!isset($userProperties['timestamp']) ||  $userProperties['timestamp'] == ""	 ? $userProperties['timestamp']	  = time()										: null;
 		!isset($userProperties['user_types_ID'])  										? $userProperties['user_types_ID']  = 0											 : null;
+		!isset($userProperties['id_departments'])  										? $userProperties['id_departments']  = 0											 : null;
 		
 		$languages = EfrontSystem :: getLanguages();
 		if (in_array($userProperties['languages_NAME'], array_keys($languages)) === false) {
@@ -1086,6 +1099,7 @@ abstract class EfrontUser
 		$_SESSION['s_login']	= $this -> user['login'];
 		$_SESSION['s_password'] = $this -> user['password'];
 		$_SESSION['s_type']		= $this -> user['user_type'];
+		$_SESSION['s_departments']		= $this -> user['id_departments'];
 		$_SESSION['s_language'] = $loginLanguage;
 		$_SESSION['s_custom_identifier'] = sha1(microtime().$this -> user['login']);
 		$_SESSION['s_time_target'] = array(0 => 'system');		//'s_time_target' is used to signify which of the system's area the user is currently accessing. It is a id => entity pair 
@@ -1405,6 +1419,9 @@ abstract class EfrontUser
 	public function persist() {
 		$fields = array('password'	   			=> $this -> user['password'],
 						'email'		  			=> $this -> user['email'],
+						'id_departments'		=> $this -> user['id_departments'],
+						'forma'					=> $this -> user['forma'],
+						'gradebook'				=> $this -> user['gradebook'],
 						'email_block'			=> $this -> user['email_block'],
 						'languages_NAME'		=> $this -> user['languages_NAME'],
 						'name'		   			=> $this -> user['name'],
@@ -1750,8 +1767,117 @@ abstract class EfrontUser
 
 		return $roles;
 	}
+public  function getDepartmentsRoles($getNames = false) {
+        //Cache results in self :: $lessonRoles
+        if (is_null(self :: $departmentsRoles)) {
+            $roles    = eF_getTableDataFlat("departments", "*", "active=1");    //Get available roles
+            self :: $departmentsRoles = $roles;
+        } else {
+            $roles = self :: $departmentsRoles;
+        }
+        if (sizeof($roles) > 0) {
+             $roles = array_combine($roles['id'], $roles['name']);
+        } 
 
+        return $roles;
+    }
 
+    public static function getDep($returnObjects = false, $returnDisabled = false){
+        $deps = array();
+        if ($returnDisabled){
+            $data = eF_getTableData("departments", "*", "active=1");
+        }
+        else{
+            $data = eF_getTableData("departments", "*", "");
+        }
+        if ($returnObjects){
+            foreach ($data as $group_info){
+                $dep = new EfrontDepartments($group_info['id']);
+                $deps[$group_info['id']] = $dep;
+            }
+        }
+        else{
+            foreach ($data as $group_info){
+                $deps[$group_info['id']] = $group_info;
+            }
+        }
+        return $deps;
+    }
+
+    public static function getPr($returnObjects = false, $returnDisabled = false){
+        $deps = array();
+        if ($returnDisabled){
+            $data = eF_getTableData("users", "*", "active=1 and user_type='professor'");
+        }
+        else{
+            $data = eF_getTableData("users", "*", "user_type='professor'");
+        }
+        if ($returnObjects){
+            foreach ($data as $group_info){
+                $dep = new EfrontUser($group_info['id']);
+                $deps[$group_info['id']] = $dep;
+            }
+        }
+        else{
+            foreach ($data as $group_info){
+                $deps[$group_info['id']] = $group_info;
+            }
+        }
+        return $deps;
+    }
+
+    public  function getFacultiesRoles($getNames = false) {
+        //Cache results in self :: $lessonRoles
+        if (is_null(self :: $facultiesRoles)) {
+            $roles    = eF_getTableDataFlat("faculties", "*", "active=1");    //Get available roles
+            self :: $facultiesRoles = $roles;
+        } else {
+            $roles = self :: $facultiesRoles;
+        }
+        if (sizeof($roles) > 0) {
+             $roles = array_combine($roles['id'], $roles['name']);
+        } 
+
+        return $roles;
+    }
+
+    
+
+    public  function getDepartmentsFacRoles($getNames = false, $fac_id = false) {
+        //Cache results in self :: $lessonRoles
+        if (!$fac_id) {
+			$fac_id = $this -> user['faculty_id'];
+		}
+		else{
+			 if (is_null(self :: $facultiesdepRoles)) {
+            $roles    = eF_getTableDataFlat("departments", "*", "active=1 and faculty_id='".$fac_id."'");    //Get available roles
+            self :: $facultiesdepRoles = $roles;
+        } else {
+            $roles = self :: $facultiesdepRoles;
+        }
+        if (sizeof($roles) > 0) {
+             $roles = array_combine($roles['id'], $roles['name']);
+        } 
+
+		}
+       
+        return $roles;
+    }
+public  function getProfRoles($getNames = false) {
+        //Cache results in self :: $lessonRoles
+        if (is_null(self :: $profRoles)) {
+            $roles    = eF_getTableDataFlat("users", "*", "active=1 and user_type='professor'");    //Get available roles
+            self :: $departmentsRoles = $roles;
+        } else {
+            $roles = self :: $departmentsRoles;
+        }
+        if (sizeof($roles) > 0) {
+             $roles = array_combine($roles['id'], $roles['surname']);
+             
+        } 
+
+        return $roles;
+    }
 	/**
 	 * Get the user profile's comments list
 	 *
@@ -2042,6 +2168,7 @@ abstract class EfrontLessonUser extends EfrontUser
 	 * @static
 	 */
 	private static $lessonRoles;
+
 
 	/**
 	 * The user lessons array.
@@ -3411,6 +3538,10 @@ abstract class EfrontLessonUser extends EfrontUser
 		return $roles;
 	}
 
+
+ 
+
+    
 	/**
 	* Get the user's role on a course
 	*

@@ -32,6 +32,15 @@ try {
                              'test_begin' => _BEGUNTEST,
                              'lastmove'   => _NAVIGATEDSYSTEM);
     $smarty -> assign("T_ACTIONS", $actions);
+    
+        $rolesdep = EfrontUser :: getDep();
+        $smarty -> assign("T_DEP_PATHS", $rolesdep);
+
+        $groups     = EfrontGroup :: getGroups();
+        $smarty -> assign("T_GROUPS", $groups);
+
+        $prepod     = EfrontUser :: getPr();
+        $smarty -> assign("T_PR_PATHS", $prepod);
 
     if (isset($_GET['showlog']) && $_GET['showlog'] == "true") {
         $lessonNames  = eF_getTableDataFlat("lessons", "id, name");
@@ -53,9 +62,24 @@ try {
     }
 
     $users   = array();
-    $result  = eF_getTableData("logs, users", "users.name, users.surname, users.active, users_LOGIN, count(logs.id) as cnt ", "users.login=users_LOGIN and action = 'login' and logs.timestamp between $from and $to group by users_LOGIN order by count(logs.id) desc");
+    if(!isset($_GET['group_filter']) && !isset($_GET['dep_filter']) && !isset($_GET['prepod_filter']))
+    {
+        $result  = eF_getTableData("logs,users", " users.name, users.surname, users.active, logs.users_LOGIN, count(logs.id) as cnt", "users.login=logs.users_LOGIN and action = 'login' and logs.timestamp between $from and $to group by logs.users_LOGIN order by count(logs.id) desc");
+    }
+    
 //    $userTimes = EfrontUser :: getLoginTime(false, array('from' => $from, 'to' => $to));
-
+    if (isset($_GET['group_filter']) && $_GET['group_filter'] != -1) {
+        $result  = eF_getTableData("logs,users,groups INNER join users_to_groups ON groups.id = users_to_groups.groups_ID", " users.name, users.surname, users.active, logs.users_LOGIN,users_to_groups.users_LOGIN, count(logs.id) as cnt", "users.login=users_to_groups.users_LOGIN and groups.id =". $_GET['group_filter']." and action = 'login' and logs.timestamp between 1457095061 and 1457699861 group by users_to_groups.users_LOGIN order by count(logs.id) desc");
+         $smarty -> assign("T_GR_F", $result);
+    }
+    if (isset($_GET['dep_filter']) && $_GET['dep_filter'] != -1) {
+            $result  = eF_getTableData("logs,users", " users.name, users.surname, users.active,users.id_departments, logs.users_LOGIN, count(logs.id) as cnt", "users.login=logs.users_LOGIN and users.id_departments=". $_GET['dep_filter'] ." and action = 'login' and logs.timestamp between $from and $to group by logs.users_LOGIN order by count(logs.id) desc");
+             $smarty -> assign("T_DEP_F", $result);
+    }
+    if (isset($_GET['prepod_filter']) && $_GET['prepod_filter'] != -1) {
+        $result  = eF_getTableData("logs,users", " users.name, users.surname, users.active, logs.users_LOGIN, count(logs.id) as cnt", "users.login=logs.users_LOGIN and users.id=". $_GET['prepod_filter'] ." and action = 'login' and logs.timestamp between $from and $to group by logs.users_LOGIN order by count(logs.id) desc");
+         $smarty -> assign("T_PR_F", $result);
+}
     $timesReport = new EfrontTimes(array($from, $to));
     $userTimes   = $timesReport -> getSystemSessionTimesForUsers();
 
@@ -273,3 +297,4 @@ if (isset($_GET['excel'])) {
     $workBook -> close();
     exit(0);
 }
+//courses,users,courses_to_groups, users_to_groups", " courses.name", "courses.id =courses_to_groups.courses_ID and courses_to_groups.groups_ID=".$_GET['group_filter']." and users.id_departments=". $_GET['dep_filter'].""

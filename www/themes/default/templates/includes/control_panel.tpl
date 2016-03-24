@@ -129,7 +129,7 @@
         {capture name = "moduleFacultiesList"}
 			<tr><td class = "moduleCell">
 
-		        {eF_template_printBlock title=$smarty.const._FACULTIES data=$smarty.capture.t_faculties_code image='32x32/faculties.png' options=$T_FACULTIES_OPTIONS link=$T_FACULTIES_LINK expand = $T_POSITIONS_VISIBILITY.moduleFacultiesList}
+		        {eF_template_printBlock title=$smarty.const._FACULTIES data=$smarty.capture.t_faculties_code image='faculties.png' options=$T_FACULTIES_OPTIONS link=$T_FACULTIES_LINK expand = $T_POSITIONS_VISIBILITY.moduleFacultiesList}
 			</td></tr>
         {/capture}
 

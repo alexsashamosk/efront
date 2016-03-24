@@ -141,7 +141,7 @@
 			});
 			
 			ed.addButton('asciimathcharmap', {
-				title : 'asciimathcharmap.desc',
+				title : '1',
 				cmd : 'mceAsciimathDlg',
 				image : url + '/img/ed_mathformula.gif'
 			});

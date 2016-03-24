@@ -30,37 +30,65 @@ if ($currentUser->user['user_type'] != 'administrator' || $currentUser->user['us
 		}
 	}
 }
+$rolesdep = EfrontUser :: getDepartmentsRoles(true);
+   $rolesdep = array(0 => _NAMEDEP) + $rolesdep;     
+
+$forma  = array(1 => _DERSH, 2 => _KONTRAKT);
 
 $constrainAccess = array();
 if (!isset($_GET['add_user'])) {
 	if ( $editedUser->user['login'] != $currentUser->user['login'] && (isset($currentUser -> coreAccess['users']) && $currentUser -> coreAccess['users'] != 'change')) {			
 		$constrainAccess = 'all';
-	} else {
+	}
+	 else 
+	 {
 		$constrainAccess = array();
 		$constrainAccess[] = 'login';
-		if ($editedUser -> user['user_type'] == 'administrator' && $editedUser -> user['user_types_ID'] == 0 && $currentUser -> user['user_type'] == 'administrator' && $currentUser -> user['user_types_ID'] != 0) {
+		//$constrainAccess[] = 'id_departments';
+
+		if ($editedUser -> user['user_type'] == 'administrator' && $editedUser -> user['user_types_ID'] == 0 && $currentUser -> user['user_type'] == 'administrator' && $currentUser -> user['user_types_ID'] != 0) 
+		{
 			//An admin subtype can't change a pure admin
 			$constrainAccess[] = 'passrepeat';
 			$constrainAccess[] = 'password_';
-			$constrainAccess[] = 'user_type';			
-			$roles = EfrontUser :: getRoles(true);	//so that the selected user type appears correctly		
+			$constrainAccess[] = 'user_type';		
+			$roles = EfrontUser :: getRoles(true);	//so that the selected user type appears correctly
+			$rolesdep = EfrontUser :: getDepartmentsRoles(true);
+			$constrainAccess[] = 'id_departments';
+			$forma  = array(1 => _DERSH, 2 => _KONTRAKT);
+			$constrainAccess[] = 'forma';
+			
 		}
+		/*if ($editedUser -> user['id_departments']) {
+			$constrainAccess[] = 'id_departments';
+		}*/
 		if ($editedUser -> isLdapUser) {
 			$constrainAccess[] = 'passrepeat';
 			$constrainAccess[] = 'password_';
+			$constrainAccess[] = 'id_departments';
+			$constrainAccess[] = 'forma';
+
 		}
 		if ($editedUser->user['login'] == $currentUser->user['login']) {	//A user can't change his own type, nor deactivate himself
+			$constrainAccess[] = 'id_departments';
+			$constrainAccess[] = 'forma';
 			$constrainAccess[] = 'user_type';
 			$constrainAccess[] = 'active';
 			$constrainAccess[] = 'ldap';
 			$roles = EfrontUser :: getRoles(true);	//so that the selected user type appears correctly	
-			if ($currentUser->user['user_type'] != 'administrator') {
-				if (!EfrontUser::isOptionVisible('change_info') && !EfrontUser::isOptionVisible('change_pass')) {
+			$rolesdep = EfrontUser :: getDepartmentsRoles(true);
+			
+			if ($currentUser->user['user_type'] != 'administrator') 
+			{
+				if (!EfrontUser::isOptionVisible('change_info') && !EfrontUser::isOptionVisible('change_pass')) 
+				{
 					$constrainAccess = 'all';
-				} else if (!EfrontUser::isOptionVisible('change_info')) {
+				} else if (!EfrontUser::isOptionVisible('change_info'))
+				{
 					$contrainAllButPassword = true;
 					$constrainAccess[] = 'file_upload';					
-				} else if (!EfrontUser::isOptionVisible('change_pass')) {
+				} else if (!EfrontUser::isOptionVisible('change_pass')) 
+				{
 					$constrainAccess[] = 'password_';
 				}
 			}
@@ -84,9 +112,24 @@ if (!in_array('password_', $constrainAccess) && $constrainAccess != 'all') {
 	$form -> addElement("static", "", str_replace("%x", $GLOBALS['configuration']['password_length'], _PASSWORDMUSTBE6CHARACTERS));
 	$passrepeatElement = $form -> addElement('password', 'passrepeat', _REPEATPASSWORD, 'class = "inputText "');
 }
+/*$rolesfac = EfrontLessonUser :: getFacultiesRoles(true);
+        //$rolesfac = array(0 => _NAMEFAC) + $rolesfac;*/
+
+
+
+
+
 $form -> addElement('text', 'name', _FIRSTNAME, 'class = "inputText"');
 $form -> addElement('text', 'surname', _LASTNAME, 'class = "inputText"');
 $form -> addElement('text', 'email', _EMAILADDRESS, 'class = "inputText"');
+
+
+//$form -> addElement('select', 'id_faculty', _FACULTIESUSER, $rolesfac, 'class = "inputText"');
+
+
+$form -> addElement('select', 'id_departments', _DEPARTMENTSUSER, $rolesdep, 'class = "inputText"');
+$form -> addElement('select', 'forma', _FORMA, $forma, 'class = "inputText"');
+$form -> addElement('text', 'gradebook', _GRADEBOOK, 'class = "inputText"');
 $form -> addElement('advcheckbox', 'email_block', _BLOCKEMAILS, null, 'class = "inputCheckbox" id="blockCheckbox" ', array(0, 1));
 if (!in_array('active', $constrainAccess) && $constrainAccess != 'all') {
 	$form -> addElement('advcheckbox', 'active', _ACTIVEUSER, null, 'class = "inputCheckbox" id="activeCheckbox" ', array(0, 1));
@@ -121,7 +164,9 @@ $form -> addRule(array('password_', 'passrepeat'), _PASSWORDSDONOTMATCH, 'compar
 $form -> addRule('name', _THEFIELD.' '._FIRSTNAME.' '._ISMANDATORY, 'required', null, 'client');
 $form -> addRule('surname', _THEFIELD.' '._LASTNAME.' '._ISMANDATORY, 'required', null, 'client');
 $form -> addRule('email', _THEFIELD.' '._EMAILADDRESS.' '._ISMANDATORY, 'required', null, 'client');
+//$form -> addRule('id_departments', _THEFIELD.' '._EMAILADDRESS.' '._ISMANDATORY, 'required', null, 'client');
 $form -> addRule('email', _INVALIDFIELDDATA, 'checkParameter', 'email');
+//$form -> addRule('id_departments', _INVALIDFIELDDATA, 'checkParameter', 'id_departments');
 $form -> addRule('name', _INVALIDFIELDDATA, 'checkParameter', 'name');
 $form -> addRule('surname', _INVALIDFIELDDATA, 'checkParameter', 'name');
 if (isset($_GET['add_user'])) {
@@ -185,6 +230,8 @@ if (isset($_GET['add_user'])) {
 	if ($GLOBALS['configuration']['default_type']) {
 		$form -> setDefaults(array('user_type' => $GLOBALS['configuration']['default_type']));
 	}
+	$form -> setDefaults($editedUser -> user['id_departments']);
+	$form -> setDefaults($editedUser -> user['forma']);
 	foreach ($userProfile as $key => $field) {
 		if ($field['type'] == 'date' && $field['default_value'] == 0) {
 			$form -> setDefaults(array($field['name'] => time()));
@@ -199,6 +246,7 @@ if (isset($_GET['add_user'])) {
 	}
 	if ($editedUser -> user['user_types_ID']) {
 		$form -> setDefaults(array('user_type' => $editedUser -> user['user_types_ID']));
+		
 	}
 	$form -> setDefaults(array("system_avatar" => $avatar['name'], 'ldap_user' => $editedUser -> isLdapUser));
 }
@@ -240,7 +288,15 @@ if ($form -> isSubmitted() && $form -> validate()) {
 		
 		$values = $form -> exportValues();
 		$roles  = EfrontUser :: getRoles();
-		
+		$rolesdep = EfrontUser :: getDepartmentsRoles();
+		$forma  = array(1 => _DERSH, 2 => _KONTRAKT);
+		if($values['id_departments']==0)
+			$values['id_departments']=null;
+		/*if($values['id_faculty']!=0)
+        {
+        	$rolesdep = EfrontLessonUser :: getDepartmentsFacRoles(true,$values['id_faculty']);
+        	$rolesdep = array(0 => _NAMEDEP) + $rolesdep;
+        }*/
 
 		$userProperties = array('login'		     	=> $values['login'],
 								'name'		     	=> $values['name'],
@@ -249,6 +305,9 @@ if ($form -> isSubmitted() && $form -> validate()) {
 								'email'		  	 	=> $values['email'],
 								'email_block'		=> $values['email_block'],
 								'user_type'	  	 	=> $roles[$values['user_type']],
+								'id_departments'	=> $values['id_departments'],
+								'forma'				=> $values['forma'],
+								'gradebook'			=> $values['gradebook'],
 								'languages_NAME' 	=> $values['languages_NAME'],
 								'timezone'	   	 	=> $values['timezone'],
 				 				'timestamp'		 	=> time(),

@@ -322,6 +322,7 @@ translations['_YOUHAVEBEENSUCCESSFULLYADDEDTOTHEGROUP'] = '{$smarty.const._YOUHA
 	                    	</table>
 	                    </li>
 	{/if}
+	
 
  	{*///MODULES INNERTABLES APPEARING*}
 	{foreach name = 'module_inner_tables_list' key = key item = module from = $T_INNERTABLE_MODULES}

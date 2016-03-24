@@ -53,4 +53,7 @@
 {elseif $T_OPTION == 'tincan'}
 	{include file = "includes/statistics/tincan_reports.tpl"}
 
+{elseif $T_OPTION == 'numbercourse'}
+	{include file = "includes/statistics/numbercourse.tpl"}
+
 {/if}

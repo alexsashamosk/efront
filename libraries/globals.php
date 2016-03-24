@@ -692,6 +692,10 @@ function Efront_Autoload($className) {
         require_once("group.class.php");
     } else if (strpos($className, "efrontfaculties") !== false) {
         require_once("faculties.class.php");
+    } else if (strpos($className, "efrontlistitems") !== false) {
+        require_once("listitems.class.php");
+    }else if (strpos($className, "efrontdepartments") !== false) {
+        require_once("departments.class.php");
     } else if (strpos($className, "efrontmanifest") !== false) {
         require_once("manifest.class.php");
     } else if (strpos($className, "ef_personalmessage") !== false) {

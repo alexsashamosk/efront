@@ -25,3 +25,12 @@ function deleteUserType(el, user_type) {
 function onDeleteUserType(el, response) {
 	new Effect.Fade(el.up().up());
 }
+
+function deleteFaculties(el, faculties) {
+    parameters = {delete_faculties:faculties, method: 'get'};
+    var url    = 'administrator.php?ctg=faculties';
+    ajaxRequest(el, url, parameters, onDeleteFaculties); 
+}
+function onDeleteFaculties(el, response) {
+    new Effect.Fade(el.up().up());
+}

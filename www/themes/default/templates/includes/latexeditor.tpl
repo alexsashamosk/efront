@@ -1,19 +1,3 @@
-<div id="embed_code" class="note-formula-dialog modal" aria-hidden="false" style="display: none;" data-width="800">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true" tabindex="-1">×</button>
-		<h4>Embeding code</h4>
-	</div>
-	<div class="modal-body">
-		<div class="row-fluid">
-			<div class="span12">
-            	Enter your embed code<br>
-				<textarea id="embed_code_text" rows="10" cols="70"><iframe src="//fast.wistia.net/embed/iframe/kaq54qbjq1" frameborder="0" scrolling="no" id="wistia_embed" name="wistia_embed" width="640" height="388"></iframe></textarea><br>
-				<input id="insert_code" type="button" class="btn btn-default" value="Insert">
-            </div>
-        </div>
-    </div>
-</div>
-
 <div id="latex_editor" class="note-formula-dialog modal" aria-hidden="false" style="display: none;">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true" tabindex="-1">×</button>

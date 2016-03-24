@@ -15,6 +15,7 @@ table#courseUsersTable td.issued_certificate,table#instanceUsersTable td.issued_
 table#courseUsersTable td.expire_certificate,table#instanceUsersTable td.expire_certificate{width:5%;text-align:center;}
 table#courseUsersTable td.operations,table#instanceUsersTable td.operations{width:5%;text-align:center;white-space:nowrap;}
 table#courseUsersTable td.has_course,table#instanceUsersTable td.has_course{width:10%;text-align:center;}
+table#courseUsersTable td.finalgrade,table#instanceUsersTable td.finalgrade{width:5%;text-align:center;}
 {/literal}
 </style>
 <script>
@@ -31,6 +32,8 @@ if (typeof(currentUserLogin) == 'undefined') var currentUserLogin ='';
 {if in_array('enrolled_on', $T_DATASOURCE_COLUMNS)}		<td class = "topTitle enrolled_on"  	 name = "enrolled_on">{$smarty.const._ENROLLEDON}</td>{/if}
 {if in_array('to_timestamp', $T_DATASOURCE_COLUMNS)}	<td class = "topTitle to_timestamp"   	 name = "to_timestamp">{$smarty.const._COMPLETEDON}</td>{/if}
 {if in_array('score', $T_DATASOURCE_COLUMNS)}			<td class = "topTitle score"   			 name = "score">{$smarty.const._SCORE}</td>{/if}
+{if in_array('score', $T_DATASOURCE_COLUMNS)}			<td class = "topTitle score"   	style="font-weight:bold"		 name = "score">{$smarty.const._FINALGRADE}</td>{/if}
+
 {if $smarty.const.G_VERSIONTYPE != 'community'} {* #cpp#ifndef COMMUNITY *}
 		{if in_array('issued_certificate', $T_DATASOURCE_COLUMNS)}<td class = "topTitle issued_certificate noSort" name = "issued_certificate">{$smarty.const._CERTIFICATEKEY}</td>{/if}
 		{if $smarty.const.G_VERSIONTYPE != 'standard'} {* #cpp#ifndef STANDARD *}
@@ -116,9 +119,11 @@ if (typeof(currentUserLogin) == 'undefined') var currentUserLogin ='';
 {if in_array('to_timestamp', $T_DATASOURCE_COLUMNS)}
 			<td class = "to_timestamp">{if $user.has_course}#filter:timestamp-{$user.to_timestamp}#{/if}</td>
 {/if}
-{if in_array('score', $T_DATASOURCE_COLUMNS)}
-			<td class = "score">{if $user.has_course && (!$T_BASIC_ROLES_ARRAY || $T_BASIC_ROLES_ARRAY[$user.role] == 'student')}{if $user.completed}#filter:score-{$user.score}#%{else}-{/if}{/if}</td>
-{/if}
+<td class = "score">{if $user.has_course && (!$T_BASIC_ROLES_ARRAY || $T_BASIC_ROLES_ARRAY[$user.role] == 'student')}{if $user.completed}#filter:score-{$user.score}#%{else}-{/if}{/if}</td>
+<td class = "score" style="font-weight:bold" >
+<a href = "{$smarty.server.PHP_SELF}?ctg=final_grade&sel_user={$user.login}&course={$smarty.get.course}"  class = "editLink">{if $user.has_course && (!$T_BASIC_ROLES_ARRAY || $T_BASIC_ROLES_ARRAY[$user.role] == 'student')}{if $user.final_grade!=0}{$user.final_grade} б.{else}-{/if}{/if}
+</a>
+</td>
 {if $smarty.const.G_VERSIONTYPE != 'community'} {* #cpp#ifndef COMMUNITY *}
 	{if in_array('issued_certificate', $T_DATASOURCE_COLUMNS)}
 			<td class = "centerAlign issued_certificate">{if $user.has_course}<span id = "{$user.login}_certificate_key_span">{$user.serial_number}</span><input id="{$user.login}_certificate_key" type = "text" style = "display:none" value = "{$user.serial_number}" size = "38" />{if $user.issued_certificate != ''}<img class = "handle" src = "images/16x16/edit.png" title = "{$smarty.const._EDIT}" alt = "{$smarty.const._EDIT}" onClick = "$('{$user.login}_certificate_key').show();$('{$user.login}_certificate_key_span').hide(); $('{$user.login}_certificate_key_save').show()">{/if}<img id = "{$user.login}_certificate_key_save" style = "display:none" class = "handle" src = "images/16x16/success.png" title = "{$smarty.const._SAVE}" alt = "{$smarty.const._SAVE}" onClick = "updateCertificateKey(this, '{$user.login}');">{/if}</td>
@@ -214,6 +219,7 @@ table#lessonsTable td.project_status,table#courseLessons td.project_status{width
 table#lessonsTable td.active_in_lesson,table#courseLessons td.active_in_lesson{width:5%;text-align:center;}
 table#lessonsTable td.completed,table#courseLessons td.completed{width:5%;text-align:center;}
 table#lessonsTable td.score,table#courseLessons td.score{width:5%;text-align:center;}
+table#courseUsersTable td.finalgrade,table#instanceUsersTable td.finalgrade{width:5%;text-align:center;}
 {/literal}
 </style>
 		<tr class = "topTitle">
@@ -230,6 +236,7 @@ table#lessonsTable td.score,table#courseLessons td.score{width:5%;text-align:cen
 		
 {if in_array('completed', $T_DATASOURCE_COLUMNS)}		<td class = "topTitle completed" 		name = "completed">{$smarty.const._COMPLETED}</td>{/if}
 {if in_array('score', $T_DATASOURCE_COLUMNS)}			<td class = "topTitle score" 			name = "score">{$smarty.const._SCORE}</td>{/if}
+{if in_array('score', $T_DATASOURCE_COLUMNS)}			<td class = "topTitle finalgrade"   			 name = "finalgrade">{$smarty.const._FINALGRADE}</td>{/if}
 		</tr>
 		{foreach name = 'users_to_lessons_list' key = 'key' item = 'lesson' from = $T_DATA_SOURCE}
 		<tr class = "defaultRowHeight {cycle values = "oddRowColor, evenRowColor"} {if !$lesson.active}deactivatedTableElement{/if}">
@@ -292,6 +299,13 @@ table#lessonsTable td.score,table#courseLessons td.score{width:5%;text-align:cen
 			<td class = "score">
 			{if (!$T_BASIC_ROLES_ARRAY || $T_BASIC_ROLES_ARRAY[$user.user_type] == 'student')}
 				{if $lesson.completed}#filter:score-{$lesson.score}#%{else}-{/if}
+			{/if}
+			</td>
+{/if}
+{if in_array('score', $T_DATASOURCE_COLUMNS)}
+			<td class = "finalgrade">
+			{if (!$T_BASIC_ROLES_ARRAY || $T_BASIC_ROLES_ARRAY[$user.user_type] == 'student')}
+				{if $lesson.completed}{$lesson.finalgrade}{else}0{/if}
 			{/if}
 			</td>
 {/if}

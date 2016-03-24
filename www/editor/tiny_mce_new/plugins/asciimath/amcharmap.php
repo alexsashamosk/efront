@@ -1,3 +1,27 @@
+<!-- start: TOP NAVIGATION CONTAINER -->
+<div>
+		<!-- start: WYSIWYG EDITORS PANEL -->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="form-group">
+							<label class="control-label">
+								Редактор:
+							</label>
+							<div class="summernote" id="edit_block">
+								Ваш текст
+							</div>
+							<input type="hidden" id="chosen_file" name="chosen_file">
+							<input type="file" id="choose_file" name="choose_file">
+							<textarea style="display:none;" name="file_text" id="file_text"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
 <div id="embed_code" class="note-formula-dialog modal" aria-hidden="false" style="display: none;" data-width="800">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true" tabindex="-1">×</button>

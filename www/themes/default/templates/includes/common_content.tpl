@@ -1,3 +1,4 @@
+
 	{capture name = "t_scorm_form_code"}
 			<script language="JavaScript" type="text/javascript" src="js/LMSFunctions{if $T_SCORM_VERSION == '1.3'}2004{/if}.php?view_unit={if $smarty.get.view_unit}{$smarty.get.view_unit}{elseif $smarty.get.target}{$smarty.get.target}{else}{$smarty.get.package_ID}{/if}"></script>
 			<form id = "scorm_form" name = "scorm_form" method = "post" action = "{$smarty.server.PHP_SELF}?ctg=content&ajax=1&commit_lms=1&scorm_version={if $T_SCORM_VERSION == '1.3'}2004&package_ID={$smarty.get.package_ID}{else}1.2&view_unit={$smarty.get.view_unit}{/if}" style = "display:none">
@@ -127,6 +128,7 @@
 										<a href = "javascript:void(0)" onclick = "toggleFileManager(this);">{$smarty.const._TOGGLEFILEMANAGER}</a>
 									</span>
 									<span>
+
 										<img src = "images/16x16/order.png" onclick = "toggledInstanceEditor = 'editor_content_data'; javascript:toggleEditor('editor_content_data','mceEditor');" class = "ajaxHandle" title = "{$smarty.const._TOGGLEHTMLEDITORMODE}" alt = "{$smarty.const._TOGGLEHTMLEDITORMODE}" />&nbsp;
 										<a href = "javascript:void(0)" onclick = "toggledInstanceEditor = 'editor_content_data';javascript:toggleEditor('editor_content_data','mceEditor');" id = "toggleeditor_link">{$smarty.const._TOGGLEHTMLEDITORMODE}</a>
 									</span>
@@ -670,7 +672,7 @@
 						{foreach name = 'module_content_side_list' key = key item = moduleItem from = $T_CONTENT_SIDE_MODULES}
 							{capture name = $key|replace:"_":""}					{*We cut off the underscore, since scriptaculous does not seem to like them*}
 								{assign var = module_name value = $key|replace:"_":""}
-								{if $moduleItem.smarty_file}{include file = $moduleItem.smarty_file}{else}{$moduleItem.html_code}{/if}
+								
 							{/capture}
 							{eF_template_printBlock title = $moduleItem.title data = $smarty.capture.$module_name id = $module_name|cat:'_id'}
 						{/foreach}
@@ -678,6 +680,7 @@
 					</td>
 				</tr>
 		{/capture}
+
 
 		<script>
 			var show_left_bar = {if $_student_}'{$T_CURRENT_LESSON->options.show_left_bar}'{else}1{/if};
@@ -689,3 +692,91 @@
 		{/if}
 
 	{/if}
+<div id="latex_editor" class="note-formula-dialog modal" aria-hidden="false" style="display: none;">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true" tabindex="-1">×</button>
+		<h4>LaTeX редактор</h4>
+	</div>
+	<div class="modal-body">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="tabbable">
+					<ul id="myTab" class="nav nav-tabs tab-padding tab-space-3 tab-blue">
+						<li class="active">
+							<a href="#panel_tab3_example1" data-toggle="tab">
+								General
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example2" data-toggle="tab">
+								Symbols
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example3" data-toggle="tab">
+								Arrows
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example4" data-toggle="tab">
+								Greek, letters and numbers
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example5" data-toggle="tab">
+								Matrices
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example6" data-toggle="tab">
+								Scripts and layout
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example7" data-toggle="tab">
+								Decorations
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example8" data-toggle="tab">
+								Big operators
+							</a>
+						</li>
+						<li class="">
+							<a href="#panel_tab3_example9" data-toggle="tab">
+								Calculus
+							</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="panel_tab3_example1">
+							<div class="row-fluid">
+								<div class="span1">
+									<div class="tex-text">+</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="editfield">
+		          <textarea id="mytextarea" title="Enter or paste LaTeX content here" rows="4" class="inputfield" type="text" name="query" style="margin: 0px;width: 100%;" onkeyup="update_formuls()" placeholder="Enter formula for paste"></textarea>
+		        </div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				You typed: <img src="" id="latex_img">
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<input type="button" class="btn btn-default" value="Add" id="add_tex_text">
+			</div>
+		</div>
+	</div>
+</div>

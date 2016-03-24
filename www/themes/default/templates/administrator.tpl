@@ -377,6 +377,28 @@
     {include file = "includes/faculties.tpl"}
 {/if}
 
+{if (isset($T_CTG) && $T_CTG == 'listitems')}
+    {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href ="'|cat:$smarty.server.PHP_SELF|cat:'?ctg=listitems">'|cat:$smarty.const._LISTITEMS|cat:'</a>'}
+    {if $smarty.get.edit_listitems}
+        {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href = "'|cat:$smarty.server.PHP_SELF|cat:'?ctg=listitems&edit_listitems='|cat:$smarty.get.edit_listitems|cat:'">'|cat:$smarty.const._EDITLISTITEMS|cat:' <span class = "innerTableName">&quot;'|cat:$T_FACULTIES_NAME|cat:'&quot;</span></a>'}
+    {elseif $smarty.get.add_listitems}
+        {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href = "'|cat:$smarty.server.PHP_SELF|cat:'?ctg=listitems&add_listitems=1">'|cat:$smarty.const._NEWFACULTIES|cat:'</a>'}
+    {/if}
+
+    {include file = "includes/listitems.tpl"}
+{/if}
+
+{if (isset($T_CTG) && $T_CTG == 'departments')}
+    {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href ="'|cat:$smarty.server.PHP_SELF|cat:'?ctg=departments">'|cat:$smarty.const._DEPARTMENTS|cat:'</a>'}
+    {if $smarty.get.edit_departments}
+        {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href = "'|cat:$smarty.server.PHP_SELF|cat:'?ctg=departments&edit_departments='|cat:$smarty.get.edit_departments|cat:'">'|cat:$smarty.const._EDITDEPARTMENTS|cat:' <span class = "innerTableName">&quot;'|cat:$T_DEPARTMENTS_NAME|cat:'&quot;</span></a>'}
+    {elseif $smarty.get.add_departments}
+        {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href = "'|cat:$smarty.server.PHP_SELF|cat:'?ctg=departments&add_departments=1">'|cat:$smarty.const._NEWDEPARTMENTS|cat:'</a>'}
+    {/if}
+
+    {include file = "includes/departments.tpl"}
+{/if}
+
 {if (isset($T_CTG) && $T_CTG == 'user_groups')}
     {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href ="'|cat:$smarty.server.PHP_SELF|cat:'?ctg=user_groups">'|cat:$smarty.const._GROUPS|cat:'</a>'}
     {if $smarty.get.add_user_group}
@@ -423,6 +445,8 @@
         {/if}
     {elseif $smarty.get.option == 'system'}
         {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href = "'|cat:$smarty.server.PHP_SELF|cat:'?ctg=statistics&option=system">'|cat:$smarty.const._SYSTEMSTATISTICS|cat:'</a>'}
+     {elseif $smarty.get.option == 'numbercourse'}
+        {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href = "'|cat:$smarty.server.PHP_SELF|cat:'?ctg=statistics&option=numbercourse">'|cat:$smarty.const._NUMBERCOURSESTATISTICS|cat:'</a>'}
     {elseif $smarty.get.option == 'queries'}
         {assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;<a class = "titleLink" href = "'|cat:$smarty.server.PHP_SELF|cat:'?ctg=statistics&option=queries">'|cat:$smarty.const._GENERICQUERIES|cat:'</a>'}
     {elseif $smarty.get.option == 'custom'}
@@ -680,6 +704,8 @@
 		{$smarty.capture.moduleLogoutUser}
 		{$smarty.capture.moduleForum}
 		{$smarty.capture.moduleFaculties}
+		{$smarty.capture.moduleDepartments}
+		{$smarty.capture.moduleListitems}
 		{$smarty.capture.moduleMessagesPage}
 		{$smarty.capture.moduleShowRoom}
 		{$smarty.capture.moduleRoomsList}

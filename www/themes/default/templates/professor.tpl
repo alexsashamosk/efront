@@ -232,6 +232,12 @@ if (top.sideframe && top.sideframe.document.getElementById('hasLoaded')) {
 	{/if}
 	{include file = "includes/lesson_information.tpl"}
 {/if}
+
+{if (isset($T_CTG) && $T_CTG == 'final_grade')}
+	{assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;'|cat:''|cat:$smarty.const._FINALGRADE|cat:''}
+{include file = "includes/final_grade.tpl"}
+{/if}
+
 {if (isset($T_CTG) && $T_CTG == 'progress')}
 	{assign var = "title" value = $title|cat:'&nbsp;&raquo;&nbsp;'|cat:'<a class = "titleLink" href ="'|cat:$smarty.server.PHP_SELF|cat:'?ctg=progress">'|cat:$smarty.const._PROGRESS|cat:'</a>'}
 	{if $smarty.get.edit_user}
@@ -1024,6 +1030,7 @@ if (top.sideframe && top.sideframe.document.getElementById('hasLoaded')) {
 		{$smarty.capture.moduleLandingPage}
 		{$smarty.capture.moduleCourses}
 		{$smarty.capture.moduleLessons}
+		{$smarty.capture.final_grade}
 		{$smarty.capture.moduleNewLessonDirection}
 	</table>
 {/capture}

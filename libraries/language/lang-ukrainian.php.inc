@@ -499,7 +499,7 @@ define("_TOPICSUBJECT","Тема");//Topic subject
 define("_SEARCHRESULTS","Результати пошуку");//Search results
 define("_NORESULTSFOUNDINPERSONALMESSAGES","Немає результатів в особистих повідомленнях");//No results found in personal messages
 define("_SEARCHRESULTSINPERSONALMESSAGES","Результати пошуку в особистих повідомленнях");//Search results in personal messages
-define("_SEARCHRESULTSINCOURSES","Результати пошуку в курсах");//Search results in courses
+define("_SEARCHRESULTSINCOURSES","Результати пошуку в предметах");//Search results in courses
 define("_MESSAGEFOLDER","Папка повідомлень");//Message folder
 define("_EMAIL","eMail");//Email
 define("_RESETPASSWORD","Скидання паролю");//Reset password
@@ -1112,7 +1112,7 @@ define("_NOTCOMPLETED","Не виконано");//Not completed
 define("_CONDITIONSMET","Умови виконані і очікують підтвердження");//Completion rules met and awaiting approval
 define("_STUDENTSTATUSCHANGED","Статус заняття студента змінено");//Student lesson status changed successfully
 define("_MUSTBENUMERIC","Повинно бути числове");//Must be numeric
-define("_DEFAULTCERTIFICATE","Цим підтверджується, що \n\n #user_name# #user_surname# \n\n успішно пройшов навчання за курсом \n #course_name# \n з оцінкою \n\n #grade# \n\n Цей сертифікат виданий #date#");//Elearning organization certifies that \n\n #user_name# #user_surname# \n\n has successfully completed \n #course_name# \n with grade \n\n #grade# \n\nThis certificate was issued on #date#
+define("_DEFAULTCERTIFICATE","Цим підтверджується, що \n\n #user_name# #user_surname# \n\n успішно пройшов навчання за предметом \n #course_name# \n з оцінкою \n\n #grade# \n\n Цей сертифікат виданий #date#");//Elearning organization certifies that \n\n #user_name# #user_surname# \n\n has successfully completed \n #course_name# \n with grade \n\n #grade# \n\nThis certificate was issued on #date#
 define("_NOQUESTIONSTOCORRECT","Немає запитань для виправлення");//There are no questions to correct
 define("_RESTTESTSCORE","Бал на залишок тесту");//Score at the remaining of the test
 define("_CORRECTQUESTION","Правильне запитання");//Correct question
@@ -1210,8 +1210,8 @@ define("_VERSION","Версія");//Version
 define("_THEFIELDSINYOURCSVFILEMUSTCONTAINTHEFOLLOWINGFIELDS","Поля у вашому csv-файлі повинні бути наступними");//The fields in your csv file must contain the following fields
 define("_IFEMPTYNEWPASSWORD","Поля, виділені червоним кольором є обов&#39;язковими. Якщо пароль не вказано, він буде таким же, як і ім&#39;я аккаунту. Будь ласка, вкажіть 'ldap' для паролю, якщо хочете, щоб користувачі проходили авторизацію через LDAP.");//Fields in red are mandatory. If there is no password given, the initial password will be set the same as the login. Please specify 'ldap' for password, if you want the users to authenticate via LDAP
 define("_PLEASECHECKYOURCSVFILEFORMAT","Будь ласка, перевірте формат вашого файлу CSV");//Please check the format of your CSV file
-define("_CERTIFICATEINSTRUCTIONS","У шаблоні використовуйте #user_name# для імені користувача, #user_surname# для прізвища, #course_name# для найменування курсу, #grade# для оцінки і #date# для дати.");//In the template, use #organization# for organization&#039;s name, #user_name# for user&#039;s name, #user_surname# for user&#039;s surname, #course_name# for course&#039;s name, #grade# for grade and #date# for date.
-define("_CERTIFICATEINSTRUCTIONSXML","У шаблон, використовуйте &lt;організація&gt; &lt;/ організації&gt; за назвою організації, &lt;Student&gt; &lt;/ студент&gt; повне ім&#39;я студента, &lt;Course&gt; &lt;/ курс&gt; за назвою курсу, &lt;grade&gt; &lt;/ сорт&gt; для класів, &lt; Серійний&gt; &lt;/ серійний&gt; для серійний номер, &lt;date&gt; &lt;/ дата&gt; на дату, &lt;logo&gt; &lt;/ логотип&gt; для логотипу, &lt;background&gt; &lt;/ фон&gt; для фону і &lt;Orientation&gt; &lt;/ орієнтації&gt; для орієнтації сторінки .");//In the template, use &lt;organization&gt;&lt;/organization&gt; for organization&#039;s name, &lt;student&gt;&lt;/student&gt; for student&#039;s full name, &lt;course&gt;&lt;/course&gt; for course&#039;s name, &lt;grade&gt;&lt;/grade&gt; for grade, &lt;serial&gt;&lt;/serial&gt; for serial number, &lt;date&gt;&lt;/date&gt; for date, &lt;logo&gt;&lt;/logo&gt; for logo, &lt;background&gt;&lt;/background&gt; for background and &lt;orientation&gt;&lt;/orientation&gt; for page orientation.
+define("_CERTIFICATEINSTRUCTIONS","У шаблоні використовуйте #user_name# для імені користувача, #user_surname# для прізвища, #course_name# для найменування предмету, #grade# для оцінки і #date# для дати.");//In the template, use #organization# for organization&#039;s name, #user_name# for user&#039;s name, #user_surname# for user&#039;s surname, #course_name# for course&#039;s name, #grade# for grade and #date# for date.
+define("_CERTIFICATEINSTRUCTIONSXML","У шаблон, використовуйте &lt;організація&gt; &lt;/ організації&gt; за назвою організації, &lt;Student&gt; &lt;/ студент&gt; повне ім&#39;я студента, &lt;Course&gt; &lt;/ предмет&gt; за назвою предмету, &lt;grade&gt; &lt;/ сорт&gt; для класів, &lt; Серійний&gt; &lt;/ серійний&gt; для серійний номер, &lt;date&gt; &lt;/ дата&gt; на дату, &lt;logo&gt; &lt;/ логотип&gt; для логотипу, &lt;background&gt; &lt;/ фон&gt; для фону і &lt;Orientation&gt; &lt;/ орієнтації&gt; для орієнтації сторінки .");//In the template, use &lt;organization&gt;&lt;/organization&gt; for organization&#039;s name, &lt;student&gt;&lt;/student&gt; for student&#039;s full name, &lt;course&gt;&lt;/course&gt; for course&#039;s name, &lt;grade&gt;&lt;/grade&gt; for grade, &lt;serial&gt;&lt;/serial&gt; for serial number, &lt;date&gt;&lt;/date&gt; for date, &lt;logo&gt;&lt;/logo&gt; for logo, &lt;background&gt;&lt;/background&gt; for background and &lt;orientation&gt;&lt;/orientation&gt; for page orientation.
 define("_VOTES","Голосів");//Votes
 define("_PERCENTAGE","Відсоток");//Percentage
 define("_CERTIFICATEISSUED","Сертифікат, виданий");//Certificate issued
@@ -1233,8 +1233,8 @@ define("_LOCKDOWNTO","Заблокувати систему до");//Lock down s
 define("_DISPLAYINDEXMESSAGE","Показувати повідомлення на першій сторінці системи");//Display notification message to system first page
 define("_SETANNOUNCEMENT","Встановити системне оголошення");//Set a system announcement
 define("_NOLESSONSFOUND","Заняття не знайдені");//No lessons found
-define("_SUCCESFULLYSETORDER","Порядок занять в курсі встановлений");//The lessons order in course was set successfully
-define("_PROBLEMSETTINGORDER","Порядок занять в курсі встановити не вдалося");//The lessons order in the course could not be set
+define("_SUCCESFULLYSETORDER","Порядок занять в предметі встановлений");//The lessons order in course was set successfully
+define("_PROBLEMSETTINGORDER","Порядок занять в предметі встановити не вдалося");//The lessons order in the course could not be set
 define("_ENABLEDAPI","Увімкнути XML API");//Enable XML API
 define("_OLDUPGRADEBACKUPS","Зберігати попередні оновлення");//Old upgrade backups
 define("_CLEANUPALL","Очистити все");//Clean up all
@@ -1330,7 +1330,7 @@ define("_USER","Користувач");//User
 define("_CHOOSEUSER","Выберіть користувача");//Select user
 define("_USERS","Користувачі");//Users
 define("_ALLSYSTEMUSERS","Всі користувачі системи");//All system users
-define("_USERSCONNECTEDTOSPECIFICCOURSE","Користувачі, що проходять певні курси");//Users involved with specific course
+define("_USERSCONNECTEDTOSPECIFICCOURSE","Користувачі, що проходять певні предмети");//Users involved with specific course
 define("_USERSCONNECTEDTOSPECIFICLESSON","Користувачі, що проходять певні заняття");//Users involved with specific lesson
 define("_SPECIFICTYPEUSERS","Певні типи користувачів");//Specific type of users
 define("_USERTYPE","Тип користувача");//User type
@@ -1385,7 +1385,7 @@ define("_SUCCESFULLYADDEDUSERTYPE","Тип користувача додано")
 define("_USERSMANAGEMENT","Керування користувачами");//Users management
 define("_AREYOUSUREYOUWANTTODELETEUSER","Ви дійсно хочете видалити користувача?");//Are you sure you want to delete user?
 define("_USERTYPEDELETED","Тип користувача видалений");//User type deleted
-define("_EDITUSERSCOURSE","Користувачі курсу");//Course users
+define("_EDITUSERSCOURSE","Користувачі предмету");//Course users
 define("_USERDEACTIVATED","Користувач деактивований");//User deactivated
 define("_USERACTIVATED","Користувач активований");//User activated
 define("_USERSKIND","Типи користувачів");//User types
@@ -1429,23 +1429,23 @@ define("_EMPLOYEEWASRELEASEDFROMGROUP","Користувача від&#39;єдн
 define("_PROFESSORCAPITAL","Викладач");//Professor
 define("_STUDENTROLE","Роль студента");//Student role
 define("_PROFESSORROLE","Роль викладача");//Professor role
-define("_COURSES","Курси");//Courses
-define("_COURSEDELETED","Курс видалено");//Course deleted
-define("_COURSEDEACTIVATED","Курс вимкнено");//Course deactivated
-define("_COURSEACTIVATED","Курс активовано");//Course activated
-define("_COURSENAME","Назва курсу");//Course name
-define("_COURSEUPDATED","Курс оновлений");//Course updated
-define("_SUCCESFULLYCREATEDCOURSE","Курс створено");//Course was created successfully
-define("_COURSEOPTIONSFOR","Параметри курсу");//Options for course
-define("_NEWCOURSEOPTIONS","Параметри нового курсу");//New course options
-define("_EDITCOURSE","Змінити курс");//Edit course
-define("_EDITLESSONSCOURSE","Заняття курсу");//Course lessons
-define("_NEWCOURSE","Новий курс");//New course
-define("_UPDATECOURSES","Зміна курсів");//Update courses
-define("_COURSE","Курс");//Course
-define("_COURSEONLY","Виключно в складі курсу");//Exclusively through course
-define("_AREYOUSUREYOUWANTTODELETECOURSE","Ви насправді хочете видалити курс?");//Are you sure you want to delete course?
-define("_NOCOURSESFOUND","Немає курсів");//No courses defined
+define("_COURSES","Предмети");//Courses
+define("_COURSEDELETED","Предмет видалено");//Course deleted
+define("_COURSEDEACTIVATED","Предмет вимкнено");//Course deactivated
+define("_COURSEACTIVATED","Предмет активовано");//Course activated
+define("_COURSENAME","Назва предмету");//Course name
+define("_COURSEUPDATED","Предмет оновлений");//Course updated
+define("_SUCCESFULLYCREATEDCOURSE","Предмет створено");//Course was created successfully
+define("_COURSEOPTIONSFOR","Параметри предмету");//Options for course
+define("_NEWCOURSEOPTIONS","Параметри нового предмету");//New course options
+define("_EDITCOURSE","Змінити предмет");//Edit course
+define("_EDITLESSONSCOURSE","Заняття предмету");//Course lessons
+define("_NEWCOURSE","Новий предмет");//New course
+define("_UPDATECOURSES","Зміна предметів");//Update courses
+define("_COURSE","Предмет");//Course
+define("_COURSEONLY","Виключно в складі предмету");//Exclusively through course
+define("_AREYOUSUREYOUWANTTODELETECOURSE","Ви насправді хочете видалити предмет?");//Are you sure you want to delete course?
+define("_NOCOURSESFOUND","Немає предметів");//No courses defined
 define("_UPDATEEMPLOYEES","Редагування співробітників");//Update users
 define("_NEWJOB","Назначити на нову роботу");//Assign new job
 define("_AREYOUSUREYOUWANTTOCANCELJOB","Ви дійсно хочете позбавити даного співробітника цієї посади?");//Are you sure you want to cancel this user from this job.
@@ -1782,7 +1782,7 @@ define("_PAYPALORDERSUCCESS","Транзакція завершена успіш
 define("_PAYPALORDERFAILURE","При виконанні транзакції виникла помилка");//There was an error with the transaction
 define("_PAYPALFREEORDERSUCCESS","Реєстрація заняття завершена");//Lessons registration finished successfully
 define("_FREEREGISTRATION","Безкоштовна реєстрація");//Free registration
-define("_VIEWDIRECTORY","Показати каталог занять / курсів");//Show lesson/courses catalog
+define("_VIEWDIRECTORY","Показати каталог занять / предметів");//Show lesson/courses catalog
 define("_VIEWDIRECTORYYESAFTERLOGIN","Так (тільки після входу в систему)");//Yes (only after login)
 define("_VIEWDIRECTORYYESONLOGIN","Так (на сторінці входу, і після входу)");//Yes (on login page and after login)
 define("_VIEWDIRECTORYNO","Ні");//No
@@ -1792,7 +1792,7 @@ define("_INTERFACEVIEWSIMPLE","Простий");//Simple
 define("_INTERFACEVIEWEXTENDED","Покращений");//Extended
 define("_PAYPALUSE","Платежі з використанням PayPal");//Payments through Paypal
 define("_DIRECTORY","Довідник");//Directory
-define("_LESSONSDIRECTORY","Каталог курсів");//Course catalog
+define("_LESSONSDIRECTORY","Каталог предметів");//Course catalog
 define("_ASSOCIATEDLESSONS","Пов&#39;язані заняття");//Associated lessons
 define("_APPLYTOALLDESCRIPTIONSWITHDESCRIPTION","Застосувати до всіх посад, описаних як:");//Apply to all job positions described as: 
 define("_AREYOUSUREYOUWANTTOREMOVETHATSKILLFROMTHISEMPLOYEE","Ви дійсно хочете видалити запис про навичку цього співробітника?");//Are you sure you want to remove that skill from that user?
@@ -1837,12 +1837,12 @@ define("_PROBLEMUPDATINGUSERSTOLESSON","Виникла помилка оновл
 define("_INVALIDPROJECTID","Неправильний ідентифікатор проекту");//Invalid project Id
 define("_PROJECTNOTFOUND","Зазначений проект не знайдено");//The specified project was not found
 define("_USERDOESNOTHAVETHISLESSON","Користувач не зареєстрований для цього заняття");//The user is not registered to this lesson
-define("_COURSEDOESNOTEXIST","Зазначеного курсу не існує");//The specified course does not exist
+define("_COURSEDOESNOTEXIST","Зазначеного предмету не існує");//The specified course does not exist
 define("_NODEDOESNOTEXIST","Зазначений вузол не існує");//The specified node does not exist
 define("_PROJECTCOULDNOTBEDELETED","Неможливо видалити проект");//The project could not be deleted
 define("_FREELESSON","Безкоштовне заняття");//Free lesson
-define("_BUYCOURSE","Придбати курс");//Buy course
-define("_FREECOURSE","Безкоштовний курс");//Free course
+define("_BUYCOURSE","Придбати предмет");//Buy course
+define("_FREECOURSE","Безкоштовний предмет");//Free course
 define("_USERDOESNOTHAVETHISPROJECT","Цей користувач не має цього проекту");//The user does not have this project
 define("_SCOREMUSTBEINTEGERBETWEEN0100","Оцінка цього проекту повинна бути цілим числом від 0 до 100");//The project score must be an integer ranging from 0 to 100
 define("_THEPROJECTGRADECOULDNOTBEUPDATED","Неможливо змінити оцінку проекту");//The project grade could not be updated
@@ -1857,9 +1857,9 @@ define("_PROJECTEXPIRED","Термін здачі проекту минув");//
 define("_SENDPROJECT","Надіслати проект");//Send project
 define("_NEWLESSONS","Нові заняття");//New lessons
 define("_YOUMUSTDELETEALLLESSONSANDSUBDIRECTIONSINTHISDIRECTIONBEFOREDEACTIVATINGIT","Ви не можете деактивувати непорожню категорію");//You cannot deactivate a non-empty category
-define("_CANNOTUPDATEUSERCOURSEINFORMATION","Неможливо оновити інформацію про курс цього користувача");//The course information on this user could not be updated
-define("_CANNOTADDUSERTOCOURSE","Неможливо додати користувача на курс");//The user could not be added to course
-define("_CANNOTREMOVEUSERFROMCOURSE","Неможливо видалити користувача з курсу");//The user could not be removed from the course
+define("_CANNOTUPDATEUSERCOURSEINFORMATION","Неможливо оновити інформацію про предмет цього користувача");//The course information on this user could not be updated
+define("_CANNOTADDUSERTOCOURSE","Неможливо додати користувача на предмет");//The user could not be added to course
+define("_CANNOTREMOVEUSERFROMCOURSE","Неможливо видалити користувача з предмету");//The user could not be removed from the course
 define("_USERHASNOTDONETEST","Користувач не виконав цей тест");//The user has not done this test
 define("_TESTISNOTDONE","Тест не виконано");//The test is not done
 define("_INVALIDQUESTIONTYPE","Неправильний тип запитання");//Invalid question type
@@ -1916,14 +1916,14 @@ define("_HIDERECIPIENTSCATEGORIES","Сховати категорії отрим
 define("_TOYOURSUPERVISORS","Всі ваші керівники");//All your supervisors
 define("_BASICINFO","Загальна інформація");//Basic info
 define("_TRAININGCAP","НАВЧАННЯ");//T R A I N I N G
-define("_COURSESAVERAGE","Середній бал по всіх курсах");//Average score in all courses
+define("_COURSESAVERAGE","Середній бал по всіх предметах");//Average score in all courses
 define("_LESSONSAVERAGE","Середній бал по всіх заняттях");//Average score in all lessons
 define("_TESTSAVERAGE","Середній бал по всіх тестах");//Average score in all tests
 define("_DONTTAKEINTOACCOUNT","Не важливо");//Do not take into account
 define("_CANNOTADDUSERTOLESSON","Невдається додати користувача до заняття");//Cannot add user to lesson
 define("_UNKNOWNUSER","Невідомий користувач");//Unknown user
 define("_DEPENDSON","Залежить від");//Depends on
-define("_COURSEINFORMATION","Інформація курсу");//Course information
+define("_COURSEINFORMATION","Інформація предмету");//Course information
 define("_NODATAFOUND","Дані не знайдено");//No data found
 define("_ERROROPENINGATTACHMENT","Помилка при відкритті прикріплення");//Error opening attachment
 define("_USERAVERAGESCOREFORLESSON","Середній бал в тестах заняття");//User&#039;s average score for lesson
@@ -1964,38 +1964,38 @@ define("_DCCOVERAGE","Охоплення");//Coverage
 define("_DCRIGHTS","Права");//Rights
 define("_NOENTRYFOUNDFOR","Записів не знайдено для");//No entry found for
 define("_FIELD","поле");//field
-define("_COURSECERTIFICATES","Сертифікати курсу");//Course certificates
+define("_COURSECERTIFICATES","Сертифікати предмету");//Course certificates
 define("_LDAPUSERMUSTCONTACTADMIN","Ваш аккаунт використовує LDAP сервер. Будь ласка, зв&#39;яжіться з системним адміністратором");//Your account is accessed through the LDAP server. Please contact the system administrator at 
-define("_COURSEMETADATA","Метадані курсу");//Course metadata
-define("_COURSESTATUS","Статус курсу");//Course status
+define("_COURSEMETADATA","Метадані предмету");//Course metadata
+define("_COURSESTATUS","Статус предмету");//Course status
 define("_LESSONSCOMPLETED","Виконані заняття");//Completed lessons
-define("_COURSESCORE","Бал курсу");//Course score
-define("_VIEWUSERCOURSEPROGRESS","Переглянути успішність учня протягом курсу");//View the user progress throughout the course
-define("_COURSERULES","Правила курсу");//Course rules
-define("_INFORMATIONFORCOURSE","Інформація для курсу");//Information for course
-define("_CERTIFICATESFORCOURSE","Сертифікати для курсу");//Certificates for course
-define("_FORMATCERTIFICATEFORCOURSE","Формат сертифіката на курс");//Format certificate for course
-define("_RULESFORCOURSE","Правила для курсу");//Rules for course
+define("_COURSESCORE","Бал предмету");//Course score
+define("_VIEWUSERCOURSEPROGRESS","Переглянути успішність учня протягом предмету");//View the user progress throughout the course
+define("_COURSERULES","Правила предмету");//Course rules
+define("_INFORMATIONFORCOURSE","Інформація для предмету");//Information for course
+define("_CERTIFICATESFORCOURSE","Сертифікати для предмету");//Certificates for course
+define("_FORMATCERTIFICATEFORCOURSE","Формат сертифіката на предмет");//Format certificate for course
+define("_RULESFORCOURSE","Правила для предмету");//Rules for course
 define("_CONTENTDONE","Виконаний матеріал");//Content done
 define("_LESSONSPROGRESS","Успішність на заняттях");//Lessons progress
-define("_COMPLETECOURSE","Повний курс");//Complete course
-define("_PROPOSEDSCOREISAVERAGELESSONSCORE","Даний бал є середнім балом занять курсу");//The proposed score is the average lessons score
+define("_COMPLETECOURSE","Повний предмет");//Complete course
+define("_PROPOSEDSCOREISAVERAGELESSONSCORE","Даний бал є середнім балом занять предмету");//The proposed score is the average lessons score
 define("_INTHESELECTEDLANGUAGE","Наберіть опис необхідною мовою");//Type the description in the prefered language
 define("_SUCCESSFULLYDELETEDFIELD","Поле видалено");//Successfully deleted field
 define("_COMPLETELESSON","Виконати заняття");//Complete lesson
-define("_AUTOCOMPLETEDCOURSE","Курс автоматично завершується тоді, коли виконали всі заняття");//The course was automatically completed when all lessons were completed
+define("_AUTOCOMPLETEDCOURSE","Предмет автоматично завершується тоді, коли виконали всі заняття");//The course was automatically completed when all lessons were completed
 define("_INFORMATIONFORLESSON","Інформація для заняття");//Information for lesson
 define("_LESSONMETADATA","Метадані заняття");//Lesson metadata
 define("_DISPLAYINGRESULTS","Відображення результатів");//Displaying results
 define("_LOADINGDATA","Завантаження ...");//Loading...
-define("_COURSESTATISTICS","Звіти по курсу");//Course reports
-define("_CHOOSECOURSE","Обрати курс");//Choose course
+define("_COURSESTATISTICS","Звіти по предмету");//Course reports
+define("_CHOOSECOURSE","Обрати предмет");//Choose course
 define("_HISTORYRECORDDELETED","Запис історії видалено");//History record deleted
 define("_AREYOUSUREYOUWANTTODELETETHEHISOTYRECORD","Ви справді хочете видалити запис історії?");//Are you sure you want to delete the history record?
 define("_HIDEALL","Сховати все");//Hide all
-define("_COURSEORDER","Порядок курсів");//Course order
-define("_ORDERFORCOURSE","Заявка на курс");//Order for course
-define("_DRAGITEMSTOCHANGELESSONSORDER","Перетягніть елементи, щоб змінити порядок відображення занять курсу");//Drag items to change the display order of the course lessons
+define("_COURSEORDER","Порядок предметів");//Course order
+define("_ORDERFORCOURSE","Заявка на предмет");//Order for course
+define("_DRAGITEMSTOCHANGELESSONSORDER","Перетягніть елементи, щоб змінити порядок відображення занять предмету");//Drag items to change the display order of the course lessons
 define("_IRREVERSIBLEACTIONDELETESUBUNITSAREYOUSURE","Ця операція неповоротньо видалить цей підрозділ і всі підлеглі йому. Ви впевнені?");//This action will irreversably delete this unit and any subunits it may have. Are you sure?
 define("_CLICKOKTOACTIVATEITEM","Натисніть OK, щоб активувати / деактивувати елемент");//Click OK to activate/deactivate item
 define("_ANDITSSUBNODES","і його вузли");//and it&#039;s sub nodes
@@ -2006,9 +2006,9 @@ define("_ERRORDEPOSITIONINGUNIT","Помилка позиціонування б
 define("_ERRORREPAIRINGTREE","Помилка при відновленні дерева");//Error repairing tree
 define("_DRAGAUNITTOCHANGEITSPOSITION","Перетягніть модуль, щоб змінити його позицію");//Drag a unit to change its position
 define("_IFUSESSLTHENPHPOPENSSL","Якщо ви хочете використовувати ssl, переконайтеся, що PHP має підтримку openssl");//If you want to use ssl, make sure that PHP openssl support is enabled
-define("_COURSECOMPLETED","Курс завершенено");//Course completed
-define("_COURSECERTIFICATE","Сертифікат курсу");//Course certificate
-define("_COURSESINFO","Інформація про курс");//Courses info
+define("_COURSECOMPLETED","Предмет завершено");//Course completed
+define("_COURSECERTIFICATE","Сертифікат предмету");//Course certificate
+define("_COURSESINFO","Інформація про предмет");//Courses info
 define("_DRAGTOMOVEMAILTOFOLDER","Перетягніть, щоб перенести цей лист в іншу папку");//Drag to move this email to another folder
 define("_SCORMOPTIONS","Параметри SCORM");//Scorm options
 define("_SCORMOPTIONSFOR","Параметри SCORM для");//Scorm options for
@@ -2049,9 +2049,9 @@ define("_SHIFTSCHEDULEFORNEWUSERS","Зсунути розклад для нов�
 define("_CURRENTSCHEDULE","Поточний розклад");//Current schedule
 define("_NOSCHEDULESET","Немає розкладу");//No schedule set
 define("_DELETESCHEDULE","Видалити розклад");//Delete schedule
-define("_SCHEDULINGFORCOURSE","Розклад для курсу");//Scheduling for course
+define("_SCHEDULINGFORCOURSE","Розклад для предмету");//Scheduling for course
 define("_ADDSCHEDULE","Додати розклад");//Add schedule
-define("_COURSESCHEDULE","Розклад курсу");//Course schedule
+define("_COURSESCHEDULE","Розклад предмету");//Course schedule
 define("_AVAILABLEUNTIL","Доступно до тих пір, доки");//Available until
 define("_FILETYPE","Тип файлу");//File type
 define("_FULLPATH","Повний шлях");//Full path
@@ -2077,7 +2077,7 @@ define("_CATEGORYSETTINGS","Параметри категорії");//Category s
 define("_YOUWANTTOBEDONE","Ви бажаєте:");//You want to
 define("_OVERWRITE","Переписати");//Overwrite
 define("_LESSONUSERS","Користувачі заняття");//Lesson users
-define("_ASSOCIATEDCOURSES","Асоційовані курси");//Associated courses
+define("_ASSOCIATEDCOURSES","Асоційовані предмети");//Associated courses
 define("_OUTPUT","Результат");//Output
 define("_TOKEN","Признак");//Token
 define("_PERMITTEDROLESMODULEERROR","Один або кілька допустимих ролей модуля неправильні");//One or more module permitted roles are wrong
@@ -2138,7 +2138,7 @@ define("_FBEXPLANATION","* ЗП = Заповнити пропуски");//* FB =
 define("_OAEXPLANATION","* ВВ = відкрита відповідь");//* OA = Open answer
 define("_YNEXPLANATION","* ТН = так/ні");//* YN = Yes/No
 define("_PROJECTNAME","Назва проекту");//Project name
-define("_STATISTICSFORCOURSE","Статистика по курсу");//Statistics for course
+define("_STATISTICSFORCOURSE","Статистика по предмету");//Statistics for course
 define("_YOUARENOTAUTHORISEDTOSEETHISTEST","Ви не авторизовані для перегляду цього тесту");//You are not authorized to see this test
 define("_YOUCANNOTREDOTHISTEST","Ви не можете повторити цей тест");//You cannot redo this test
 define("_ACCESSEDLESSON","Відвідані заняття");//Accessed lesson
@@ -2151,14 +2151,14 @@ define("_CONTENTTRAVERSINGRULES","Зміст правил проходження
 define("_FILEUPLOADEDON","Файл був завантажений на");//The file was uploaded on
 define("_DIRECTIONOPTIONSFOR","Параметри для категорії");//Options for category
 define("_NEWDIRECTIONOPTIONS","Параметри нової категорії");//New category options
-define("_COURSELESSONS","Заняття курсу");//Course lessons
+define("_COURSELESSONS","Заняття предмету");//Course lessons
 define("_RELATEDTO","Пов&#39;язано з");//Related to
 define("_SUCCESSFULLYEXPORTEDSCORMFILE","Заняття експортоване у формат SCORM");//The lesson was exported to SCORM format succesfully
 define("_LDAPEXTENSIONNOTLOADED","Попередження: розширення LDAP не завантажено");//Warning: LDAP Extension  not loaded
 define("_PERCENTAGEMUSTBEBETWEEN1100","Відсоток повинен бути від 1 до 100");//Percentage must be between 1 and 100
 define("_MUSTSEECONTENTSERIALSOMUSTFIRSTREADUNIT","Ви повинні переглядати вміст послідовно, тому спочатку прочитайте модуль");//You must see content in a serial order, so you must first read unit
-define("_YOUDONTHAVEANYLESSONS","У вас немає занять чи курсів");//You don&#039;t have any lessons or courses
-define("_THEADMINISTRATORWILLASSIGNYOULESSONS","Системний адміністратор призначить вам заняття або курси");//The system administrator will assign you lessons or courses
+define("_YOUDONTHAVEANYLESSONS","У вас немає занять чи предметів");//You don&#039;t have any lessons or courses
+define("_THEADMINISTRATORWILLASSIGNYOULESSONS","Системний адміністратор призначить вам заняття або предмети");//The system administrator will assign you lessons or courses
 define("_BACKTOINDEX","Повернутися на головну сторінку");//Back to index page
 define("_LESSONAVAILABLE","Заняття доступне");//Lesson is available
 define("_DIRECTLY","Безпосередньо");//Directly
@@ -2195,15 +2195,15 @@ define("_UNAUTHORIZEDACCESS","У вас немає прав доступу до 
 define("_LESSONUSER","Користувач заняття");//Lesson user
 define("_PROGRESSFORUSER","Успішність користувача");//Progress for user
 define("_LESSONSORDER","Порядок занять");//Lessons order
-define("_COURSEUSER","Користувач курсу");//Course user
-define("_COURSELESSON","Заняття курсу");//Course lesson
+define("_COURSEUSER","Користувач предмету");//Course user
+define("_COURSELESSON","Заняття предмету");//Course lesson
 define("_CANNOTDELETEOWNTYPE","Ви не можете видалити свій власний тип");//You may not delete your own type
 define("_GROUPUSER","Користувач групи");//Group user
 define("_EXPLICITIFRAMESIZE","Точний размір iframe");//Explicit iframe size
 define("_EXPLICITSIZEEXPLANATION","Це розмір фрейму, що містить матеріал SCORM. Залиште порожнім, щоб він розраховувався автоматично");//This is the size of the SCORM content containing frame. Leave it blank to have it automatically calculated
 define("_USERROLEINLESSON","Роль користувача на занятті");//User role in lesson
 define("_LESSONROLE","Роль на занятті");//Role in lesson
-define("_COURSEROLE","Роль на курсі");//Role in course
+define("_COURSEROLE","Роль на предметі");//Role in course
 define("_PAYPAL","Paypal");//Paypal
 define("_DOWNLOADEXAMPLE","Завантажити приклад");//Download example
 define("_CONTENTTREEFIRSTPAGE","Дерево матеріалу на першій сторінці");//Content tree in first page
@@ -2222,7 +2222,7 @@ define("_THRESHOLD","Поріг");//Threshold
 define("_SKILLGAPANALYSISFORUSER","Аналіз наявності навичок у користувача");//Skill gap analysis for user
 define("_ACCORDINGTOTEST","відповідно з тестом");//according to test
 define("_NOLESSONSPROPOSEDACCORDINGTOANALYSIS","Немає запропонованих занять, відповідо до аналізу на наявність навичок");//No lessons are proposed according to the skill gap analysis
-define("_NOCOURSESPROPOSEDACCORDINGTOANALYSIS","Немає запропонованих курсів, відповідо до аналізу на наявність навичок");//No courses are proposed according to the skill gap analysis
+define("_NOCOURSESPROPOSEDACCORDINGTOANALYSIS","Немає запропонованих предметів, відповідо до аналізу на наявність навичок");//No courses are proposed according to the skill gap analysis
 define("_CERTIFICATETEMPLATE","Шаблон сертифікату (формат RTF)");//Certificate template (rtf format)
 define("_COMMANDS","Команди");//Commands
 define("_SEARCHRESULTSCOMMANDS","Результати пошуку в командах");//Search results in commands
@@ -2235,7 +2235,7 @@ define("_SKILLGAPTESTSTOBECOMPLETED","Тести на наявність нав�
 define("_SKILLGAPTESTCOMPLETEDSUCCESSFULLY","Тест на наявність навичок виконано");//Skill gap test completed successfully
 define("_RELEVANCE","Відповідність");//Relevance
 define("_KNOWLEDGEOFLESSON" ,"Knowledge of lesson");
-define("_KNOWLEDGEOFCOURSE","Знання матеріалу курсу");//Knowledge of course
+define("_KNOWLEDGEOFCOURSE","Знання матеріалу предмету");//Knowledge of course
 define("_NOSKILLSCORRELATEDWITHTHETESTSQUESTIONS","Немає навичок, які корелюють з питаннями тесту");//No skills correlated with the test&#039;s questions
 define("_OPENFILEMANAGER","Відкрити менеджер файлів");//Open file manager
 define("_CLOSEFILEMANAGER","Закрити менеджер файлів");//Close file manager
@@ -2259,16 +2259,16 @@ define("_SHOWALLSOLVEDSKILLGAPTESTS","показати всі пройдені �
 define("_DELETESKILLGAPTESTRECORD","Видалити запис тесту на наявність навичок");//Delete skill gap test record
 define("_ASSIGNTOALLNEWSTUDENTS","Призначити всім новим студентам");//Assign to all new students
 define("_AUTOMATICALLYASSIGNLESSONS","Автоматично призначити заняття");//Automatically assign lessons
-define("_AUTOMATICASSIGNMENTINFO","Після виконання тесту, студенту будуть автоматично призначені всі <br> заняття та курси, відповідно його освітнім потребам");//After completing the test, a student will be automatically assigned with all<br> lessons and courses matching his or her educational needs
+define("_AUTOMATICASSIGNMENTINFO","Після виконання тесту, студенту будуть автоматично призначені всі <br> заняття та предмети, відповідно його освітнім потребам");//After completing the test, a student will be automatically assigned with all<br> lessons and courses matching his or her educational needs
 define("_SKILLGAPTESTCOMPLETEDSUCCESSFULLYANDTHECORRESPONDING","Тест на наявність навичок виконаний, і відповідні");//Skill gap test completed successfully and the corresponding
 define("_HAVEBEENASSIGNED","призначені вам");//have been assigned to you
 define("_SKILLGAPTESTRESULTS","Результати тесту на наявність навичок");//Skill gap test results
 define("_CURRENTPDFFILE","Поточний PDF-файл");//Current pdf file
 define("_SEARCHTEXTWASINSCRIPT","Шуканий текст був знайдений усередині скрипта");//Search text was found inside a script
 define("_NUMBERFROM000TO9999REQUIRED","Необхідно число від 0.00 до 99.99");//Number from 0.00 to 99.99 required
-define("_COMPLETETHESKILLGAPTESTSBELOWSOTHATWECANASSIGNLESSONS","Виконайте тести на наявність навичок, зазначені нижче, щоб можна було призначити курси, найбільш відповідні Вашим потребам.");//Complete the skill gap tests below so that we can assign courses most suitable to your neeeds.
-define("_YOUHAVECOMPLETEDALLSKILLGAPSTESTSASSIGNEDTOYOUWAITTOBEASSIGNEDLESSONS","Ви виконали всі призначені Вам тести на наявність навичок. <br> Зачекайте, коли Ваш викладач призначить Вам курси, у відповідності з виявленими потребами.");//You have completed all skill gap tests assigned to you. <br>Please wait until your professors assign to you the most suitable courses according to your needs.
-define("_YOURRESULTSHAVEBEENSENTTOYOURPROFESSORSWHOWILLASSIGNLESSONSACCORDINGTOYOURNEEDS","Ваші результати були відправлені Вашому викладачу, який найближчим часом призначить Вам курси, відповідно до Ваших потреб, виявлених в результаті цього тесту");//Your results have been sent to your professors who will soon assign courses to your according to your needs as identified from this test
+define("_COMPLETETHESKILLGAPTESTSBELOWSOTHATWECANASSIGNLESSONS","Виконайте тести на наявність навичок, зазначені нижче, щоб можна було призначити предмети, найбільш відповідні Вашим потребам.");//Complete the skill gap tests below so that we can assign courses most suitable to your neeeds.
+define("_YOUHAVECOMPLETEDALLSKILLGAPSTESTSASSIGNEDTOYOUWAITTOBEASSIGNEDLESSONS","Ви виконали всі призначені Вам тести на наявність навичок. <br> Зачекайте, коли Ваш викладач призначить Вам предмети, у відповідності з виявленими потребами.");//You have completed all skill gap tests assigned to you. <br>Please wait until your professors assign to you the most suitable courses according to your needs.
+define("_YOURRESULTSHAVEBEENSENTTOYOURPROFESSORSWHOWILLASSIGNLESSONSACCORDINGTOYOURNEEDS","Ваші результати були відправлені Вашому викладачу, який найближчим часом призначить Вам предмети, відповідно до Ваших потреб, виявлених в результаті цього тесту");//Your results have been sent to your professors who will soon assign courses to your according to your needs as identified from this test
 define("_JOBPLACEMENTS","Ставки");//Job placements
 define("_NEWJOBPLACEMENT","Нові ставки");//New job placement
 define("_UPGRADEMODULE","Оновлення модулів");//Upgrade module
@@ -2276,7 +2276,7 @@ define("_NEWUNITOPTIONS","Властивості нового підрозділ
 define("_UNITOPTIONSFOR","Властивості модуля");//Options for unit
 define("_OPTIONSFORSKILLGAPTEST","Параметри тесту на наявність навичок");//Options for skill gap test
 define("_OPTIONSFORTEST","Параметри тесту");//Options for test
-define("_REPORTSFORCOURSE","Звіти по курсу");//Reports for course
+define("_REPORTSFORCOURSE","Звіти по предмету");//Reports for course
 define("_REPORTSFORTEST","Звіти по тесту");//Reports for test
 define("_USERISNOTVALIDORYOUCANNOTSEEUSER","Користувач вказаний неправильно або у вас немає доступу до даних цього користувача");//The user specified is not valid, or you cannot access this user&#039;s data
 define("_SELECTGROUP","Оберіть групу");//Select group
@@ -2358,7 +2358,7 @@ define("_LOGINOREMAIL","Ім&#39;я аккаунту або адреса еле�
 define("_USETHISTORESETPASSWORD","Використовуйте цю форму для скидання пароля");//Use this form to reset your password
 define("_USETHISTOREGISTERANEWACCOUNT","Використовуйте цю форму, щоб створити новий аккаунт користувача");//Use this form to create a new user account
 define("_USETHISTOCONTACTUS","Використовуйте цю форму, щоб зв&#39;язатися з нами по будь-якому питанню");//Use this form to contact us for any issue
-define("_AVAILABLELESSONS","Заняття і курси, які є в системі");//Lessons and courses available in the system
+define("_AVAILABLELESSONS","Заняття і предмети, які є в системі");//Lessons and courses available in the system
 define("_SELECTLAYOUT","Оберіть макет");//Select a layout
 define("_ENROLL","Записатися");//Enroll
 define("_INFORMATION","Інформація");//Information
@@ -2381,7 +2381,7 @@ define("_SIMPLE","Простий");//Simple
 define("_SAVELAYOUT","Зберегти макет");//Save layout
 define("_ADDBLOCK","Додати блок");//Add block
 define("_RESTOREDEFAULTLAYOUT","Відновити макет за замовчуванням");//Restore default layout
-define("_INFOFORCOURSE","Інформація про курс");//Information for course
+define("_INFOFORCOURSE","Інформація про предмет");//Information for course
 define("_PLEASELOGINTOCOMPLETEREGISTRATION","Будь ласка, увійдіть в систему, щоб завершити реєстрацію");//If you are an existing user, please login below to complete registration. 
 define("_GOTOLESSONSLIST","Перейти до переліку занять");//Go to lessons list
 define("_PUBLISHED","Опубліковано");//Published
@@ -2391,7 +2391,7 @@ define("_SKILLGAPTESTRESULTSREMOVEDFROMUSERTHETESTCANBEREPEATED","Результ
 define("_HOMEOFLESSON","Початок заняття");//Home of lesson
 define("_OPTIONSFORGROUP","Параметри групи");//Options for group
 define("_SURVEYFAILEDTOBEDELETED","Опитування не було видалено");//Survey failed to be deleted
-define("_COURSESNUMBER","Кількість курсів");//Number of courses
+define("_COURSESNUMBER","Кількість предметів");//Number of courses
 define("_GROUPSNUMBER","Кількість груп");//Number of groups
 define("_FORUMTITLE","Назва форуму");//Forum title
 define("_OTHERLESSONS","Інші заняття");//Other lessons
@@ -2431,8 +2431,8 @@ define("_YOUCANNOTACCESSREQUESTEDRESOURCE","Ви не можете отрима�
 define("_TOTALUNITS","Всього блоків");//Total units
 define("_DISPLAYORDEREDLISTINFO","Відображає нумерацію поруч з кожним із можливих відповідей на питання з множинним вибором");//Displays numbering next to each possible answer for multiple choice questions
 define("_CONFIRMATIONPEDINGFROMADMIN","Очікується підтвердження адміністратора");//Confirmation pending by the administrator
-define("_USERHASNOTTHECOURSE","Користувач не має курсу");//The user does not have the course
-define("_USERHASTHECOURSE","Користувач має курс");//The user has the course
+define("_USERHASNOTTHECOURSE","Користувач не має предмету");//The user does not have the course
+define("_USERHASTHECOURSE","Користувач має предмет");//The user has the course
 define("_TOTALTESTS","Всього тестів");//Total tests
 define("_TOTALPROJECTS","Всього проектів");//Total projects
 define("_SELECTCHATROOM","Виберіть кімнату");//Select room
@@ -2505,16 +2505,16 @@ define("_YEARSCONDITIONAL","Року (ів)");//Year(s)
 define("_SUBSCRIPTIONDURATION","Термін підписки");//Subscription duration
 define("_COULDNOTCREATEUSERDIRECTORY","Не вдалося створити папку користувача");//Could not create user directory
 define("_YOUALREADYHAVETHISLESSON","У вас вже є це заняття");//You already have this lesson
-define("_YOUALREADYHAVETHISCOURSE","У вас вже є цей курс");//You already have this course
+define("_YOUALREADYHAVETHISCOURSE","У вас вже є цей предмет");//You already have this course
 define("_ONLYSTUDENTSMAYSUBSCRIBETOLESSONS","Тільки студенти можуть підписуватися на уроки. Якщо ви викладач, попросіть адміністратора про передплату.");//Only students may subscribe to lessons. If you are a professor, please ask the administrator to enroll you to one.
 define("_CHARGINGEACH","Зобов&#39;язати кожного");//Charge each
-define("_LESSONPARTOFCOURSES","Це заняття є частиною курсів");//This lesson is part of the courses
+define("_LESSONPARTOFCOURSES","Це заняття є частиною предметів");//This lesson is part of the courses
 define("_YESAFTERLOGIN","Так, але тільки після входу в систему");//Yes, but only after user logs in
 define("_CHECKED","Перевірено");//Checked
 define("_NOTCHECKED","Не перевірено");//Not checked
 define("_NOTSELECTEDLESSONSORSELECTEDYOUHAVEALREADY","Ви не вибрали жодне заняття, або у вас вже є вибрані");//You already have the lessons you selected
-define("_GETTHECOURSE","Отримати курс");//Get the course
-define("_YOULAREDYHAVETHECOURSE","У вас вже є курс");//You already have the course
+define("_GETTHECOURSE","Отримати предмет");//Get the course
+define("_YOULAREDYHAVETHECOURSE","У вас вже є предмет");//You already have the course
 define("_THISISAPMFROMSITE","Це особисте повідомлення від");//This is a private message from
 define("_INSERTINTOBRANCH","Ввести в підрозділ");//Insert into branch
 define("_NOSPECIFICBRANCH","Не вводити в підрозділ");//No specific branch
@@ -2526,7 +2526,7 @@ define("_USERFORMPRINTPREVIEW","Предварительный просмотр 
 define("_USERSFULFILLINGCRITERIA","Користувачі, що задовільняють критерію");//Users fulfilling the criteria
 define("_UNCATEGORIZEDSKILLS","Навички без категорії");//Non-categorized skills
 define("_ADDQUICKSKILLGAP","Швидкий генератор тестів на наявність навичок");//Quick skill-gap test generator
-define("_SELECTASSOCIATEDDIRECTIONSCOURSESANDLESSONS","Виберіть категорію, курси або заняття, якої будуть пов&#39;язані з питаннями тесту");//Select the directions, courses or lessons that will be associated with the test&#039;s questions
+define("_SELECTASSOCIATEDDIRECTIONSCOURSESANDLESSONS","Виберіть категорію, предмети або заняття, якої будуть пов&#39;язані з питаннями тесту");//Select the directions, courses or lessons that will be associated with the test&#039;s questions
 define("_SELECTASSOCIATEDSKILLSORSKILLCATEGORIES","Виберіть навички або категорії навичок, які будуть пов&#39;язані з питаннями тесту");//Select the skills or skill categories that will be associated with the test&#039;s questions
 define("_NEWSELECTION","Новий выбір");//New selection
 define("_SELECTQUESTIONSBASEDONLESSONS","Обрати зппитання, основані на заняттях");//Select questions based on lessons
@@ -2540,12 +2540,12 @@ define("_SWITCHTO","Перейти до");//Switch to
 define("_YOUHAVENTSETADDITIONALACCOUNTS","У Вас немає зв&#39;язаних аккаунтів");//You haven&#039;t set any additional accounts
 define("_OPERATIONWASNOTCOMPLETEDSUCCESFULLY","Операція не була повністю завершена");//Operation was not completed succesessfully
 define("_LESSONMODULES","Модулі заняття");//Lesson modules
-define("_COURSEEXPORTEDSUCCESFULLY","Курс експортований");//Course exported successfully
-define("_IMPORTCOURSE","Імпортувати курс");//Import course
-define("_EXPORTCOURSE","Експортувати курс");//Export course
-define("_COURSEDATAFILE","Файл даних курсу");//Course data file
-define("_COURSEIMPORTNOTICE","Попередження: При імпортуванні курсу буде вилучена вся існуюча інформації про нього");//Warning: Importing a course will erase all existing course information
-define("_CLICKTOEXPORTCOURSE","Натисніть, щоб експортувати курс");//Click to export course
+define("_COURSEEXPORTEDSUCCESFULLY","Предмет експортований");//Course exported successfully
+define("_IMPORTCOURSE","Імпортувати предмет");//Import course
+define("_EXPORTCOURSE","Експортувати предмет");//Export course
+define("_COURSEDATAFILE","Файл даних предмету");//Course data file
+define("_COURSEIMPORTNOTICE","Попередження: При імпортуванні предмету буде вилучена вся існуюча інформації про нього");//Warning: Importing a course will erase all existing course information
+define("_CLICKTOEXPORTCOURSE","Натисніть, щоб експортувати предмет");//Click to export course
 define("_IMPORT","Імпортувати");//Import
 define("_RESETLESSONDATA","Скинути наступні дані уроку");//Reset the following lesson data
 define("_DEPENDSONCONTENT","Залежно від матеріалу");//Depends on content
@@ -2555,7 +2555,7 @@ define("_HIDELEFTBAR","Приховати ліву панель при пере�
 define("_HIDEPERCENTAGE","Приховати відсоток виконання при перегляді вмісту");//Hide complete percentage when viewing content
 define("_OPTIONSFORLESSON","Параметри заняття");//Options for lesson
 define("_LAYOUTFORLESSON","Макет для заняття");//Layout for lesson
-define("_COURSEIMPORTEDSUCCESFULLY","Курс імпортований");//Course imported successfully
+define("_COURSEIMPORTEDSUCCESFULLY","предмет імпортований");//Course imported successfully
 define("_LOCKDOWNMESSAGE","Повідомлення про блокування системи");//Lock down message
 define("_LOCKDOWNONLYADMINISTRATORSCANLOGIN","Система заблокована. Тільки адміністратори можуть входити в систему в цей період");//The system is locked down. Only administrators may login during this period
 define("_THESYSTEMISCURRENTLYLOCKED","Система в даний час заблокована");//The system is currently locked
@@ -2565,7 +2565,7 @@ define("_COPYGLOSSARY","Копіювати глосарій");//Copy glossary
 define("_COPYOTHERENTITIES","Копіювати інші суб&#39;єкти");//Copy other entities
 define("_TEXTAREA","Текстове поле");//Text area
 define("_CHARACTERSMAX20ONLYNOSPACES","Тільки букви, максимальна довжина 20 символів, без пробілів");//Letters only, maximum 20 characters length, without spaces
-define("_COURSEACTIONS","Дія курсу");//Course actions
+define("_COURSEACTIONS","Дія предмету");//Course actions
 define("_LICENSENOTE","Ліцензійна примітка");//License note
 define("_ENABLELICENSENOTE","Увімкнути ліцензійну примітку");//Enable license note
 define("_IMPORTANTNOTICE","Важлива замітка");//Important notice
@@ -2608,7 +2608,7 @@ define("_EXCEPTFORTHEROLES","За винятком ролей");//Except for the
 define("_EXCEPTFORTHEUSERS","За винятком користувачів");//Except for the users
 define("_COULDNOTSETCONFIGURATIONVALUE","Наступне значення конфігурації не може бути встановлено");//The following configuration value could not be set
 define("_HOLDDOWNCTRLFORMULTIPLESELECT","Утримуйте клавішу CTRL при натисканні, для вибору декількох елементів");//Hold down the CTRL key while clicking for multiple select or deselect
-define("_COURSESETTINGS","Налаштуванння курсу");//Course settings
+define("_COURSESETTINGS","Налаштуванння предмету");//Course settings
 define("_FREETEXT","Вільний текст");//Free text
 define("_OUTCOMEPENDING","Очікування результату");//Outcome pending
 define("_USERNOTCOMPLETEDTEST","Даний користувач не завершив цей тест");//The user has not completed this test
@@ -2618,8 +2618,8 @@ define("_IMPORTEXPORT","Імпорт / експорт");//Import - export
 define("_EXPORTIMPORTDATA","Експортувати / імпортувати дані");//Export - Import
 define("_THISPMISSENTALLUSERS","Це особисте повідомлення було надіслано усім активним користувачам.");//This private message was sent to all active users.
 define("_THISPMISSENTLESSONUSERS","Це особисте повідомлення було надіслано усім користувачам заняття");//This private message was sent to all users of lesson
-define("_THISPMISSENTCOMPLETEDCOURSEUSERS","Це особисте повідомлення було надіслано усім користувачам, які завершили курс.");//This private message was sent to all users completed course.
-define("_THISPMISSENTCOURSEUSERS","Це особисте повідомлення було надіслано усім користувачам курсу");//This private message was sent to all users of course
+define("_THISPMISSENTCOMPLETEDCOURSEUSERS","Це особисте повідомлення було надіслано усім користувачам, які завершили предмет.");//This private message was sent to all users completed course.
+define("_THISPMISSENTCOURSEUSERS","Це особисте повідомлення було надіслано усім користувачам предмету");//This private message was sent to all users of course
 define("_THISPMISSENTLESSONPROFESSORS","Це особисте повідомлення було надіслано викладачам  заняття");//This private message was sent to professors of lesson
 define("_THISPMISSENTUSERTYPE","Це особисте повідомлення було надіслано усім таким же, як і ви користувачам");//This private message was sent to all users of type
 define("_THISPMISSENTUSERGROUP","Це особисте повідомлення було надіслано усім користувачам групи");//This private message was sent to all users of group
@@ -2628,7 +2628,7 @@ define("_RTLLANGUAGE","Справа наліво");//Right to left
 define("_YOUCANONLYUPLOADONEFILE","Ви можете завантажити тільки один файл");//You can only upload one file
 define("_DELETETHEFILETOUPLOADANOTHER","Видаліть цей файл, якщо ви хочете завантажити інший");//Delete this file if you want to upload another
 define("_LOGINERRORPLEASEMAKESURECAPSLOCKISOFF","Ваше ім&#39;я користувача або пароль неправильні. Будь ласка, спробуйте ще раз, попередньо переконавшись, що режим CAPS LOCK вимкнено");//Your username or password is incorrect. Please try again, making sure that CAPS LOCK key is off
-define("_YOUCANNOTACCESSTHISLESSONBECAUSEOFCOURSERULES","Ви не можете отримати доступ до цього заняття за правилами проходження курсу");//You can not access this lesson because of course rules
+define("_YOUCANNOTACCESSTHISLESSONBECAUSEOFCOURSERULES","Ви не можете отримати доступ до цього заняття за правилами проходження предмету");//You can not access this lesson because of course rules
 define("_SHOWHEADLINE","Показувати заголовок");//Show headline
 define("_YOUAREREVISITINGCHANGESNOTTAKENINTOACCOUNT","Примітка: Ви повторюєте перегляд цього блоку, тому будь-які зміни не будуть враховуватися");//Note: you are revisiting this unit, so any changes will not be taken into account
 define("_ACTIONONRENTRYCOMPLETED","Дія при повторному вході");//Action on re-entry
@@ -2730,12 +2730,12 @@ define("_LEAVE","Залишити");//Leave
 define("_ASSIGNED","Призначений");//Assigned
 define("_REMOVED","Видалений");//Removed
 define("_ANYLESSON","Будь-яке заняття");//Any lesson
-define("_ANYCOURSE","Будь-який курс");//Any course
+define("_ANYCOURSE","Будь-який предмет");//Any course
 define("_ANYTEST","Будь-який тест");//Any test
 define("_ADDTEMPLATIZEDTEXT","Додати шаблонний текст");//Add templatized text
 define("_RECIPIENTSUSERNAME","Ім&#039;я одержувача");//Recipient&#039;s name
 define("_AUTHORUSERNAME","Ім&#039;я автора");//Author&#039;s username
-define("_COURSETITLE","Назва курсу");//Course title
+define("_COURSETITLE","Назва предмету");//Course title
 define("_GROUPNAME","Назва групи");//Group name
 define("_TIMEAFTEREVENT","Час на відправку після події");//Time to send after event
 define("_STARTINGFROM","Починаючи з");//Starting from
@@ -2785,11 +2785,11 @@ define("_CONTENT_NOT_COMPLETED","Зміст не завершено");//Content 
 define("_VISITEDLESSON","відвідане заняття");//visited lesson
 define("_GOTOLESSONSTIMELINE","Перейти до часових стрічок заняття");//Goto lessons timeline
 define("_GROUPLESSONS","Групові заняття");//Group lessons
-define("_GROUPCOURSES","Групові курси");//Group courses
+define("_GROUPCOURSES","Групові предмети");//Group courses
 define("_GROUPUSERSTATUS","Статус користувача групи");//Group user status
 define("_NOTACTIVE","Неактивний");//Inactive
 define("_ASSIGNLESSONSTOALLNEWMEMBERS","Призначити профіль групи новим членам");//Assign group profile to new members
-define("_ASSIGNLESSONSTONEWMEMBERSEXPLANATION","Профіль групи (наприклад, мова, статус за замовчуванням, тип користувача, призначені уроки та курси), буде автоматично присвоюватись всім користувачам, які входять в цю групу з даного моменту");//The group profile (i.e. preferred language, default status, user type, associated lessons and courses) will be automatically assigned to all users joining this group from now on
+define("_ASSIGNLESSONSTONEWMEMBERSEXPLANATION","Профіль групи (наприклад, мова, статус за замовчуванням, тип користувача, призначені уроки та предмети), буде автоматично присвоюватись всім користувачам, які входять в цю групу з даного моменту");//The group profile (i.e. preferred language, default status, user type, associated lessons and courses) will be automatically assigned to all users joining this group from now on
 define("_GROUPLANGUAGE","Мова групи");//Group language
 define("_GROUPUSERTYPE","Тип групи користувачів");//Group user type
 define("_NOCOMMONGROUPUSERSTATUS","Немає загального статусу користувача");//No common user status
@@ -2805,14 +2805,14 @@ define("_ISTHEDEFAULTEFRONTSYSTEMGROUPINFO","При включенні цієї 
 define("_ENTERGROUPKEY","Ключ групи");//Group/Lesson key
 define("_ENTERGROUPKEYINFO","Вказавши тут унікальний ключ групи, виданий Вам адміністратором системи, Ви можете зареєструватися на всі заняття цієї групи");//By submitting here a unique group key provided to you by the system administrator you are able to register yourself to all lessons of that particular group
 define("_WRONGGROUPLESSONKEY","Введений Вами ключ групи недійсний");//The group key you have entered is not valid
-define("_THEGROUPHASNOLESSONS","Групі, що відповідає введеному ключу, не призначені заняття та курси");//The group corresponding to your key has no lessons and no courses
+define("_THEGROUPHASNOLESSONS","Групі, що відповідає введеному ключу, не призначені заняття та предмети");//The group corresponding to your key has no lessons and no courses
 define("_THEGROUPISNOTACTIVE","Група, що відповідає введеному ключу, неактивна");//The group corresponding to your key is not active
-define("_YOUALREADYATTENDALLLESSONSOFTHISGROUP","Вам вже призначені всі заняття та курси даної групи");//You are already attending all lessons and all courses of this group
+define("_YOUALREADYATTENDALLLESSONSOFTHISGROUP","Вам вже призначені всі заняття та предмети даної групи");//You are already attending all lessons and all courses of this group
 define("_YOUHAVEBEENASSIGNEDWITH","Ви вже зараховані");//You have been assigned
 define("_PLEASEFILLINTHEGROUPSKEY","Введіть, будь ласка, ключ групи");//Please fill in the group key
-define("_ASSIGNCOURSESTOGROUPUSERS","Призначити вибрані курси групі користувачів");//Assign selected courses to group users
+define("_ASSIGNCOURSESTOGROUPUSERS","Призначити вибрані предмети групі користувачів");//Assign selected courses to group users
 define("_LCNEWLESSONS","нові заняття");//new lessons
-define("_LCNEWCOURSES","нові курси");//new courses
+define("_LCNEWCOURSES","нові предмети");//new courses
 define("_INSERTINTOGROUP","Включити до групи");//Insert into group
 define("_NOSPECIFICGROUP","Група не визначена");//No specific group
 define("_VIEWINSERTGROUPKEY","Показати параметри ключа групи");//Show group key option
@@ -2848,11 +2848,11 @@ define("_NEVER","Ніколи");//Never
 define("_CLASSMATES","Одногрупники");//Classmates
 define("_LESSONPEOPLE","Користувачі заняття");//People connection
 define("_NORMALIZEDIMENSIONS","Нормалізація розмірів");//Normalize dimensions
-define("_WASASSIGNEDTHECOURSE","був призначений курс");//was assigned the course
-define("_WILLBETEACHINGCOURSE","буде викладати курс");//will be teaching the course
-define("_VISITEDCOURSE","відвідано курс");//visited course
-define("_HASCOMPLETEDCOURSE","завершив курс");//has completed the course
-define("_NOLONGERATTENDSCOURSE","більше не відвідує курс");//no longer attends the course
+define("_WASASSIGNEDTHECOURSE","був призначений предмет");//was assigned the course
+define("_WILLBETEACHINGCOURSE","буде викладати предмет");//will be teaching the course
+define("_VISITEDCOURSE","відвідано предмет");//visited course
+define("_HASCOMPLETEDCOURSE","завершив предмет");//has completed the course
+define("_NOLONGERATTENDSCOURSE","більше не відвідує предмет");//no longer attends the course
 define("_STARTEDTEST","розпочав тест");//started the test
 define("_PROJECT_SUBMISSION","Подання проекту");//Project submission
 define("_SUBMITTEDPROJECT","поданий проект");//submitted the project
@@ -2867,11 +2867,11 @@ define("_MESSAGESQUEUE","Черга повідомлень");//Messages queue
 define("_SENDNEXTQUEUEMESSAGES","Надіслати наступне в черзі повідомлення");//Send next queue messages
 define("_COURSE_ACQUISITION_AS_STUDENT","Course acquisition as student");//Course acquisition as student
 define("_COURSE_ACQUISITION_AS_PROFESSOR","Course acquisition as professor");//Course acquisition as professor
-define("_COURSE_VISITED","Курс відвідано");//Course visited
-define("_COURSE_REMOVAL","Видаленння курсу");//Course removal
-define("_COURSE_COMPLETION","Завершення курсу");//Course completion
-define("_COURSE_NOT_VISITED","Курс не відвідано");//Course not visited
-define("_COURSE_NOT_COMPLETED","Курс не завершено");//Course not completed
+define("_COURSE_VISITED","Предмет відвідано");//Course visited
+define("_COURSE_REMOVAL","Видаленння предмету");//Course removal
+define("_COURSE_COMPLETION","Завершення предмету");//Course completion
+define("_COURSE_NOT_VISITED","Предмет не відвідано");//Course not visited
+define("_COURSE_NOT_COMPLETED","Предмет не завершено");//Course not completed
 define("_PENDINGTESTS","Незавершені тести");//Pending tests
 define("_SETPERIOD","Обрати період");//Select period
 define("_PREVIOUSWEEK","Попередній тиждень");//Previous week
@@ -2939,7 +2939,7 @@ define("_SELECTEDUSERS","Обрані користувачі");//Selected users
 define("_DURATIONFOREXPIRATION","Термін закінчення дії сертифіката");//Time for certificate expiration
 define("_MONTHS","Місяці");//Months
 define("_EXPIREINSTRUCTIONS","Встановіть термін, після закінчення якого сертфікат перестане діяти. Вкажіть 0, щоб не обмежувати термін дії");//Set the time for expiration after certificate will be issued. Select 0 for no expiration
-define("_RESETCOURSEWHENEXPIRE","Виконати скидання курсу, коли термін дії сертифіката закінчиться");//Reset course when certificate expires
+define("_RESETCOURSEWHENEXPIRE","Виконати скидання предмету, коли термін дії сертифіката закінчиться");//Reset course when certificate expires
 define("_SENDMESSAGEASHTML","Надіслати лист в HTML-форматі");//Send email in html format
 define("_RECENTLYSENT","Нещодавно відправлені");//Recently sent
 define("_REGISTERED","Зареєстровані");//Registered
@@ -2969,7 +2969,7 @@ define("_CERTIFICATEEXPIRED","Термін дії сертифіката мин�
 define("_CERTIFICATEISSUEDON","Сертифікат виданий");//Certificate issued on
 define("_CERTIFICATEEXPIREDON","Термін дії сертифіката минув в");//Certificate expired on
 define("_CERTIFICATEEXPIRESON","Термін дії сертифіката закінчується");//Certificate expires on
-define("_RESETCOURSEAFTEREXPIRATION","Виконати скидання курсу після закінчення терміну дії сертифіката");//Reset course after expiration
+define("_RESETCOURSEAFTEREXPIRATION","Виконати скидання предмету після закінчення терміну дії сертифіката");//Reset course after expiration
 define("_RESETLICENSENOTE","Скинути попередню угоду");//Reset license note
 define("_USETHISINCASEYOUWANTALLUSERSTORECOMPLYTOLICENSENOTE","Повторити запит на згоду користувачів з умовами використання");//Check this if you want all users to re-comply to the license note
 define("_USERSWITHCOMMONLESSONS","Користувачі, які розділяють зі мною заняття");//Users who share lessons with me
@@ -3092,15 +3092,15 @@ define("_VERYHIGH","Дуже високий");//Very high
 define("_ADJUSTQUESTIONS","Відрегулюйте запитання");//Adjust questions
 define("_CUSTOMSTATISTICS","Звіти по обмеженому часу");//Time constraint reports
 define("_WANTUSAGEREPOSTLESSON","Звіт про використання для заняття");//Usage report for lesson
-define("_WANTUSAGEREPOSTCOURSE","Звіт про використання для курсу");//Usage report for course
+define("_WANTUSAGEREPOSTCOURSE","Звіт про використання для предмету");//Usage report for course
 define("_WANTUSERSENROLLEDLESSON","Користувачі записані на заняття");//Users enrolled to lesson
-define("_WANTUSERSENROLLEDCOURSE","Користувачі зараховані на курс");//Users enrolled to course
+define("_WANTUSERSENROLLEDCOURSE","Користувачі зараховані на предмет");//Users enrolled to course
 define("_WANTUSERSCOMPLETEDLESSON","Користувачі завершили заняття");//Users completed the lesson
-define("_WANTUSERSCOMPLETEDCOURSE","Користувачі завершили курс");//Users completed the course
-define("_WANTUSERSCERTIFICATEDCOURSE","Користувачі, які отримали сертифікацію за курсом");//Users that got a certification for the course
+define("_WANTUSERSCOMPLETEDCOURSE","Користувачі завершили предмет");//Users completed the course
+define("_WANTUSERSCERTIFICATEDCOURSE","Користувачі, які отримали сертифікацію за предметом");//Users that got a certification for the course
 define("_WANTMOSTACTIVEUSERS","Найактивніші користувачі");//Most active users
 define("_WANTMOSTACTIVELESSONS","Найбільш активні заняття");//Most active lessons
-define("_WANTMOSTACTIVECOURSES","Найбільш активні курси");//Most active courses
+define("_WANTMOSTACTIVECOURSES","Найбільш активні предмети");//Most active courses
 define("_WANTUSERSCOMPLETEDTEST","Користувачі завершили тест");//Users completed the test
 define("_WANTUSERSSUBMITTEDPROJECT","Користувачі представили проект");//Users submitted the project
 define("_WANTUSERSREGISTEREDSYSTEM","Користувачі, які зареєстровані в системі");//Users registered to the system
@@ -3184,7 +3184,7 @@ define("_CLEARTEMPLATESCACHE","Очистити кеш шаблонів");//Clea
 define("_CLEARTESTSCACHE","Очистити кеш тестів");//Clear tests cache
 define("_CLEAR","Очистити");//Clear
 define("_CREDIT","Кредит");//Credit
-define("_COURSECATALOG","Каталог курсів");//Course catalog
+define("_COURSECATALOG","Каталог предметів");//Course catalog
 define("_PAYMENTS","Платежі");//Payments
 define("_AMOUNT","Сума");//Amount
 define("_ADDMANUALPAYMENT","Додати ручну оплату");//Add manual payment
@@ -3208,7 +3208,7 @@ define("_PAYUSINGYOURBALANCE","Оплатити Ваші рахунки");//Pay 
 define("_VOUCHER","Ваучер");//Voucher
 define("_REVIEWANDCHECKOUT","Переглянути обране і завершити");//Review selections and finish
 define("_JOBS","Вакансії");//Jobs
-define("_SHOWCOURSEINCATALOG","Показати курс в каталозі");//Show course in catalog
+define("_SHOWCOURSEINCATALOG","Показати предмет в каталозі");//Show course in catalog
 define("_PASTESELECTED","Вставити вибрані");//Paste selected
 define("_SWITCHACCOUNT","Перемкнути акаунт");//Switch account
 define("_CONNECTED","З&#39;єднано");//Connected
@@ -3314,7 +3314,7 @@ define("_DAYSAFTERREGISTRATION","днів після реєстрації");//da
 define("_NOTIFICATIONTIME","Час");//Time
 define("_RESEND","Повторно відправити електронну пошту");//Resend email
 define("_CERTIFICATESTATISTICS","Звіти по сертифікатах");//Certificate reports
-define("_WANTUSERSCERTIFICATEDALLCOURSES","Користувачі, які отримали сертифікацію з будь-якого курсу");//Users that got a certification for any course
+define("_WANTUSERSCERTIFICATEDALLCOURSES","Користувачі, які отримали сертифікацію з будь-якого предмету");//Users that got a certification for any course
 define("_EVENTSTATISTICS","Звіти подій");//Event reports
 define("_EVENTSMATCHINGTHECRITERIA","Події, які відповідають критеріям");//Events matching criteria
 define("_NOEVENTSFOUND","Жодні події не відповідають Вашим критеріям");//No events match your search criteria
@@ -3386,7 +3386,7 @@ define("_PRIVATE","Приватні");//Private
 define("_WANTCERTIFICATESEXPIRED","Сертифікати, які закінчується");//Certificates that will expire
 define("_MAXIMUMUSERS","Максимальна кількість користувачів");//Maximum users
 define("_MAXIMUMUSERSREACHEDFORLESSON","Досягнуто максимальної кількості користувачів, для цього заняття");//The maximum number of users for this lesson is reached
-define("_MAXIMUMUSERSREACHEDFORCOURSE","Досягнуто максимальної кількості користувачів, для цього курсу");//The maximum number of users for this course is reached
+define("_MAXIMUMUSERSREACHEDFORCOURSE","Досягнуто максимальної кількості користувачів, для цього предмету");//The maximum number of users for this course is reached
 define("_FILTERS","Фільтри");//Filters
 define("_NOBEFOREUPLOAD","Не копіювати OnUnload події");//Don't copy onunload events
 define("_GROUPSTATISTICS","Групові звіти");//Group reports
@@ -3407,7 +3407,7 @@ define("_RESTORESELECTED","Відновити обрані");//Restore selected
 define("_ARCHIVEENTITY","Архів");//Archive
 define("_LOADMATHTYPESASIMAGES","Показувати матиматичні типи як зображення");//Display math types as images
 define("_MATHIMAGESINFO","Рекомендується для Internet Explorer 8. Ви також можете видалити кеш браузера");//Recommended for Internet Explorer 8. You may also have to delete your browser&#039;s cache
-define("_EDITCOURSESDIRECTION","Категорія курсів");//Category courses
+define("_EDITCOURSESDIRECTION","Категорія предметів");//Category courses
 define("_GROUPROLE","Група загальної ролі");//Group common role
 define("_GROUPONLY","Група");//Group
 define("_YOUCANTDOTHESURVEYCONTACTLESSONPROFESSOR","Або ви вже виконали опитування або воно неактивне");//Either you have done the survey or it is inactive
@@ -3480,16 +3480,16 @@ define("_CONTENTPROGRESSEXCLUDINGTESTS","Прогес змісту (за вик�
 define("_DATABASEVERSION","Версія бази даних");//Database version
 define("_DIFFERENTVERSIONSUPGRADENEEDED","Ваша версія бази даних, відрізняється від зазначеної версії. Будь ласка, запустіть %link скрипт");//Your database version is different than the code version. Please run the %link script
 define("_UPGRADE","Оновити");//Upgrade
-define("_DOWNLOADEXPORTEDCOURSE","Завантажити експортований курс");//Download exported course
+define("_DOWNLOADEXPORTEDCOURSE","Завантажити експортований предмет");//Download exported course
 define("_MAXDISCOUNT100","Максимальна знижка 100%");//The maximum discount is 100%
 define("_REGISTRATIONUPDATE","Реєстрація/оновлення");//Registration/Update
 define("_ROWS","Рядки");//Rows
 define("_COMMANDFAILEDWITHOUTPUT","Помилка виконання команди з наступним виводом");//The command failed with the following output
 define("_PERHAPSDONTSUPPORTZIP","Можливо, ваша система не підтримує ZIP обробку?");//Perhaps your system does not support zip processing?
-define("_TOCREATECOURSEYOUMUSTFIRSTCREATECATEGORY","Перш ніж створити курс, ви повинні створити категорію");//In order to create a course, you must first create a category
+define("_TOCREATECOURSEYOUMUSTFIRSTCREATECATEGORY","Перш ніж створити предмет, ви повинні створити категорію");//In order to create a course, you must first create a category
 define("_LESSONBRANCHESSELECTION","Оберіть підрозділи заняття");//Select lesson branches
 define("_LESSONBRANCHES","Підрозділи заняття");//Lesson branches
-define("_COURSEBRANCHES","Підрозділи курсу");//Course branches
+define("_COURSEBRANCHES","Підрозділи предмету");//Course branches
 define("_ALLOWSTUDENTSTOSPECIFYTOTALQUESTIONS","Дозволити студентам визначити кількість запитань у кожному виконанні тесту");//Allow students to specify number of questions in each test execution
 define("_MAXIMUM","Максимум");//Maximum
 define("_MINIMUM","Мінімум");//Minimum
@@ -3499,12 +3499,12 @@ define("_KEYISNOTFORTHISEDITION","Ключ не підходить для цьо
 define("_ILLEGALMODE","Неправильний режим");//Illegal mode
 define("_MUSTSPECIFYQUESTIONNUMBER","Ви повинні вказати кількість запитань");//You must specify the number of questions
 define("_MUSTSPECIFYVALUEFROM","Ви повинні вказати значення від");//You must specify a value from
-define("_COURSEPROFESSORS","Викладачі курсу");//Course professors
-define("_PROFESSORSOFCOURSE","Викладачі курсу");//Professors of course
+define("_COURSEPROFESSORS","Викладачі предмету");//Course professors
+define("_PROFESSORSOFCOURSE","Викладачі предмету");//Professors of course
 define("_USERSUPERVISORS","Керівник користувачів");//User supervisors
 define("_USEROPTIONSFOR","Функції для користувачів");//Options for user
 define("_MYSTATUS","Мій статус навчання");//my Learning status
-define("_MYCOURSES","Мої курси");//my Courses
+define("_MYCOURSES","Мої предмети");//my Courses
 define("_CERTIFICATIONS","Сертифікати");//Certificates
 define("_MYCERTIFICATIONS","мої сертифікати");//my Certificates
 define("_NOCERTIFICATESHAVEBEENISSUEDYET","Сертифікати користувачу ще не видані");//No certificates have been issued to the user yet
@@ -3540,7 +3540,7 @@ define("_RESETSCORMDATA","Скидання даних користувача");/
 define("_TOGGLEADVENCEDPARAMETERS","Розширені налаштування");//Advanced settings
 define("_ADDINSTANCE","Додати примірник");//Add instance
 define("_INSTANCE","Примірник");//Instance
-define("_COURSECODE","Код курсу");//Course code
+define("_COURSECODE","Код предмету");//Course code
 define("_TRAININGHOURS","Навчальні години");//Training hours
 define("_COURSEINSTANCES","Course instances");//Course instances
 define("_CAPACITY","Обсяг");//Capacity
@@ -3553,26 +3553,26 @@ define("_EDITUSERSCOURSEINSTANCE","Instance users");//Instance users
 define("_SKILLSOFFEREDINSTANCE","Instance skills");//Instance skills
 define("_COURSEOPTIONSFORINSTANCE","Опції для примірника");//Options for instance
 define("_JUMPTO","Перейти до");//Jump to
-define("_PARENTCOURSE","Батьківський курс");//Parent Course
+define("_PARENTCOURSE","Батьківський предмет");//Parent Course
 define("_LOCATIONBRANCH","Розташування (підрозділ)");//Location (branch)
 define("_SELECTBRANCH","Обрати підрозділ");//Select branch
 define("_SHARED","Загальне");//Shared
 define("_UNIQUE","Унікальний");//Unique
 define("_MODE","Режим");//Mode
-define("_USEONLYCOURSESINCATALOG","Використовуйте тільки курси в каталозі");//Use only courses in catalog
+define("_USEONLYCOURSESINCATALOG","Використовуйте тільки предмети в каталозі");//Use only courses in catalog
 define("_ALLJOBS","Всі вакансії");//All jobs
 define("_SHOWMOTTOONHEADER","Показати назву і девіз на заголовку");//Show name and motto also on header
-define("_ASSIGNCOURSES","Призначити курси");//Assign courses
-define("_MASSCOURSESASSIGNMENTINFO","Вибір курсів для присвоєнням всім знайденим користувачам");//Select courses to assign to all the users found
+define("_ASSIGNCOURSES","Призначити предмети");//Assign courses
+define("_MASSCOURSESASSIGNMENTINFO","Вибір предметів для присвоєнням всім знайденим користувачам");//Select courses to assign to all the users found
 define("_NOUSERSHAVEBEENFOUND","Користувачі не знайдені");//No users have been found
 define("_ASSIGNMENT","Призначення");//Assignment
 define("_ANYLOWESTLEVELBRANCH","Будь-який на найнижчому рівні");//Any at the lowest level
 define("_ANYABOVETHELOWESTLEVELBRANCH","Будь-який трохи вище найнижчого рівня");//Any just above the lowest level
-define("_NOCOURSESHAVEBEENREGISTERED","Жодних курсів не зареєстровано");//No courses have been registered
+define("_NOCOURSESHAVEBEENREGISTERED","Жодних предметів не зареєстровано");//No courses have been registered
 define("_NOREQUIREDTRAININGSETYET","Обов&#39;язкове навчання ще не визначене");//No required training has been defined yet
 define("_REQUIREDTRAINING","Обов&#39;язкове навчання");//Required training
 define("_NEWREQUIREDTRAININGCOURSE","Нові умови навчання");//New training condition
-define("_REQUIREDTRAININGCOURSES","Обов&#39;язкові навчальні курси");//Required training courses
+define("_REQUIREDTRAININGCOURSES","Обов&#39;язкові навчальні предмети");//Required training courses
 define("_ADDALTERNATIVETRAINING","Додати альтернативне навчання");//Add alternative training
 define("_HASREQUIREDTRAINING","Потребує навчання");//Has required training
 define("_SEARCHRESULTSINGLOSSARY","Результати пошуку в глосарії");//Search results in glossary
@@ -3595,13 +3595,13 @@ define("_USERREDOWRONG","Переробити тільки неправильн�
 define("_DEFAULTTHEMECANNOTBEIMPORTED","Стандартна тема не може бути імпортована");//Default theme cannot be imported
 define("_ACCESSEXPIRED","Доступ минув");//Access expired
 define("_LESSONSCHEDULE","Розклад занять");//Lessons schedule
-define("_COURSESTARTSAT","Курс починається");//The course starts on
-define("_COURSEENDSAT","Курс закінчується");//The course ends on
+define("_COURSESTARTSAT","Предмет починається");//The course starts on
+define("_COURSEENDSAT","Предмет закінчується");//The course ends on
 define("_ENDDATE","Дата закінчення терміну");//End date
 define("_SELECTSKILLCATEGORY","Виберіть категорію навички");//Select skill category
 define("_NOHEADERROWISDEFINEDORHEADERROWNOTCOMPATIBLEWITHIMPORTTYPE","Рядок заголовку не визначений, або заголовок не сумісний з імпортованим типом");//No header row was defined or header not compatible with import type
 define("_IMPORTEDUSER","Імпортовані користувачі");//Imported user
-define("_USERSTOCOURSES","Користувачі до курсів");//Users to courses
+define("_USERSTOCOURSES","Користувачі до предметів");//Users to courses
 define("_USERSTOGROUPS","Користувачі до груп");//Users to groups
 define("_IMPORTANYTHING","Все, що визнається");//Anything recognized
 define("_DATATOIMPORT","Дані для імпорту");//Data to import
@@ -3610,7 +3610,7 @@ define("_FAILEDIMPORTS","не вдалося імпортувати");//failed i
 define("_REPLACEDUSER","Оновлений користувач");//Updated user
 define("_HEADERDOESNOTINCLUDEESSENTIALCOLUMN","Файл не містить необхідних стовпців");//The file does not contain the necessary columns
 define("_REPLACEDEXISTINGASSIGNMENT","Замінити існуючі призначення");//Replaced existing assignment
-define("_NEWCOURSEASSIGNMENT","Призначення нового курсу");//New course assignment
+define("_NEWCOURSEASSIGNMENT","Призначення нового предмету");//New course assignment
 define("_NEWGROUPASSIGNMENT","Призначення нової групи");//New group assignment
 define("_USERSTOJOBS","Користувачі - посади");//Users to jobs
 define("_USERSTOSKILLS","Користувачі - навички");//Users to skills
@@ -3662,7 +3662,7 @@ define("_ASSIGNCURRICULUMTOGROUPUSERS","Призначення навчальн�
 define("_ASSIGNCURRICULUMTOUSER","Призначення навчального плану для користувача");//Assign curriculum to user
 define("_ADDCURRICULUM","Додати навчальний план");//Add curriculum
 define("_EDITCURRICULUM","Редагувати навчальний план");//Edit curriculum
-define("_COULDNOTFINDCOURSE","Курс не знайдено");//Could not find course
+define("_COULDNOTFINDCOURSE","Предмет не знайдено");//Could not find course
 define("_IMPORTRESULTSFOR","Імпортувати результати для");//Import results for
 define("_COUPONUSAGE","Використання купону");//Coupon usage
 define("_NEWPAYPALPAYMENT","Новий платіж PayPal");//New paypal payment
@@ -3691,15 +3691,15 @@ define("_SUBMITANDEDITGROUP","Затвердити і редагувати гр�
 define("_SEARCHGROUPUSERS","Шукати користувачів для додавання в групу");//Search users to add to group
 define("_AFTER","Після");//After
 define("_BEFORE","До");//Before
-define("_PARTICIPATIONINTHECOURSESOFTHEGROUP","Участь всіх користувачів у курсах групи");//Participation of all users in the courses of the group
-define("_PARTICIPATIONOFGROUPUSERSINCOURSES","Участь всіх користувачів групи у курсах системи");//Participation of group users in the courses of the system
+define("_PARTICIPATIONINTHECOURSESOFTHEGROUP","Участь всіх користувачів у предметах групи");//Participation of all users in the courses of the group
+define("_PARTICIPATIONOFGROUPUSERSINCOURSES","Участь всіх користувачів групи у предметах системи");//Participation of group users in the courses of the system
 define("_PURGELOGS","Очистити журнали");//Purge logs
 define("_LOGSSIZE","Розмір журналів");//Logs size
 define("_OLDESTLOG","Найдавніший запис в журналі");//Oldest log entry
 define("_PURGELOGSOLDERTHAN","Очистити журнали старші за");//Purge logs older than
 define("_SUCCESSFULLYPURGEDLOGS","Успішно очищені журнали");//Successfully purged logs
 define("_ONLYXCANBEAPPLIEDATATIME","Тільки %х записів було оброблено, що є лімітом для даної операції");//Only %x entities where processed, which is the limit for this operation
-define("_YOUCANNOTASSIGNUSERSBECAUSECURRICULUMISEMPTY","Ви не можете призначити користувачів на навчальний план, тому що він не містить курсів");//You cannot assign users to this curriculum because it has no courses
+define("_YOUCANNOTASSIGNUSERSBECAUSECURRICULUMISEMPTY","Ви не можете призначити користувачів на навчальний план, тому що він не містить предметів");//You cannot assign users to this curriculum because it has no courses
 define("_CURRICULUMPROPERTIES","Властивості навчального плану");//Curriculum properties
 define("_ENTRIES","Записи");//Entries
 define("_ENTERPRISEOPTIONS","Enterprise options");//Enterprise options
@@ -3748,9 +3748,9 @@ define("_NOTIFICATIONSSIZE","Сповіщення розміром");//Notificat
 define("_OLDESTNOTIFICATION","Старі сповіщення");//Oldest notification
 define("_PURGENOTIFICATIONSOLDERTHAN","Очисщення сповіщень старіших");//Purge notifications older than
 define("_CURRENTUSERS","Поточні");//Current
-define("_SELECTEDCOURSES","Вибрані курси");//Selected courses
+define("_SELECTEDCOURSES","Вибрані предмети");//Selected courses
 define("_MODULEFILESPRESENTNOTINSTALLED","Файли модуля наявні, але він не встановлений");//Module files are present, but it is not installed
-define("_DISABLEPAYMENTSNOTICE","Ця дія встановить нульову ціну на всі курси та заняття");//This will set all lessons and courses price to 0
+define("_DISABLEPAYMENTSNOTICE","Ця дія встановить нульову ціну на всі предмети та заняття");//This will set all lessons and courses price to 0
 define("_SPECIFYIDFORSREENMATCHING","Вкажіть id об&#39;єкта для відповідностей розмірів екрану");//Specify object id for screen matching dimensions
 define("_COMMASEPARATEDLIST","Через кому");//Comma separated list
 define("_WEBSERVERAUTHENTICATION","Веб-сервер аутентифікації");//Web server authentication
@@ -3784,7 +3784,7 @@ define("_ACCESSESPERUSER","Звернень на одного користува
 define("_ACCESSESPERDAY","Звернень за добу");//Accesses per day
 define("_OCCURENCES","Випадки");//Occurences
 define("_SCORES","Результати");//Scores
-define("_PROPAGATECOURSE","Поширити курс");//Propagate course
+define("_PROPAGATECOURSE","Поширити предмет");//Propagate course
 define("_LESSONSTRUCTURE","Структура заняття");//Lesson structure
 define("_ADMINISTRATORCANNOTACCESSLESSONPAGE","Адміністратор не може одержати доступ до сторінок заняття");//An administrator cannot access lesson pages
 define("_FAILEDPERMISSIONSMESSAGE","%x катологів і %y файлів не доступні для запису веб-сервером. <br> Натисніть <a href = 'view_file.php?file=%z&action=download' target = '_NEW'>тут</a>, щоб завантажити повний звіт");//%x directories and %y files are not writable by the web server.<br> Click <a href = 'view_file.php?file=%z&action=download' target = '_NEW'>here</a> to download a complete report
@@ -3801,15 +3801,15 @@ define("_OPERATIONOUTCOME","Результат операції");//Operation ou
 define("_NOOPERATIONPERFORMEDYET","Операції ще не проводились");//No operation performed yet
 define("_SOMEFILESARENOTWRITABLEVISITMAINTENANCECLEANUPPERMISSIONS","Деякі файли та папки не дозволені до запису. Будь ласка, зайдіть в розділ \"права\" в обслуговування -&gt; очищення для перевірки й перегляду цих файлів");//Some files/folders are not writable. Please visit the 'permissions' section in maintenance -> cleanup to check permissions and review these files
 define("_OTHERWISEPLEASEREGISTER","В іншому випадку, Ви можете створити <button onclick = \"location='index.php?ctg=signup'\">новий аккаунт</button>");//Otherwise, you may create a <button onclick = \"location='index.php?ctg=signup'\">new account</button>
-define("_FREELESSONSANDCOURSESWHEREASSIGNEDPLEASEREVIEWNONFREE","Ви зараховані на безкоштовні заняття та курси. Будь ласка, ознайомтесь нижче з Вашим вибором платних занять та курсів.");//You were enrolled to free lessons and courses. Please review below your selection of non free lessons and courses
+define("_FREELESSONSANDCOURSESWHEREASSIGNEDPLEASEREVIEWNONFREE","Ви зараховані на безкоштовні заняття та предмети. Будь ласка, ознайомтесь нижче з Вашим вибором платних занять та предметів.");//You were enrolled to free lessons and courses. Please review below your selection of non free lessons and courses
 define("_SUPERVISORS","Керівники");//Supervisors
-define("_COURSEOPTIONS","Вибір курсів");//Course options
+define("_COURSEOPTIONS","Вибір предметів");//Course options
 define("_RESETEXECUTIONSFORALLUSERS","Скидання досягнень для всіх користувачів");//Reset executions for all users
 define("_ADVANCEDUSERREPORTS","Генератор звітів користувача");//User reports generator
 define("_ADDTOGROUP","Додати в групу");//Add to group
-define("_ASSIGNCOURSE","Призначити курс");//Assign course
+define("_ASSIGNCOURSE","Призначити предмет");//Assign course
 define("_ASSIGNLESSON","Призначити заняття");//Assign lesson
-define("_REMOVECOURSE","Видалити курс");//Remove course
+define("_REMOVECOURSE","Видалити предмет");//Remove course
 define("_REMOVELESSON","Видалити заняття");//Remove lesson
 define("_REMOVEFROMGROUP","Виключити з групи");//Remove from group
 define("_RESETLEARNINGPROGRESS","Скидання прогресу навчання");//Reset learning progress
@@ -3832,7 +3832,7 @@ define("_REPORTNAME","Назва звіту");//Report name
 define("_SELECTCONDITION","Оберіть умову");//Select condition
 define("_ISNOT","не є");//is not
 define("_HASCOMPLETEDALLASSIGNEDLESSONS","Завершив усі призначені заняття");//Has completed all assigned lessons
-define("_HASCOMPLETEDALLASSIGNEDCOURSES","Завершив усі призначені курси");//Has completed all assigned courses
+define("_HASCOMPLETEDALLASSIGNEDCOURSES","Завершив усі призначені предмети");//Has completed all assigned courses
 define("_HAS","");//Has
 define("_HASNOT","Не");//Has not
 define("_ENROLLEDTO","Записати в");//Enrolled to
@@ -3866,7 +3866,7 @@ define("_REMOVEFROM","Видалити з");//Remove from
 define("_GROUPOPERATIONS","Операції з групою");//Group operations
 define("_CERTIFICATEOPERATIONS","Операції із сертифікатом");//Certificate operations
 define("_LESSONOPERATIONS","Операції із заняттям");//Lesson operations
-define("_COURSEOPERATIONS","Операції з курсом");//Course operations
+define("_COURSEOPERATIONS","Операції з предметом");//Course operations
 define("_EXPORTTOCSV","Експорт в CSV");//Export to csv
 define("_NOEVENTCODEDEFINED","Не визначено код події");//No event code defined
 define("_FILESIMPORTEDSUCCESSFULLY","Файли успішно імпортовано");//Files imported successfully
@@ -3906,10 +3906,10 @@ define("_SORTBY","Сортувати за");//Sort by
 define("_TRAINING","Навчання");//Training
 define("_COMPLETEDLESSONS","Завершено уроки");//Completed lessons
 define("_INCOMPLETELESSONS","Неповна уроки");//Incomplete lessons
-define("_COMPLETEDCOURSES","Закінчив курси");//Completed courses
-define("_INCOMPLETECOURSES","Неповна курси");//Incomplete courses
+define("_COMPLETEDCOURSES","Закінчив предмети");//Completed courses
+define("_INCOMPLETECOURSES","Неповна предмети");//Incomplete courses
 define("_EDITCOLUMN","Змінити стовпець");//Edit column
-define("_LESSONSFORCOURSE","Уроки для курсу");//Lessons for course
+define("_LESSONSFORCOURSE","Уроки для предмету");//Lessons for course
 define("_TESTSFORLESSON","Тести на урок");//Tests for lesson
 define("_SETALLUSERSSTATUSCOMPLETED","Повне для всіх користувачів");//Complete for all users
 define("_LESSONTIMES","Урок раз");//Lesson times
@@ -3926,20 +3926,20 @@ define("_WASDEACTIVATEDFROMTHESYSTEM","було відключено від си
 define("_SUPERVISORAPPROVAL","Керівник затвердження");//Supervisor approval
 define("_APPROVE","Затвердити");//Approve
 define("_GROUPKEYEXISTS","Унікальний ключ вже існує");//Unique key already exists
-define("_PARTOFCOURSES","Частина курсів");//Part of courses
-define("_THISLESSONISPARTOFCOURSESANDCANNOTCHANGEMODE","Цей урок є частиною одного або кількох курсів, тому він не може змінити режим");//This lesson is part of one or more courses, so it cannot change mode
+define("_PARTOFCOURSES","Частина предметів");//Part of courses
+define("_THISLESSONISPARTOFCOURSESANDCANNOTCHANGEMODE","Цей урок є частиною одного або кількох предметів, тому він не може змінити режим");//This lesson is part of one or more courses, so it cannot change mode
 define("_THISLESSONHASUSERSENROLLEDPLEASEREMOVEBEFORESWITCHINGMODE","Є користувачам реєструватися для цього уроку. Будь ласка, скасування призначення їх перед перемиканням режимів");//There are users enrolled to this lesson. Please unassign them before switching modes
-define("_COURSESINCOMPLETETOTAL","Курси (неповне / всего)");//Courses (incomplete/total)
+define("_COURSESINCOMPLETETOTAL","Предмети (неповне / всего)");//Courses (incomplete/total)
 define("_EXPORTFILES","Експорт файлів");//Export files
-define("_PROGRAMMEDCOURSEEXPIRY","Курс запланованого терміну");//Course scheduled expiration
-define("_PROGRAMMEDCOURSESTART","Курс запланованого початку");//Course scheduled beginning
-define("_SCHEDULEDSTARTOFCOURSE","Заплановані початку курсу");//Scheduled start of course
-define("_SCHEDULEDEXPIRYOFCOURSE","Заплановані закінчення курсу");//Scheduled expiration of course
+define("_PROGRAMMEDCOURSEEXPIRY","Предмет запланованого терміну");//Course scheduled expiration
+define("_PROGRAMMEDCOURSESTART","Предмет запланованого початку");//Course scheduled beginning
+define("_SCHEDULEDSTARTOFCOURSE","Заплановані початку предмету");//Scheduled start of course
+define("_SCHEDULEDEXPIRYOFCOURSE","Заплановані закінчення предмету");//Scheduled expiration of course
 define("_ALLCOURSEUSERS","Всі звичайно користувачів");//All course users
 define("_MOVEBLOCK","Перемістити блок");//Move block
 define("_EXPANDCOLLAPSEBLOCK","Розгорнути / Згорнути блок");//Expand/collapse block
 define("_DEFAULTLEARNERTYPE","За замовчуванням учень типу");//Default learner type
-define("_DEFAULTLEARNERTYPEINFO","Якщо у вас є набір груп для цієї групи, то користувачі, які використовують ключ буде зарахований на уроки / курси з цього типу. Якщо у вас є набір в цю групу, щоб бути за замовчуванням, то нових користувачів буде призначений уроки групи з цим типом");//If you have set a group key for this group, then users that use the key will be enrolled to lessons/courses having this type. If you have set this group to be default, then new users will be assigned to the group's lessons with this type
+define("_DEFAULTLEARNERTYPEINFO","Якщо у вас є набір груп для цієї групи, то користувачі, які використовують ключ буде зарахований на уроки / предмети з цього типу. Якщо у вас є набір в цю групу, щоб бути за замовчуванням, то нових користувачів буде призначений уроки групи з цим типом");//If you have set a group key for this group, then users that use the key will be enrolled to lessons/courses having this type. If you have set this group to be default, then new users will be assigned to the group's lessons with this type
 define("_DONTUSEDEFAULTGROUP","Не використовувати за замовчуванням тип");//Don't use default type
 define("_YOUHAVEBEENSUCCESSFULLYADDEDTOTHEGROUP","Ви успішно доданий до групи");//You have been successfully added to the group
 define("_THISGROUPISINACTIVE","Ця група є неактивним");//This group is inactive
@@ -3955,7 +3955,7 @@ define("_RESULTSFOR","Результати для");//Results for
 define("_THANKYOUFORCOMPLETING","Дякуємо вам за заповнення");//Thank you for completing
 define("_NOREPORTSFOUNDINTHESYSTEM","Жодних повідомлень, виявлених у системі");//No reports found in the system
 define("_YOUMAYCREATEONE","Ви можете створити один");//You may create one
-define("_YOUCANNOTCHANGEMODECOURSENOTEMPTY","Ви не можете змінити урок режимі, оскільки Є користувачі, вступив на курс");//You cannot change lesson mode because there are users enrolled to the course
+define("_YOUCANNOTCHANGEMODECOURSENOTEMPTY","Ви не можете змінити урок режимі, оскільки Є користувачі, вступив на предмет");//You cannot change lesson mode because there are users enrolled to the course
 define("_YOUCANNOTREMOVETHELASTELEMENT","");//You cannot remove the last element
 define("_CONTAINS","");//Contains
 define("_NOTCONTAINS","");//Does not contain
@@ -3966,7 +3966,7 @@ define("_AUTOCORRECTOPTIONS","");//Auto-correct options
 define("_QUESTIONCORRECTION","");//Question correction
 define("_SEPARATEWORDSWITHPIPE","");//Separate words with pipe |
 define("_POINTS","");//Points
-define("_THEUSERDOESNOTHAVETHISCOURSE","Користувач не залишив цей курс");//The user does not have this course
+define("_THEUSERDOESNOTHAVETHISCOURSE","Користувач не залишив цей предмет");//The user does not have this course
 define("_THEUSERDOESNOTHAVETHISLESSON","Користувач не залишив цей урок");//The user does not have this lesson
 define("_USERACCESSGRANTED","Доступ користувачів надаються");//User access granted
 define("_FORCECHANGEPASSWORD","");//Force password change upon initial login
@@ -4029,10 +4029,10 @@ define("_RETAINBESTEXECUTION","Зберегти кращий результат"
 define("_AVERAGETESTSCOREOFACTIVEEXECUTIONS","Середня оцінка випробувань (з урахуванням активного виконання кожного тесту)");//Average test score (counting each test's active execution)
 define("_SCOREONACTIVEEXECUTION","Оцінка на активне виконання");//score on active execution
 define("_YOUCANUSEASTERISK","Якщо вказати слово, яке закінчується зірочкою (*), тільки її першій частині будуть розглянуті. Наприклад, якщо вказати 'вчитися *', то як 'навчанняv' і 'вчитися' буде вважатися правильним.");//If you specify a word that ends with an asterisk (*), only its first part will be considered. For example, if you specify 'learn*', then both 'learning' and 'learn' will be considered correct.
-define("_COURSELESSONSRULES","правила курс Урок");//Course lesson rules
-define("_RULESBETWEENCOURSES","Правила між курсами");//Rules between courses
+define("_COURSELESSONSRULES","правила предмет Урок");//Course lesson rules
+define("_RULESBETWEENCOURSES","Правила між предметами");//Rules between courses
 define("_COURSEDEPENDSON","Звичайно, залежить від");//Course depends on
-define("_YOUCANNOTSETSAMECOURSEASRULE","Ви не можете встановити курс в якості попередньої умови про себе");//You cannot set the course as a prerequisite of itself
+define("_YOUCANNOTSETSAMECOURSEASRULE","Ви не можете встановити предмет в якості попередньої умови про себе");//You cannot set the course as a prerequisite of itself
 define("_DISPLAYALTERNATIVESINSELECTBOX","Показати альтернатив у вікні вибору");//Display alternatives in select box
 define("_CHECKINGTHISWILLDISPLAYLISTBOXFIRSTISCORRECT","Перевірка цього з&#39;явиться список всіх альтернатив, а не в текстовому полі. У цьому випадку, тільки перший варіант вважається правильним");//Checking this will display a list box with all the alternatives, instead of a text box. In this case, only the first option is considered correct
 define("_SHOWANSWERSIFSTUDENTPASSED","Показати правильні відповіді, тільки якщо студент пройшов випробування");//Show correct answers only if student passed the test
@@ -4126,7 +4126,7 @@ define("_PLEASENOTEFILESARESHAREDWITHSUPERVISOR","Будь ласка, звер�
 define("_REPLACEASSIGNMENTS","Замініть завдань");//Replace assignments (New)
 define("_REPLACEASSIGNMENTSEXPLANATION","Відмітка цього замінить поточні призначення всіх користувачів зі значенням з файлу CSV");//Checking this will replace all users' current assignments with those from the csv file (New)
 define("_LESS","менше");//less (New)
-define("_COURSESREGISTRATIONS","Курс реєстрації");//Course registrations (New)
+define("_COURSESREGISTRATIONS","предмет реєстрації");//Course registrations (New)
 define("_INACTIVEREGISTRATIONS","Неактивні реєстрації");//Inactive registrations (New)
 define("_BUYBALANCE","Купити баланс");//Buy balance (New)
 define("_COMPLETEUNITOPTIONS","Група варіантів завершення");//Unit completion options (New)
@@ -4163,7 +4163,7 @@ define("_ADDFEEDBACSFEEDBACK","Додати відгук");
 define("_SHOWQUESTIONSPOOL"," Показати загальний пул питань"); 
 define("_SHOWLESSONQUESTIONS","Показати урок питання"); 
 define("_OLDPASSWORDWRONG","Старий пароль невірний"); 
-define("_COURSETOPICS","Теми курсу"); 
+define("_COURSETOPICS","Теми предмету"); 
 define("_FORCEDOWNLOADFILE","Силове завантаження файл автоматично"); 
 define("_FORCEDOWNLOADFILEINFO","Встановивши цей тільки вікно для завантаження файлу буде відображатися файли не можуть бути впроваджені Otherwrise посилання на файл вставляється");
 define("_SPAMDETECTION","На жаль, ви не можете отримати доступ до цієї сторінки, щоб незабаром Повторіть спробу через деякий час."); 
@@ -4175,9 +4175,9 @@ define("_ALLSUPERVISORS","Всі керівники");
 define("_REVOKECERTIFICATEFOREXPIRED","Відкликати прострочені сертифікати"); 
 define("_MODULEITSELF","модулі (окремі)"); 
 define("_MODULESPANEL","модулі (додати / видалити)"); 
-define("_PROFESSORSCANCREATECOURSES","Професори можуть створювати курси"); 
+define("_PROFESSORSCANCREATECOURSES","Професори можуть створювати предмети"); 
 define("_YOURSESSIONHASEXPIREDPLEASELOGINAGAIN","Час сеансу минув, будь ласка, увійдіть до системи знову"); 
-define("_AUTOMATICALLYPROPAGATEBRANCHCOURSESTOUSERS","Поширити філія курсів філії користувачів");
+define("_AUTOMATICALLYPROPAGATEBRANCHCOURSESTOUSERS","Поширити філія предметів філії користувачів");
 define("_APPLYTOUSERALLREADYTOBRANCH","поширюється на користувачів з цією галуззю"); 
 define("_THEME","Тема"); 
 define("_SELECTBRANCHTHEME","Виберіть філія теми"); 
@@ -4186,7 +4186,7 @@ define("_ACCESSURL","URL-адресу відділення доступу");
 define("_AUTOFILL","Автозаповнення"); 
 define("_THEBRANCHWILLBEACCESSIBLEWITHURL","галузь будуть доступні прямо з URL"); 
 define("_ORRESETCOURSEBEFOREEXPIRE","Або скинути хід до закінчення"); 
-define("_PROGRESSRESETSUCCESSFULLY","Курс прогрес був успішно скинути"); 
+define("_PROGRESSRESETSUCCESSFULLY","Предмет прогрес був успішно скинути"); 
 define("_RESETPROGRESSDATAKEEPCERTIFICATE","Reset прогрес зберігання сертифікатів"); 
 define("_YOUARENOTAMEMBEROFTHISBRANCH","Вам ​​не дозволено увійти, тому що ви не є членом цієї галузі"); 
 define("_MAXONLINEUSERS","Найбільше відвідувачів"); 
@@ -4208,14 +4208,14 @@ define("_HASFAILEDATEST","Тест не пройдений");
 define("_MAXIMUMUSERSLIMITREACHEDCONTACTUS", "Досягнуто граничну кількість користувачів. Зв&#39;яжіться з нами, якщо вам необхідний доступ.");
 define("_IWANTTOSIGNUPBUTMAXIMUMUSERSLIMITREACHED", "Я хочу зареєструватися, але отримую повідомлення про те, що досягнута межа реєстрацій.");
 define("_IWANTTOSIGNUPBUTMAXIMUMUSERSLIMITREACHEDBODY", "Я намагаюся зареєструватися, але отримую повідомлення про те, що досягнуто максимальну кількість користувачів.");
-define("_PROFESSORCREATECOURSES", "Створити курси/заняття");
+define("_PROFESSORCREATECOURSES", "Створити предмети/заняття");
 define("_RESETALLUSERS", "Обнулити прогрес всіх користувачів");
 define("_MYROLE", "Роль");
 define("_MAXSEATSDEPLEATED", "Доступно місць %y, зайнято %x. Зв&#39;яжіться з %z для подробиць.");
 define("_IFRAMEPARAMETERS", "Параметри IFRAME");
 define("_HEIGHTREFERSTOINITIALHEIGHT", "Розміри можуть бути динамічно змінені після завантаження матеріалу. Ви можете вказати конкретний розмір в параметрах вікна SCORM-розділу");
-define("_COURSESTARTDATE", "Початок курсу");
-define("_COURSEENDDATE", "Закінчення курсу");
+define("_COURSESTARTDATE", "Початок предмету");
+define("_COURSEENDDATE", "Закінчення предмету");
 define("_SEARCHRESULTSINFILESYSTEM", "Результати пошуку у файлах");
 define("_FILESYSTEM", "Файлова система");
 define("_PATH", "Шлях");
@@ -4231,7 +4231,7 @@ define("_PROJECTASSIGNMENT", "Призначення проекту");
 define("_PROJECTID", "Идентифікатор проекту");
 define("_DEAR", "Шановний");
 define("_SETCERTIFICATEDATEFORCOMPLTETED","Встановити дату сертифікатів рівній даті завершення");
-define("_VIEWCOURSECERTIFICATE","Сертифікат курсу");
+define("_VIEWCOURSECERTIFICATE","Сертифікат предмету");
 define("_SETSHOWNUSERSSTATUSCOMPLETED", "Встановити для всіх перелічених користувачів як виконаний");
 define("_FREETEXTFILEUPLOAD", "Завантаження файлу / Довільного тексту");
 define("_FREETEXTINPUTTYPE", "Тип довільного тексту");
@@ -4259,7 +4259,7 @@ define("_FIELDRULE", "Правило поля");
 define("_FIELDRULEEXPLANATION", "Регулярний вираз для перевірки вводу користувача. Наприклад, якщо потрібні тільки цифри, вкажіть: /^\d+$/");//A regular expression to check the user input. For example, in order to enforce only digits, you would use: /^\d+$/ ##
 define("_TRANSACTIONID", "ID транзакції");
 define("_USERPROJECTSCOMPRESSED", "Завантажити файл проекту користувача");
-define("_DAYSAFTERCOURSEENROLLMENT","дня/днів після зарахування на курс");
+define("_DAYSAFTERCOURSEENROLLMENT","дня/днів після зарахування на предмет");
 define("_DAYSAFTERLESSONENROLLMENT","дня/днів після зарахування на заняття");
 define("_DISABLED", "Вимкнено");
 define("_ALWAYSVISIBLE", "Завжди видно");
@@ -4272,13 +4272,13 @@ define("_SWITCHPERIODMODE", "Переключити в режим періоду
 define("_MODREWRITENOTENABLED", "mod_rewrite схоже, не увімкнений. Якщо його увімкнено, встановіть параметр mod_rewrite_bypass в таблиці конфігурації бази даних в значення 1");
 define("_WANTCERTIFICATESALREADYEXPIRED", "Сертифікати вже не дійсні");
 define("_NOW", "зараз");
-define("_WANTUSERSNOTCERTIFICATEDCOURSE","Користувачі, зараховані, але не мають сертифікатів цього курсу");
-define("_WANTUSERSNOTCERTIFICATEDALLCOURSES", "Користувачі, зараховані, але не мають сертифікатів будь-якого курсу");
+define("_WANTUSERSNOTCERTIFICATEDCOURSE","Користувачі, зараховані, але не мають сертифікатів цього предмету");
+define("_WANTUSERSNOTCERTIFICATEDALLCOURSES", "Користувачі, зараховані, але не мають сертифікатів будь-якого предмету");
 define("_TINCANIMPORT", "Імпорт матеріалу для консервування");
 define("_USERIMMEDIATESUPERVISORS", "Безпосередній керівник");
 define("_STATEMENT", "Заява");
-define("_WANTCERTIFICATESALREADYEXPIREDFOR","Прострочені сертифікати курсу");
-define("_WANTCERTIFICATESEXPIREDFOR","Сертифікати курсу, що закінчаться");
+define("_WANTCERTIFICATESALREADYEXPIREDFOR","Прострочені сертифікати предмету");
+define("_WANTCERTIFICATESEXPIREDFOR","Сертифікати предмету, що закінчаться");
 define("_PEOPLECONNECTIONS", "Зв&#39;язки людей");
 define("_SHOWONLINEUSERS", "Показати пов&#39;язаних користувачів");
 define("_SHOWTOOLTIPS","Показувати підказки");
@@ -4395,4 +4395,43 @@ define("_CODEFAC","Скорочена назва факультету");
 define("_NAMEFAC","Назва факультету");
 define("_UPDATEFAC","Оновити факультети");
 define("_NEWFACULTIES","Новий факультет");
+define("_AREYOUSUREYOUWANTTODELETEFACULTIES","Ви дійсно хочете видалити факультет?");
+define("_FACOPTIONS","Оновити факультет");
+define("_EDITFACULTIES","Редагування факультету");
+define("_OPTIONSFORFAC","Параметри факультету");
+define("_CODEDEP","Скорочена назва кафедри");
+define("_NAMEDEP","Назва кафедри");
+define("_DEPOPTIONS","Оновити кафедру");
+define("_NEWDEPARTMENTS","Нова кафедра");
+define("_OPTIONSFORDEP","Параметри кафедри");
+define("_EDITDEPARTMENTS","Редагування кафедри");
+define("_AREYOUSUREYOUWANTTODELETEDEPARTMENTS","Ви дійсно хочете видалити кафедру?");
+define("_DEPARTMENTSUSER","Кафедра");
+define("_FACULTIESUSER","Факультет");
+define("_LISTITEMS","Перелік предметів");
+define("_EDITLISTITEMS","Редагувати предмет");
+define("_NEWFLISTITEMS","Новий предмет");
+define("_NAMELIST","Назва предмета");
+define("_CODELIST","Код предмета");
+define("_PZLIST","Пз");
+define("_LKLIST","Лк");
+define("_TYPELIST","Тип");
+define("_NUMBERCOURSELIST","Курс");
+define("_DEPLIST","Кафедра");
+define("_PREPOD","Викладач");
+define("_NUMBERCOURSESTATISTICS","Звіти по курсу");
+define("_STPR","Предмет/Студент");
+define("_FINALGRADE","Підсумкова оцінка");
+define("_FINALGRADEFOR","Підсумкова оцінка для студента");
+define("_FINALGRADEFORPR","По предмету");
+define("_FINALGRADEINFO","Підсумкова оцінка може бути від 0 до 100 баллів. Від 0 до 60 - 2б. - не задовільно; від 60 до 75 - 3б. - задовільно; від 76 до 89 - 4б. - добре; від 90 до 100 - 5б. - відмінно.");
+define("_NOUD","Не задовільно");
+define("_UD","Задовільно");
+define("_GOOD","Добре");
+define("_VERYGOOD","Відмінно");
+define("_SEMESTR", "Семестр");
+define("_FORMA", "Форма(Державна, Контракт)");
+define("_DERSH", "Державна");
+define("_KONTRAKT", "Контракт");
+define("_GRADEBOOK", "Номер залікової книжки");
 ?>

@@ -1130,9 +1130,7 @@ class module_administrator_tools extends EfrontModule {
 		if (EfrontUser::isOptionVisible('forum')) {
 			$lessonSettings['forum']           = array('text' => _FORUM,             	'image' => "32x32/forum.png",      'onClick' => 'activate(this, \'forum\')',           'title' => _CLICKTOTOGGLE, 'group' => 2, 'class' =>  'inactiveImage');
 		}
-		if (EfrontUser::isOptionVisible('faculties')) {
-			$lessonSettings['forum']           = array('text' => _FACULTIES,             	'image' => "32x32/faculties.png",      'onClick' => 'activate(this, \'faculties\')',           'title' => _CLICKTOTOGGLE, 'group' => 2, 'class' =>  'inactiveImage');
-		}
+		
 		if (EfrontUser::isOptionVisible('comments')) {
 			$lessonSettings['comments']        = array('text' => _COMMENTS,          	'image' => "32x32/note.png",          'onClick' => 'activate(this, \'comments\')',        'title' => _CLICKTOTOGGLE, 'group' => 2, 'class' =>  'inactiveImage');
 		}

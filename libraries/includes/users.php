@@ -87,6 +87,7 @@ if (isset($_GET['delete_user']) && eF_checkParameter($_GET['delete_user'], 'logi
             $smarty -> assign("T_LANGUAGES", EfrontSystem :: getLanguages(true));
             $smarty -> assign("T_ROLES", EfrontUser :: getRoles(true));
             
+            
 /*            
             $users        = eF_getTableData("users", "*", "archive = 0");
             //$user_lessons = eF_getTableDataFlat("users_to_lessons as ul, lessons as l", "ul.users_LOGIN, count(ul.lessons_ID) as lessons_num", "ul.lessons_ID=l.id AND l.archive=0 AND ul.archive=0", "", "ul.users_LOGIN");

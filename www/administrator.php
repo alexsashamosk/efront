@@ -328,6 +328,10 @@ try {
 	    /***/
 	    require_once "departments.php";
 	}
+	elseif ($ctg == 'listitems') {
+	    /***/
+	    require_once "listitems.php";
+	}
 
 /*
     $fields_log = array ('users_LOGIN' => $_SESSION['s_login'],                                 //This is the log entry array

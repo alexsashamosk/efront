@@ -140,7 +140,8 @@
 						{$T_ROLES[$user.role]}
 				{/if}
 					</td>
-					<td class = "centerAlign">{if $user.has_lesson}{if $user.completed}<img src = "images/16x16/success.png" alt = "{$smarty.const._COMPLETEDON} #filter:timestamp-{$user.timestamp_completed}#" title = "{$smarty.const._COMPLETEDON} #filter:timestamp-{$user.timestamp_completed}#"/>{else}<img src = "images/16x16/forbidden.png" alt = "{$smarty.const._NOTCOMPLETED}" title = "{$smarty.const._NOTCOMPLETED}"/>{/if}{/if}</td>
+					<td class = "centerAlign">{if $user.has_lesson}{if $user.completed}  <img src = "images/16x16/success.png" alt = "{$smarty.const._COMPLETEDON} #filter:timestamp-{$user.timestamp_completed}#" title = "{$smarty.const._COMPLETEDON} #filter:timestamp-{$user.timestamp_completed}#"/>  
+					{else}<img src = "images/16x16/forbidden.png" alt = "{$smarty.const._NOTCOMPLETED}" title = "{$smarty.const._NOTCOMPLETED}"/>{/if}{/if}</td>
 					<td class = "centerAlign">
 				{if $smarty.const.G_VERSIONTYPE == 'enterprise'} {* #cpp#ifdef ENTERPRISE *}
 						  <a href = "{$smarty.server.PHP_SELF}?ctg=personal&user={$user.login}&op=evaluations&add_evaluation=1&popup=1" target = "POPUP_FRAME" onclick = "eF_js_showDivPopup(event, '{$smarty.const._NEWEVALUATION}', 1)">

@@ -3,7 +3,8 @@
 if (str_replace(DIRECTORY_SEPARATOR, "/", __FILE__) == $_SERVER['SCRIPT_FILENAME']) {
     exit;
 }
-
+$number_course = array(1 => "I", 2=> "II",3 => "III", 4 => "IV", 5 => "V м", 6 => "V sp", 7 => "VIм");
+            $smarty -> assign("T_NC_PATHS", $number_course);
 $loadScripts[] = 'includes/groups';
  	if (!EfrontUser::isOptionVisible('groups')) {
         eF_redirect("".basename($_SERVER['PHP_SELF'])."?ctg=control_panel&message=".urlencode(_UNAUTHORIZEDACCESS)."&message_type=failure");
@@ -67,7 +68,7 @@ $loadScripts[] = 'includes/groups';
         $roles = EfrontLessonUser :: getStudentRoles(true);
 		//array_unshift($roles, _DONTUSEDEFAULTGROUP);
         $roles = array(0 => _DONTUSEDEFAULTGROUP) + $roles;
-        $number_course = array(1 => "I", 2=> "II",3 => "III", 4 => "IV", 5 => "V");
+        $number_course = array(1 => "I", 2=> "II",3 => "III", 4 => "IV", 5 => "V м", 6 => "V sp", 7 => "VI");
         
         $form -> addElement('text', 'name', _GROUPNAME, 'class = "inputText"');
         $form -> addElement('text', 'description', _DESCRIPTION, 'class = "inputText"');
@@ -367,7 +368,9 @@ $loadScripts[] = 'includes/groups';
         	$dataSource = eF_getTableData("groups g LEFT OUTER JOIN (select ug.groups_ID from users_to_groups ug, users u where u.login=ug.users_LOGIN and u.archive=0) c ON g.id=c.groups_ID", "g.*, count(c.groups_ID) as num_users", "g.dynamic=0", "g.name", "g.id");
         	$tableName  = $_GET['ajax'];
 	        include("sorted_table.php");
+            
         }
+
         //$smarty -> assign("T_USERGROUPS", $result);
     }
 
