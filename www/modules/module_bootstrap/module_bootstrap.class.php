@@ -37,7 +37,7 @@ class module_bootstrap extends EfrontModule {
      */
     public function getCenterLinkInfo() {
     	return array('title' => $this -> getName(),
-                     'image' => $this -> moduleBaseLink . 'img/logo.png',
+                     'image' => $this -> moduleBaseLink . 'img/КрНУ.png',
                      'link'  => $this -> moduleBaseUrl);
     }
     

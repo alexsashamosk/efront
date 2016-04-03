@@ -4144,3 +4144,49 @@ position:relative;
 position:relative;
 float:left;
 }
+
+
+.notess
+{
+    text-align: center;
+}
+
+
+.notessclassic{
+	width: 80%;
+	margin-top:2em;
+	margin-left: auto;
+	margin-right: auto;
+    border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    padding: 15px 20px 15px 80px;
+	margin: 0px 0px 0px 0px;
+	-webkit-box-shadow: 2px 2px 3px #999;
+	-moz-box-shadow: 2px 2px 3px #999;
+    /*IE min-height hack*/
+    min-height:40px;
+    height:auto !important;
+    height:40px;
+    overflow:visible;
+    
+	position:relative;
+	bottom:6px;
+	right: 6px;
+	border: 1px solid #999999;
+    /*Set the position of the background image*/
+    background-position: 20px 50%;
+    background-repeat: no-repeat;
+    text-align: justify;
+}
+.notessclassic{
+	/* IE5 hack */
+	\margin: 0px 0px -3px 0px;
+	ma\rgin:  0px 0px 0px 0px;
+}
+
+.notessclassic {
+  background-color: #EEF;
+
+
+}

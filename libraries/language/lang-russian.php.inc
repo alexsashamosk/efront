@@ -4420,7 +4420,7 @@ define("_NUMBERCOURSELIST","Курс");
 define("_DEPLIST","Кафедра");
 define("_PREPOD","Преподаватель");
 define("_NUMBERCOURSESTATISTICS","Отчёты по курсу");
-define("_STPR","Предмет/Студент");
+define("_STPR","Студент/Предмет");
 define("_FINALGRADE","Итоговая оценка");
 define("_FINALGRADEFOR","Итоговая оценка для студента");
 define("_FINALGRADEFORPR","По предмету");
@@ -4434,4 +4434,6 @@ define("_FORMA", "Форма(Государственная, Контракт)")
 define("_DERSH", "Государственная");
 define("_KONTRAKT", "Контракт");
 define("_GRADEBOOK", "Номер зачётной книжки");
+define("_ST", "Показать студентов");
+define("_FINALGRADES","Итоговые оценки");
 ?>

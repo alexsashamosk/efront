@@ -19,6 +19,9 @@ if (isset($currentUser -> coreAccess['users']) && $currentUser -> coreAccess['us
 }
 
 $loadScripts[] = 'includes/users';
+
+
+
 if (isset($_GET['delete_user']) && eF_checkParameter($_GET['delete_user'], 'login')) {    //The administrator asked to delete a user
     try {
 	    if (isset($currentUser -> coreAccess['users']) && $currentUser -> coreAccess['users'] != 'change') {
@@ -124,7 +127,10 @@ if (isset($_GET['delete_user']) && eF_checkParameter($_GET['delete_user'], 'logi
             $smarty -> display('administrator.tpl');
             exit;
 */
+            
+
             $constraints  = array('archive' => false) + createConstraintsFromSortedTable();
+
             $dataSource = EfrontUser::getUsers($constraints);
             $totalEntries = EfrontUser::countUsers($constraints);
             
@@ -133,6 +139,7 @@ if (isset($_GET['delete_user']) && eF_checkParameter($_GET['delete_user'], 'logi
             $smarty -> assign("T_TABLE_SIZE", $totalEntries);
             
             include ("sorted_table.php");
+            
             
         }
     } else {    #cpp#else

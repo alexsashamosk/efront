@@ -7,13 +7,13 @@ if (str_replace(DIRECTORY_SEPARATOR, "/", __FILE__) == $_SERVER['SCRIPT_FILENAME
 /** The database Host */
 define('G_DBTYPE', 'mysql');
 /** The database Host */
-define('G_DBHOST', 'localhost');
+define('G_DBHOST', 'sdnknu.mysql.ukraine.com.ua');
 /** The database user*/
-define('G_DBUSER', 'efront');
+define('G_DBUSER', 'sdnknu_efront');
 /** The database user password*/
-define('G_DBPASSWD', 'efront');
+define('G_DBPASSWD', 'pxyt5t4h');
 /** The database name*/
-define('G_DBNAME', 'efront');
+define('G_DBNAME', 'sdnknu_efront');
 /** The database tables prefix*/
 define('G_DBPREFIX', '');
 

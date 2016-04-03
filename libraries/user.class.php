@@ -597,7 +597,7 @@ abstract class EfrontUser
 		!empty($constraints) OR $constraints = array('archive' => false, 'active' => true);
 	
 		list($where, $limit, $orderby) = EfrontUser :: convertUserConstraintsToSqlParameters($constraints);
-		$select  = "u.login,u.user_type,u.user_types_ID,u.active,u.timestamp,u.archive, u.last_login,u.balance";
+		$select  = "u.login,u.user_type,u.user_types_ID,u.active,u.timestamp,u.archive, u.last_login,u.balance, u.id_departments";
 		$from    = "users u";
 	
 		$result  = eF_getTableData($from, $select, implode(" and ", $where), $orderby, $groupby, $limit);
@@ -606,7 +606,19 @@ abstract class EfrontUser
 	
 	}	
 
-
+public function getUsersDep($constraints = array()) {
+	
+		!empty($constraints) OR $constraints = array('archive' => false, 'active' => true);
+	
+		list($where, $limit, $orderby) = EfrontUser :: convertUserConstraintsToSqlParameters($constraints);
+		$select  = "u.login,u.user_type,u.user_types_ID,u.active,u.timestamp,u.archive, u.last_login,u.balance";
+		$from    = "users u";
+	
+		$result  = eF_getTableData($from, $select, implode(" and ", $where), $orderby, $groupby, $limit);
+	
+		return EfrontUser :: convertDatabaseResultToUserArray($result);
+	
+	}	
 
 	/**
 	 * Add user profile field
@@ -1804,6 +1816,28 @@ public  function getDepartmentsRoles($getNames = false) {
         return $deps;
     }
 
+        public static function getFac($returnObjects = false, $returnDisabled = false){
+        $deps = array();
+        if ($returnDisabled){
+            $data = eF_getTableData("faculties", "*", "active=1");
+        }
+        else{
+            $data = eF_getTableData("faculties", "*", "");
+        }
+        if ($returnObjects){
+            foreach ($data as $group_info){
+                $dep = new EfrontFaculties($group_info['id']);
+                $deps[$group_info['id']] = $dep;
+            }
+        }
+        else{
+            foreach ($data as $group_info){
+                $deps[$group_info['id']] = $group_info;
+            }
+        }
+        return $deps;
+    }
+
     public static function getPr($returnObjects = false, $returnDisabled = false){
         $deps = array();
         if ($returnDisabled){
@@ -1960,8 +1994,11 @@ public  function getProfRoles($getNames = false) {
 		if (isset($constraints['archive'])) {
 			$constraints['archive'] ? $where[] = 'u.archive!=0' : $where[] = 'u.archive=0';
 		}
-		if (isset($constraints['active'])) {
-			$constraints['active'] ? $where[] = 'u.active=1' : $where[] = 'u.active=0';
+		if (isset($constraints['archive'])) {
+			$constraints['archive'] ? $where[] = 'u.archive!=0' : $where[] = 'u.archive=0';
+		}
+		if (isset($constraints['user_type'])) {
+			$constraints['user_type'] ? $where[] = 'u.user_type' : $where[] = "u.user_type='student'";
 		}
 		if (isset($constraints['filter']) && $constraints['filter']) {
 			$result 	 = eF_describeTable("users");

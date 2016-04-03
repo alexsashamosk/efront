@@ -153,7 +153,7 @@ try {
 
 
         //These are the entities that will be automatically replaced in custom header/footer
-        $systemEntities = array('logo.png',
+        $systemEntities = array('КрНУ.png',
 						 	    '#siteName',
 							    '#siteMoto',
 							    '#languages',

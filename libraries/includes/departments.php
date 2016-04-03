@@ -79,6 +79,7 @@ try {
         $form -> addElement('text', 'name', _NAMEDEP, 'class = "inputText"');
         $form -> addElement('text', 'code', _CODEDEP, 'class = "inputText"');
         $form -> addElement('select', 'faculty_id' , _NAMEFAC, $roles, 'class = "inputText"');
+        $form -> addElement('text', 'link', _CODEDEP, 'class = "inputText"');
 
 
 
@@ -97,6 +98,7 @@ try {
                     $values = $form -> exportValues();
                     $fields['name']          = $values['name'];
                     $fields['code']   = $values['code'];
+                    $fields['link']   = $values['link'];
                     if($values['faculty_id'] != 0)
                     $fields['faculty_id']   = $values['faculty_id'];
                     else

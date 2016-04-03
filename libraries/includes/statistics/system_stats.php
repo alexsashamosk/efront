@@ -36,6 +36,9 @@ try {
         $rolesdep = EfrontUser :: getDep();
         $smarty -> assign("T_DEP_PATHS", $rolesdep);
 
+        $rolesdep = EfrontUser :: getFac();
+        $smarty -> assign("T_FAC_PATHS", $rolesdep);
+
         $groups     = EfrontGroup :: getGroups();
         $smarty -> assign("T_GROUPS", $groups);
 
@@ -75,6 +78,10 @@ try {
     if (isset($_GET['dep_filter']) && $_GET['dep_filter'] != -1) {
             $result  = eF_getTableData("logs,users", " users.name, users.surname, users.active,users.id_departments, logs.users_LOGIN, count(logs.id) as cnt", "users.login=logs.users_LOGIN and users.id_departments=". $_GET['dep_filter'] ." and action = 'login' and logs.timestamp between $from and $to group by logs.users_LOGIN order by count(logs.id) desc");
              $smarty -> assign("T_DEP_F", $result);
+    }
+    if (isset($_GET['fac_filter']) && $_GET['fac_filter'] != -1) {
+            $result  = eF_getTableData("logs,users  INNER join departments ON users.id_departments = departments.id  INNER join faculties ON departments.faculty_id=faculties.id ", " users.name , users.surname, users.active, logs.users_LOGIN, count(logs.id) as cnt", "users.login=logs.users_LOGIN and faculties.id=". $_GET['fac_filter'] ." and action = 'login' and logs.timestamp between $from and $to group by logs.users_LOGIN order by count(logs.id) desc");
+             $smarty -> assign("T_FAC_F", $result);
     }
     if (isset($_GET['prepod_filter']) && $_GET['prepod_filter'] != -1) {
         $result  = eF_getTableData("logs,users", " users.name, users.surname, users.active, logs.users_LOGIN, count(logs.id) as cnt", "users.login=logs.users_LOGIN and users.id=". $_GET['prepod_filter'] ." and action = 'login' and logs.timestamp between $from and $to group by logs.users_LOGIN order by count(logs.id) desc");

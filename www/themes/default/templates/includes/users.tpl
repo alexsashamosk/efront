@@ -9,6 +9,7 @@
             	<tr><td class = "moduleCell">
             		<script>var activate = '{$smarty.const._ACTIVATE}';var deactivate = '{$smarty.const._DEACTIVATE}';</script>
                     {capture name = 't_users_code'}
+                
                             {if !isset($T_CURRENT_USER->coreAccess.users) || $T_CURRENT_USER->coreAccess.users == 'change'}
                                 <div class = "headerTools">
                                     <span>
@@ -19,7 +20,7 @@
                                 {assign var = "_change_" value = 1}
                             {/if}
 <!--ajax:usersTable-->
-
+                                 
                                 <table style = "width:100%" class = "sortedTable" size = {$T_TABLE_SIZE} sortBy = "0" id = "usersTable" useAjax = "1" rowsPerPage = "20" url = "administrator.php?ctg=users&">
                                     <tr class = "topTitle">
                                         <td class = "topTitle" name = "login">{$smarty.const._USER}</td>

@@ -19,6 +19,11 @@ if (!isset($_SESSION['s_login'])) {
 
 $path = "../libraries/";
 //Automatically redirect to installation page if configuration file is missing
+
+			 
+
+
+
 if (!is_file($path."configuration.php")) {                        //If the configuration file does not exist, this is a fresh installation, so redirect to installation page
 	is_file("install/index.php") ? header("location:install/index.php") : print('Failed locating configuration file <br/> Failed locating installation directory <br/> Please execute installation script manually <br/>');
 	exit;
@@ -26,6 +31,12 @@ if (!is_file($path."configuration.php")) {                        //If the confi
 	/** Configuration file */
 	require_once $path."configuration.php";
 }
+
+$rolesfac = EfrontFaculties :: getFacultiestree();
+$smarty -> assign("T_FAC", $rolesfac);
+
+$rolesdep = EfrontDepartments :: getDepartmentstree();
+$smarty -> assign("T_DEP", $rolesdep);
 
 if ($_SESSION['s_login']) {
 	try {
@@ -184,7 +195,7 @@ if (isset($_GET['logout']) && !isset($_POST['submit_login'])) {
 if (!$smarty -> is_cached('index.tpl', $cacheId) || !$GLOBALS['configuration']['smarty_caching']) {
 	$blocks = array('login'           => array('title' => _LOGINENTRANCE,   'image' => '32x32/keys.png'),
     				'online'          => array('title' => _USERSONLINE, 	'image' => '32x32/users.png'),
-    				'lessons'         => array('title' => _COURSES, 		'image' => '32x32/theory.png'),
+    				'lessons'         => array('title' => _FACULTIES, 		'image' => '32x32/theory.png'),
                 	'selectedLessons' => array('title' => _SELECTEDCOURSES, 'image' => '32x32/shopping_basket.png'),
 					'checker' 		  => array('title' => _OPTIONSCHECKER,  'image' => '32x32/success.png'),
     				'news'            => array('title' => _SYSTEMNEWS, 		'image' => '32x32/announcements.png'));
@@ -1416,7 +1427,10 @@ if (isset($_GET['ctg']) && $_GET['ctg'] == 'lesson_info') {                     
 	//session_start();			//Isn't needed here if the head session_start() is in place
 
 	if (!$smarty -> is_cached('index.tpl', $cacheId) || !$GLOBALS['configuration']['smarty_caching']) {
-		include("directions_tree.php");
+		//include("directions_tree.php");
+	
+		
+
 		try {
 			if (isset($_GET['lessons_ID'])) {
 				if (isset($lessons[$_GET['lessons_ID']]) && ($lessons[$_GET['lessons_ID']] instanceOf EfrontLesson)) {

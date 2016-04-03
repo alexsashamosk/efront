@@ -54,6 +54,19 @@
                             <input class = "flatButton" type = "button" value="{$smarty.const._SUBMIT}" onclick = "document.location='administrator.php?ctg=statistics&option=system&tab=system_traffic&from_year='+document.systemperiod.from_Year.value+'&from_month='+document.systemperiod.from_Month.value+'&from_day='+document.systemperiod.from_Day.value+'&from_hour='+document.systemperiod.from_Hour.value+'&from_min='+document.systemperiod.from_Minute.value+'&to_year='+document.systemperiod.to_Year.value+'&to_month='+document.systemperiod.to_Month.value+'&to_day='+document.systemperiod.to_Day.value+'&to_hour='+document.systemperiod.to_Hour.value+'&to_min='+document.systemperiod.to_Minute.value+'&showlog='+document.systemperiod.showLog.checked+'&showusers='+document.systemperiod.showUsers.checked+'&showlessons='+document.systemperiod.showLessons.checked+'&dep_filter='+$('dep_filter').options[$('dep_filter').selectedIndex].value"> 
                             </td>                         
                             </tr>
+                            <tr><td class = "labelCell">{$smarty.const._FACULTIESUSER}:&nbsp;</td>
+                            <td><select style = "vertical-align:middle" id = "fac_filter" name = "fac_filter" >
+                                <option value = "-1" class = "inactiveElement" {if !$smarty.get.fac_filter}selected{/if}>
+                                {$smarty.const._FACULTIESUSER}
+                                </option>
+                            {foreach name = "fac_options" from = $T_FAC_PATHS item = 'faculties' key='id'}
+                                <option value = "{$faculties.id}" {if $smarty.get.fac_filter == $faculties.id}selected{/if}>{$faculties.name}
+                                </option>
+                            {/foreach}
+                            </select>
+                            <input class = "flatButton" type = "button" value="{$smarty.const._SUBMIT}" onclick = "document.location='administrator.php?ctg=statistics&option=system&tab=system_traffic&from_year='+document.systemperiod.from_Year.value+'&from_month='+document.systemperiod.from_Month.value+'&from_day='+document.systemperiod.from_Day.value+'&from_hour='+document.systemperiod.from_Hour.value+'&from_min='+document.systemperiod.from_Minute.value+'&to_year='+document.systemperiod.to_Year.value+'&to_month='+document.systemperiod.to_Month.value+'&to_day='+document.systemperiod.to_Day.value+'&to_hour='+document.systemperiod.to_Hour.value+'&to_min='+document.systemperiod.to_Minute.value+'&showlog='+document.systemperiod.showLog.checked+'&showusers='+document.systemperiod.showUsers.checked+'&showlessons='+document.systemperiod.showLessons.checked+'&fac_filter='+$('fac_filter').options[$('fac_filter').selectedIndex].value"> 
+                            </td>                         
+                            </tr>
                             <tr><td class = "labelCell">{$smarty.const._PREPOD}:&nbsp;</td>
                             <td><select style = "vertical-align:middle" id = "prepod_filter" name = "dep_filter" >
                                 <option value = "-1" class = "inactiveElement" {if !$smarty.get.dep_filter}selected{/if}>

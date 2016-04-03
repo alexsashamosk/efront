@@ -1725,3 +1725,48 @@ sub{font-size:xx-small; vertical-align:bottom!important;}
 .sprite32-warning { background-position: 0 -3467px; width: 32px; height: 32px; } 
 .sprite32-wizard { background-position: 0 -3500px; width: 32px; height: 32px; } 
 
+.note
+{
+    text-align: center;
+}
+
+
+.noteclassic{
+	width: 80%;
+	margin-top:2em;
+	margin-left: auto;
+	margin-right: auto;
+    border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    padding: 15px 20px 15px 80px;
+	margin: 0px 0px 0px 0px;
+	-webkit-box-shadow: 2px 2px 3px #999;
+	-moz-box-shadow: 2px 2px 3px #999;
+    /*IE min-height hack*/
+    min-height:40px;
+    height:auto !important;
+    height:40px;
+    overflow:visible;
+    
+	position:relative;
+	bottom:6px;
+	right: 6px;
+	border: 1px solid #999999;
+    /*Set the position of the background image*/
+    background-position: 20px 50%;
+    background-repeat: no-repeat;
+    text-align: justify;
+}
+.noteclassic{
+	/* IE5 hack */
+	\margin: 0px 0px -3px 0px;
+	ma\rgin:  0px 0px 0px 0px;
+}
+
+.noteclassic {
+  background-color: #EEF;
+
+}
+
+

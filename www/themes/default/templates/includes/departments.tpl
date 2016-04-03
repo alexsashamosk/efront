@@ -59,6 +59,7 @@
 								<td class = "topTitle" name="name">{$smarty.const._NAMEDEP}</td>
 								<td class = "topTitle" code="code">{$smarty.const._CODEDEP}</td>
 								<td class = "topTitle" code="code">{$smarty.const._NAMEFAC}</td>
+								<td class = "topTitle" code="code">Link</td>
 								<td class = "topTitle centerAlign" name="active">{$smarty.const._ACTIVE2}</td>
 	                            
 								{if $change_departments}
@@ -74,6 +75,7 @@
 								</td>
 								<td>{$departments.code}</td>
 								<td>{$T_DIRECTIONS_PATHS[$departments.faculty_id]}</td>
+								<td>{$departments.link}</td>
 								<td class = "centerAlign">
 								{if $departments.active == 1}
 								<a href = "administrator.php?ctg=departments&deactivate_departments={$departments.id}"  class = "editLink">

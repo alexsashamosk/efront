@@ -102,7 +102,7 @@ if (isset($currentUser -> coreAccess['configuration']) && $currentUser -> coreAc
 			} elseif ($values['use_logo'] == 1) {
 				EfrontConfiguration :: setValue('logo', $GLOBALS['configuration']['site_logo']);
 			} elseif ($values['use_logo'] == 2) {
-				EfrontConfiguration :: setValue('logo', 'images/logo/logo.png');
+				EfrontConfiguration :: setValue('logo', 'images/logo/КрНУ.png');
 			}
 		
 			$logoDirectory = new EfrontDirectory(G_LOGOPATH);

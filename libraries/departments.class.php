@@ -211,6 +211,22 @@ class EfrontDepartments
         return $departments;
     }
 
+    public static function getDepartmentstree($returnObjects = false){
+
+            $result = eF_getTableData("departments", "id, code, name, faculty_id, link", "active = 1", "name");
+
+            foreach ($result as $value) {
+            if ($returnObjects){
+                $departments[$value['id']] = new EfrontDepartments($value);
+            } else {
+               // $value['name']    = unserialize($value['name']);
+                $departments[$value['id']] = $value;
+            }
+        }
+
+        return $departments;
+    }
+
    /**
      * Returns the lessons that are associated with the group's users (NOT necessarily with the group)
      *

@@ -97,7 +97,7 @@ if (G_VERSIONTYPE != 'community') { #cpp#ifndef COMMUNITY
     	//$decrypted   = str_replace($hashResidue, '', $decrypted);
     	//html_entity_decode because of #1429 [amp;view_unit]...
     	parse_str(html_entity_decode($decrypted), $cru); 
-    	mb_internal_encoding('utf-8');	//This must be put here due to PHP bug #48697
+    	mb_internal_encoding('utf8_general_ci');	//This must be put here due to PHP bug #48697
         unset($_GET['cru']);
 
         $_GET = array_merge($cru, $_GET);
@@ -383,7 +383,7 @@ function setDefines() {
 	//var_dump($_SERVER);exit;
 	
     /*Define default encoding to be utf-8*/
-    mb_internal_encoding('utf-8');
+    mb_internal_encoding('utf8_general_ci');
 
     /** The full filesystem path of the lessons directory*/
     define("G_LESSONSPATH", G_ROOTPATH."www/content/lessons/");

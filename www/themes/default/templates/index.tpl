@@ -71,7 +71,33 @@
 {if $T_CONFIGURATION.lessons_directory == 1}
 	{*Block for displaying the lessons list*}
 	{capture name = 't_lessons_code'}
-		{$T_DIRECTIONS_TREE}
+
+            {foreach name = 'fac_list' key = 'key' item = 'fac' from = $T_FAC}
+                            
+
+            <div>
+
+            <div>
+               <h4> {if $fac.name!=null}  <img src="images/faculties.png" title={$fac.name}  align="left" > <center>{$fac.name} :</center>  </h4>
+               {foreach name = 'dep_list' key = 'key' item = 'dep' from = $T_DEP}
+                    {if $dep.faculty_id==$fac.id}
+                    <ul>
+                        <li> <a href="{$dep.link}" class = "editLink" target="_blank">{$dep.name} </a> </li>
+                    </ul>
+                    {/if}
+
+               {foreachelse}          
+                {/foreach}
+                {else} Факульетів не знайдено {/if}
+                </div>
+            </div>
+                
+            
+                            
+            {foreachelse}          
+            {/foreach}
+
+
 	{/capture}
 
 	{*Block for displaying the selected lessons list (cart)*}
@@ -160,7 +186,7 @@
             {/foreach}
         {else}
         	{if $T_CONFIGURATION.lessons_directory == 1}
-        		{eF_template_printBlock title = $smarty.const._COURSES  content = $smarty.capture.t_lessons_code image = $T_BLOCKS.lessons.image}
+        		{eF_template_printBlock title = $smarty.const._FACULTIES  content = $smarty.capture.t_lessons_code image = $T_BLOCKS.lessons.image}
         	{/if}
         {/if}
     {/if}

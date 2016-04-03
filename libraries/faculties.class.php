@@ -204,6 +204,22 @@ class EfrontFaculties
         return $faculties;
     }
 
+     public static function getFacultiestree($returnObjects = false){
+
+            $result = eF_getTableData("faculties", "id, code, name", "active = 1");
+
+            foreach ($result as $value) {
+            if ($returnObjects){
+                $faculties[$value['id']] = new EfrontFaculties($value);
+            } else {
+               // $value['name']    = unserialize($value['name']);
+                $faculties[$value['id']] = $value;
+            }
+        }
+
+        return $faculties;
+    }
+
    /**
      * Returns the lessons that are associated with the group's users (NOT necessarily with the group)
      *

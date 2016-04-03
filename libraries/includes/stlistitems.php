@@ -21,11 +21,13 @@ try
         if (empty($number_course)) {
             throw new Exception(_UNAUTHORIZEDACCESS);
         }
-        $result = eF_getTableData("listitems", "*", "active=1 and kafedra_id='".$currentUser -> user['id_departments']."' and number_course='".$number_course[0]['number_course']."'");
-        //SELECT number_course FROM `groups` INNER JOIN users_to_groups ON groups.id = users_to_groups.groups_ID AND users_to_groups.users_LOGIN='sasha'
-      //  $number_course = eF_getTableData("groups INNER JOIN users_to_groups ON groups.id = users_to_groups.groups_ID AND users_to_groups.users_LOGIN='".$currentUser -> user['login']."'", "number_course");
+        $resultfirst = eF_getTableData("listitems", "*", "active=1 and semestr=1 and kafedra_id='".$currentUser -> user['id_departments']."' and number_course='".$number_course[0]['number_course']."'");
 
-        $smarty -> assign("T_USERTYPES_DATA", $result);
+        $smarty -> assign("T_USERTYPESFIRST_DATA", $resultfirst);
+
+        $resultsecond = eF_getTableData("listitems", "*", "active=1 and semestr=2 and kafedra_id='".$currentUser -> user['id_departments']."' and number_course='".$number_course[0]['number_course']."'");
+
+        $smarty -> assign("T_USERTYPESSECOND_DATA", $resultsecond);
 
                 $rolespr = EfrontUser :: getProfRoles(true);
                 $rolespr = array(0 => _NAMELIST) + $rolespr; 

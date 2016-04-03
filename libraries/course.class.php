@@ -249,6 +249,8 @@ class EfrontCourse
 
 	}
 
+	
+
 	/**
 	 * Return an array of EfrontLesson objects that belong to this course, based
 	 * on the specified constraints
@@ -275,6 +277,22 @@ class EfrontCourse
 		}
 
 	}
+
+public static function getCoursesReport($returnObjects = false){
+
+            $result = eF_getTableData("courses", "id, name", "active = 1", "name");
+
+            foreach ($result as $value) {
+            if ($returnObjects){
+                $faculties[$value['id']] = new EfrontCourse($value);
+            } else {
+               // $value['name']    = unserialize($value['name']);
+                $faculties[$value['id']] = $value;
+            }
+        }
+
+        return $faculties;
+    }
 
 	/**
 	 * Count the number of lessons in the course, based on the specified constraints
@@ -3640,6 +3658,32 @@ public function persistusers_to_courses() {
 		
 		$sql	= prepareGetTableData($tables, implode(",", $select), implode(" and ", $where), $orderby, false, $limit);
 		$result = eF_getTableData("courses, ($sql) t", implode(",", $from), "courses.id=t.id");
+		if (!isset($constraints['return_objects']) || $constraints['return_objects'] == true) {
+			return EfrontCourse :: convertDatabaseResultToCourseObjects($result);
+		} else {
+			return EfrontCourse :: convertDatabaseResultToCourseArray($result);
+		}
+	}
+
+	public static function getAllFaculties($constraints = array()) {
+
+		$select['name']   = "(SELECT departments.name, faculties.name FROM departments INNER JOIN faculties ON departments.faculty_id = faculties.id)";
+	
+		$select = EfrontCourse :: convertCourseConstraintsToRequiredFields($constraints, $select);
+		list($where, $limit, $orderby) = EfrontCourse :: convertCourseConstraintsToSqlParameters($constraints);
+
+		//$result = eF_getTableData("courses c", $select, implode(" and ", $where), $orderby, false, $limit);
+		//WITH THIS NEW QUERY, WE GET THE SLOW 'has_instances' PROPERTY AFTER FILTERING
+		$tables = "departments c";
+		$from   = array("departments.*", "t.*");
+		if (in_array('name', array_keys($select))) {
+			unset($select['name']);
+			$from[] = "(SELECT departments.name, faculties.name FROM departments INNER JOIN faculties ON departments.faculty_id = faculties.id)";
+
+		}
+		
+		$sql	= prepareGetTableData($tables, implode(",", $select), implode(" and ", $where), $orderby, false);
+		$result = eF_getTableData("departments, ($sql) t", implode(",", $from), "courses.id=t.id");
 		if (!isset($constraints['return_objects']) || $constraints['return_objects'] == true) {
 			return EfrontCourse :: convertDatabaseResultToCourseObjects($result);
 		} else {
