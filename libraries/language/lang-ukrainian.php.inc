@@ -4435,4 +4435,7 @@ define("_DERSH", "Державна");
 define("_KONTRAKT", "Контракт");
 define("_GRADEBOOK", "Номер залікової книжки");
 define("_FINALGRADES","Підсумкові оцінки");
+define("_LINKDEP","Перехід на сайт кафедри");
+define("_FACCOURSE","Факультети та курси");
+define("_INDEXCOURSE","Курси");
 ?>

@@ -70,35 +70,64 @@
 
 {if $T_CONFIGURATION.lessons_directory == 1}
 	{*Block for displaying the lessons list*}
-	{capture name = 't_lessons_code'}
 
-            {foreach name = 'fac_list' key = 'key' item = 'fac' from = $T_FAC}
-                            
+{capture name='t_facdep'}
 
-            <div>
+    {foreach name = 'fac_list' key = 'key' item = 'fac' from = $T_FAC}
+                                            
 
-            <div>
-               <h4> {if $fac.name!=null}  <img src="images/faculties.png" title={$fac.name}  align="left" > <center>{$fac.name} :</center>  </h4>
-               {foreach name = 'dep_list' key = 'key' item = 'dep' from = $T_DEP}
-                    {if $dep.faculty_id==$fac.id}
-                    <ul>
-                        <li> <a href="{$dep.link}" class = "editLink" target="_blank">{$dep.name} </a> </li>
-                    </ul>
-                    {/if}
+                            <div>
 
-               {foreachelse}          
-                {/foreach}
-                {else} Факульетів не знайдено {/if}
-                </div>
-            </div>
-                
-            
+                            <div>
+                               <h4> {if $fac.name!=null}  <img src="images/faculties.png" title='{$fac.name}'  align="left" > <center>{$fac.name} :</center>  </h4>
+                               {foreach name = 'dep_list' key = 'key' item = 'dep' from = $T_DEP}
+                                    {if $dep.faculty_id==$fac.id}
+                                    <ul>
+                                        <li> <a href="{$dep.link}" title='{$smarty.const._LINKDEP}' class = "editLink" target="_blank"  >{$dep.name} </a> </li>
+                                    </ul>
+                                    {/if}
+
+                               {foreachelse}          
+                                {/foreach}
+                                {else} Факульетів не знайдено {/if}
+                                </div>
+                            </div>
+                                
+        
                             
             {foreachelse}          
             {/foreach}
 
+{/capture}
 
-	{/capture}
+
+     {capture name='t_course'}               
+        {$T_DIRECTIONS_TREE}
+    {/capture}
+
+{capture name='t_lessons_code'}
+
+        <div class = "tabber">
+        {eF_template_printBlock tabber = "index" title=$smarty.const._FACULTIES data=$smarty.capture.t_facdep image='32x32/generic.png' options = $T_FAC} 
+
+        {eF_template_printBlock tabber = "index" title=$smarty.const._INDEXCOURSE data=$smarty.capture.t_course image='32x32/generic.png' options = $T_DIRECTIONS_TREE} 
+
+    
+
+        </div>
+
+{/capture}
+
+
+
+
+             
+
+
+
+
+   
+
 
 	{*Block for displaying the selected lessons list (cart)*}
 	{capture name = 't_selectedLessons_code'}
@@ -154,7 +183,7 @@
     {elseif $smarty.get.ctg == 'lessons' && $T_CONFIGURATION.lessons_directory == 1}
 		{if in_array('lessons', $T_POSITIONS.leftList) == false &&  in_array('lessons', $T_POSITIONS.rightList) == false}
     		{assign var = "title" value = "`$title`<span>&nbsp;&raquo;&nbsp;</span><a class='titleLink' href = '`$smarty.server.PHP_SELF`?ctg=lessons'>`$smarty.const._COURSES`</a>"}
-    		{eF_template_printBlock title = $smarty.const._COURSES  content = $smarty.capture.t_lessons_code image = $T_BLOCKS.lessons.image}
+    		{eF_template_printBlock title = $smarty.const._INDEXCOURSE  content = $smarty.capture.t_course image = $T_BLOCKS.lessons.image}
 		{/if}
     {elseif $smarty.get.ctg == 'lesson_info' && $T_CONFIGURATION.lessons_directory == 1}
     	{if $T_LESSON_INFO}

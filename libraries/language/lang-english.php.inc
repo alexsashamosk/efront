@@ -4434,4 +4434,8 @@ define("_FORMA", "Form(State, Contract)");
 define("_DERSH", "State");
 define("_KONTRAKT", "Contract");
 define("_GRADEBOOK", "Gradebook");
+define("_FINALGRADES","Final grades");
+define("_LINKDEP", "Go to the website of the Department");
+define("_FACCOURSE","Faculties and courses");
+define("_INDEXCOURSE","Courses");
 ?>

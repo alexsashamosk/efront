@@ -195,8 +195,8 @@ if (isset($_GET['logout']) && !isset($_POST['submit_login'])) {
 if (!$smarty -> is_cached('index.tpl', $cacheId) || !$GLOBALS['configuration']['smarty_caching']) {
 	$blocks = array('login'           => array('title' => _LOGINENTRANCE,   'image' => '32x32/keys.png'),
     				'online'          => array('title' => _USERSONLINE, 	'image' => '32x32/users.png'),
-    				'lessons'         => array('title' => _FACULTIES, 		'image' => '32x32/theory.png'),
-                	'selectedLessons' => array('title' => _SELECTEDCOURSES, 'image' => '32x32/shopping_basket.png'),
+    				'lessons'         => array('title' => _FACCOURSE, 		'image' => '32x32/theory.png'),
+                	'selectedLessons' => array('title' => _INDEXCOURSE, 'image' => '32x32/shopping_basket.png'),
 					'checker' 		  => array('title' => _OPTIONSCHECKER,  'image' => '32x32/success.png'),
     				'news'            => array('title' => _SYSTEMNEWS, 		'image' => '32x32/announcements.png'));
 	if (!empty($GLOBALS['currentTheme'] -> layout['positions']['enabled'])) {
@@ -1427,7 +1427,7 @@ if (isset($_GET['ctg']) && $_GET['ctg'] == 'lesson_info') {                     
 	//session_start();			//Isn't needed here if the head session_start() is in place
 
 	if (!$smarty -> is_cached('index.tpl', $cacheId) || !$GLOBALS['configuration']['smarty_caching']) {
-		//include("directions_tree.php");
+		include("directions_tree.php");
 	
 		
 

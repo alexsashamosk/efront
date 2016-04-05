@@ -3,8 +3,8 @@
 <head>
     <base href = "{$smarty.const.G_SERVERNAME}">    
     <meta http-equiv = "Content-Language" content = "{$smarty.const._HEADERLANGUAGEHTMLTAG}">
-    <meta http-equiv = "keywords"         content = "education">
-    <meta http-equiv = "description"      content = "Collaborative Elearning Platform">
+    <meta http-equiv = "keywords"         content = "КрНУ, крну, КРНУ, krnu, ibm, информатика, математика, ИВМ, дистанционная ситема обучения, efront, кременчугский национальный университет, кафедра ивм, кафедра информатики, феки, фэки, факультет, кафедра, кременчуг, университет, программирование, обучение,  дистанционная ситема, sdnknu, sdnknu.biz, sdnknu.biz.ua, система дистанционного обучения, система дистанційного навчання, сднкну, математика укр, математика.укр, вища математика, учебные заведения, Кременчуцький національний університет імені Михайла Остроградського">
+    <meta http-equiv = "description"      content = "Дистанционная ситема обучения КрНУ">
     <meta http-equiv = "Content-Type"     content = "text/html; charset = utf-8">
     <!--  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>  -->
     <link rel="shortcut icon" href="{if $T_FAVICON}{$T_FAVICON}{else}themes/default/images/favicon.png{/if}">

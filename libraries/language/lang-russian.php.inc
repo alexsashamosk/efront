@@ -4436,4 +4436,7 @@ define("_KONTRAKT", "Контракт");
 define("_GRADEBOOK", "Номер зачётной книжки");
 define("_ST", "Показать студентов");
 define("_FINALGRADES","Итоговые оценки");
+define("_LINKDEP","Переход на сайт кафедры");
+define("_FACCOURSE","Факультеты и курсы");
+define("_INDEXCOURSE","Курсы");
 ?>

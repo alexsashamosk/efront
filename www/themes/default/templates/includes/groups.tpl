@@ -187,7 +187,7 @@
 		{if $smarty.get.add_user_group}
 				{eF_template_printBlock title = $smarty.const._NEWGROUP data = $smarty.capture.t_new_group_code image = '32x32/users.png'}
 		{else}
-				{eF_template_printBlock title = "`$smarty.const._OPTIONSFORGROUP` <span class = 'innerTableName'>&quot;`$T_CURRENT_GROUP->group.name`&quot;</span>" data = $smarty.capture.t_new_group_code image = '32x32/users.png'}
+				{eF_template_printBlock title = " <span class = 'innerTableName'>&quot;`$T_CURRENT_GROUP->group.name`&quot;</span>" data = $smarty.capture.t_new_group_code image = '32x32/users.png'}
 		{/if}
 
 	{else}
